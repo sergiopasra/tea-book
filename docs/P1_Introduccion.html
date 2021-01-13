@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P1_Introducción &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P2 Fotometría CCD" href="P2_Fotometria_CCD.html" />
+    <link rel="prev" title="Espectroscopía" href="espectroscopia.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Documentos
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Técnicas Experimentales en Astrofísica
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria.html">
+     Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia.html">
+     Espectroscopía
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     P1_Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD.html">
+     P2 Fotometría CCD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+     P3 Espectroscopía de Rendija Larga
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="about_py.html">
+     About Python
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/index-notebooks.html">
+   TEA Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/fotometria_1.html">
+   Ajuste Bouger y término de color
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P1_Introduccion.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion-al-software-de-procesado-de-observaciones-astronomicas">
+   Introducción al software de procesado de observaciones astronómicas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recomendaciones-previas">
+     Recomendaciones previas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nombres-de-los-ficheros">
+       Nombres de los ficheros
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#control-de-versiones-y-cabecera">
+       Control de versiones y cabecera
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduccion-basica-a-linux-y-transferencia-de-ficheros">
+     Introducción básica a LINUX y transferencia de ficheros:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comandos-basicos-de-linux">
+       Comandos básicos de Linux
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#manejo-de-ficheros-y-carpetas">
+       Manejo de ficheros y carpetas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#transferencia-de-ficheros-entre-ordenadores">
+       Transferencia de ficheros entre ordenadores
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ftp">
+         FTP
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ssh">
+         SSH
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reducion-de-observaciones-astronomicas">
+     Redución de observaciones astronómicas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formato-fits-de-las-imagenes-astronomicas">
+       Formato FITS de las imágenes astronómicas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paquetes-de-reduccion-de-datos">
+       Paquetes de reducción de datos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#starlink">
+         STARLINK
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#figaro">
+         FIGARO
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#midas">
+         MIDAS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#idl">
+         IDL
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#iraf">
+         IRAF
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#astropy">
+         Astropy
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacion-e-inspeccion-de-imagenes">
+     Visualización e inspección de imágenes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#saoimageds9">
+       SAOimageDS9
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ejemplo">
+         Ejemplo
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aladin">
+       ALADIN
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programacion-en-python-y-cuadernos-de-jupyter">
+     Programación en Python y cuadernos de Jupyter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones">
+       Importancia de la utilización de un sistema de control de versiones
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#acceso-a-catalogos-on-line-desde-python">
+       Acceso a catálogos on line desde Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cuaderno-de-observaciones">
+     Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-llegada-de-fotones-a-un-detector">
+     La llegada de fotones a un detector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imagenes-de-calibracion">
+     Imágenes de calibración
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-imagenes-ccd">
+     Ejemplo de reducción de imágenes CCD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-espectros-ccd">
+     Ejemplo de reducción de espectros CCD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estrategias-para-la-estimacion-de-incertidumbres">
+     Estrategias para la estimación de incertidumbres
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="p1-introduccion">
+<h1>P1_Introducción<a class="headerlink" href="#p1-introduccion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduccion-al-software-de-procesado-de-observaciones-astronomicas">
+<h2>Introducción al software de procesado de observaciones astronómicas<a class="headerlink" href="#introduccion-al-software-de-procesado-de-observaciones-astronomicas" title="Permalink to this headline">¶</a></h2>
+<p>Para paliar el problema de la heterogénea formación inicial con la que ingresan los estudiantes del Máster en el ámbito de la utilización de un sistema operativo en Linux (o similar), así como en el manejo de lenguajes de programación, se comienzan las clases prácticas con un repaso sobre el uso de terminales y comandos básicos de Linux. Esto permite al estudiante organizar y manejar un gran volumen de ficheros, algo esencial para esta asignatura.</p>
+<p>Por otro lado, como las prácticas propuestas durante el resto del curso están pensadas para poder ser llevadas a cabo utilizando el lenguaje de programación <a class="reference external" href="https://www.python.org/">Python</a> a través de cuadernos de <a class="reference external" href="https://jupyter.org/">Jupyter</a> (conocidos como Jupyter notebooks), se utiliza este sistema desde el primer instante de ejecución de esta práctica de demostración inicial. Se explican los pasos a seguir para obtener imágenes y espectros de objetos astronómicos reducidos, destacando la importancia de adquirir el número suficiente de imágenes de calibración de diferentes tipos (dependiendo del tipo de observación). Finalmente se discuten distintas alternativas para la estimación de incertidumbres en las medidas finales realizadas sobre las imágenes reducidas.</p>
+<p>Los alumnos podrán entregar los Jupyter notebooks generados por ellos mismos como material evaluable de las Prácticas 2, 3 y 4, lo que evita la necesidad de generar informes independientes.</p>
+<div class="section" id="recomendaciones-previas">
+<h3>Recomendaciones previas<a class="headerlink" href="#recomendaciones-previas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="nombres-de-los-ficheros">
+<h4>Nombres de los ficheros<a class="headerlink" href="#nombres-de-los-ficheros" title="Permalink to this headline">¶</a></h4>
+<p>Aunque parezca de menor importancia se debe procurar que el nombre de los ficheros informe de su contenido no sólo al autor. Si enviamos un fichero a un colaborador o a un profesor para su evaluación, el destinatario tendrá la información básica si se la proporcionamos. Por ejemplo</p>
+<pre>
+Malos ejemplos a evitar:  
+ - práctica 2.pdf     	(acentos, espacios, informa poco)
+ - memoria_final.pdf 	(no informa nada)  
+Mejor:  
+ - TEA_G2_practica_3_v2.pdf
+ - Grupo3_practica2_v1.pdf
+</pre>
+</div>
+<div class="section" id="control-de-versiones-y-cabecera">
+<h4>Control de versiones y cabecera<a class="headerlink" href="#control-de-versiones-y-cabecera" title="Permalink to this headline">¶</a></h4>
+<p>La cabecera de las memorias  deben informar de sus autores, grupo, asignatura y fecha. La fecha puede servir de control de la versión. Más completo es añadir la versión y la fecha:</p>
+<pre>
+TÉCNICAS EXPERIMENTALES EN ASTROFÍSICA 
+Práctica 2      Fotometría CCD 
+GRUPO 6: Carmelo de Castro, Felipe Paredes y Daniel Revilla
+Versión 2. 12 abril 2020
+</pre>
+</div>
+</div>
+<div class="section" id="introduccion-basica-a-linux-y-transferencia-de-ficheros">
+<h3>Introducción básica a LINUX y transferencia de ficheros:<a class="headerlink" href="#introduccion-basica-a-linux-y-transferencia-de-ficheros" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.linux.org/">Linux</a> es el sistema operativo preferido por los investigadores en el campo de la Astronomía. Para usuarios que vengan del mundo de Windows es fácil aprender lo básico para empezar a trabajar como usuario e ir aprendiendo sobre la marcha.</p>
+<p>Linux dispone de un escritorio con iconos que llevan a las carpeta de ficheros o a las aplicaciones. Su uso es intuitivo. Los ficheros se encuentar en una estructura de directorios y subdirectorios. Normalmente se usa la terminal para introducir comandos (cli, command line interface). El intérprete de comandos se encarga de realizar las operaciones solicitadas. Se pueden encontrar manuales para principiantes en muchos sitios. Por ejemplo redhat.com  <a class="reference external" href="https://www.redhat.com/sysadmin/10-commands-terminal">Linux 10-commands-terminal</a> o de maker.pro <a class="reference external" href="https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners">basic-linux-commands-for-beginners</a></p>
+<div class="section" id="comandos-basicos-de-linux">
+<h4>Comandos básicos de Linux<a class="headerlink" href="#comandos-basicos-de-linux" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>pwd (print working directory) muestra el directorio donde nos encontramos
+sidrax:Jupyter jzamorano&#64;sidrax$ pwd<br />
+/home/jzamorano/0_TEA/Jupyter</p></li>
+</ul>
+<p>Lo que se encuentra delante del símbolo $ es lo que se conoce como el ‘prompt’.
+Contiene información del nombre del ordenador y del directorio donde nos encontramos.
+Si escribimos el comando pwd la respuesta sale en la siguiente línea que en este caso informa de que estamos en el subdirectorio Jupyter que cuelga de 0_TEA en el ‘home’ (directorio raíz) del usuario jzamorano.</p>
+<ul class="simple">
+<li><p>ls (list) es el comando para lista el contenido del directorio donde nos encontramos
+sidrax:Jupyter jzamorano$ ls</p></li>
+</ul>
+<p>Podemos usar el asterisco  para listar sólo algunos ficheros etc.</p>
+</div>
+<div class="section" id="manejo-de-ficheros-y-carpetas">
+<h4>Manejo de ficheros y carpetas<a class="headerlink" href="#manejo-de-ficheros-y-carpetas" title="Permalink to this headline">¶</a></h4>
+<p>Comandos touch, cd, mkdir, cp, mv, more, head, tail, etc</p>
+</div>
+<div class="section" id="transferencia-de-ficheros-entre-ordenadores">
+<h4>Transferencia de ficheros entre ordenadores<a class="headerlink" href="#transferencia-de-ficheros-entre-ordenadores" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ftp">
+<h5>FTP<a class="headerlink" href="#ftp" title="Permalink to this headline">¶</a></h5>
+<p>FTP es un protocolo estándar para transferencia de ficheros. Con esta utilidad podemos mover ficheros entre diferentes ordenadores (cliente y servidor) mediante comandos. Para que un servidor permita descargar ficheros es necesario autenticarse (username &amp; password) salvo en el caso de servidores públicos donde se puede hacer una conexión anónima.</p>
+<div class="figure align-default" id="ftp-1-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_1.png"><img alt="../_images/intro_01_ftp_1.png" src="../_images/intro_01_ftp_1.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">Comandos básicos de ftp.</span><a class="headerlink" href="#ftp-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ftp-2-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_2.png"><img alt="../_images/intro_01_ftp_2.png" src="../_images/intro_01_ftp_2.png" style="height: 800px;" /></a>
+</div>
+<div class="figure align-default" id="ftp-3-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_3.png"><img alt="../_images/intro_01_ftp_3.png" src="../_images/intro_01_ftp_3.png" style="height: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="ssh">
+<h5>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h5>
+<p>SSH (secure shell) es un protocolo encriptado que permite conexiones y transferencias seguras en redes que no lo son. En las conexiones podemos acceder a otro servidor y lanzar comandos o trabajar con ese ordenador remoto como si estuviéramos conectados en una terminal de él.</p>
+<p>Ejemplos de uso de ssh y scp.</p>
+</div>
+</div>
+</div>
+<div class="section" id="reducion-de-observaciones-astronomicas">
+<h3>Redución de observaciones astronómicas<a class="headerlink" href="#reducion-de-observaciones-astronomicas" title="Permalink to this headline">¶</a></h3>
+<p>Las observaciones astronómicas que emplean detectores de imagen tipo CCD deben procesarse o reducirse para proporcionar imágenes o espectros calibrados. Sólo tras la reducción de las observaciones podemos medir en ellas para obtener la información que nuestro proyecto científico requiera. Este procesado debe ser cuidadoso porque de él depende la calidad final de nuestras medidas.</p>
+<div class="section" id="formato-fits-de-las-imagenes-astronomicas">
+<h4>Formato FITS de las imágenes astronómicas<a class="headerlink" href="#formato-fits-de-las-imagenes-astronomicas" title="Permalink to this headline">¶</a></h4>
+<p>Los primeros instrumentos que usaron CCDs grababan sus imágenes en cintas magnéticas en ficheros con formatos particulares (proprietary format), es decir que cada observatorio proporcionaba al final de las observaciones los ficheros y las instrucciones de cómo estaba almacenada y codificada la información. El investigador debía usar los programas de procesado en el propio observatorio (si disponían de ellos) o preparar los suyos propios en su lugar de trabajo. El primer paso consistía en lograr traspasar la información de la cinta magnética a un fichero en tu propio ordenador y crear una matriz de datos organizada en píxeles X,Y con la intensidad de cada pixel.</p>
+<p>Para paliar esta pérdida de tiempo se diseñó el formato digital estándar abierto FITS <a class="reference external" href="https://fits.gsfc.nasa.gov/fits_primer.html">Flexible Image Transport System</a> que es de uso común en la comunidad astronómica. Tanto la NASA como la IAU lo avalan y promueven.</p>
+<p>El formato FITS se usa tanto para imágenes como para tablas. La cabecera de una imagen FITS está escrita en ASCII y es por ello fácilmente legible. Contiene los metadatos, es decir, la información descriptiva que debe acompañar a los datos de la imagen. Por ejemplo el tamaño del fichero, su origen , la fecha de creación, el observador, el filtro utilizado etc. Estos parámetros son conocidos como los ‘keywords’ (descriptor).</p>
+<p>Se han desarrollado paquetes de software para visualizar ficheros FITS como  Image Software <a class="reference external" href="http://ds9.si.edu/site/Home.html">SAOImage DS9</a> y <a class="reference external" href="http://aladin.u-strasbg.fr/">ALADIN</a> y para transformar entre FITS y otros formatos de imagen como, GIMP o ImageMagick.</p>
+<p>La cabecera (‘heeader’) está escrita en líneas de 80 caracteres en ASCII sencillo y cada línea contiene el Nombre del descriptor + Valor + Comentario.</p>
+<p>KEYNAME = value / comment string</p>
+<pre>
+SIMPLE = T        / file conforms to FITS standard 
+BITPIX = 16       / number of bits per data pixel 
+NAXIS  = 2        / number of data axes 
+NAXIS1 = 440      / length of data axis 1 
+NAXIS2 = 300      / length of data axis 2
+</pre>
+<p>Algunos descriptores básicos son obligatorios. Otros descriptores pueden verse en el ejemplo siguiente de una observación de un arco de calibración con el IDS en el INT.</p>
+<pre>
+SIMPLE  =                    T /                                                
+BITPIX  =                   16 /                                                
+NAXIS   =                    2 /                                                
+NAXIS1  =                 1124 /                                                
+NAXIS2  =                  400 /                                                
+BSCALE  =             1.000000 /                                                
+BZERO   =         32768.000000 /                                                
+RUN     =               115135 / Run number                                     
+IRAFNAME= 'r115135           ' / rfits should use this name                     
+SYSVER  = 's6-1              ' / Version of observing system                    
+ORIGIN  = 'ING La Palma      ' / Name of observatory                            
+OBSERVAT= 'LAPALMA           ' / Name of observatory (IRAF style)               
+OBJECT  = 'cune ucm1443+2844 ' / Title of observation                           
+OBSTYPE = 'ARC               ' / Type of observation, eg. ARC                   
+IMAGETYP= 'ARC               ' / Type of observation, eg. ARC                   
+LATITUDE=            28.762000 / Telescope latitude  (degrees), +28:45:43.2     
+LONGITUD=            17.877639 / Telescope longitude (degrees), +17:52:39.5     
+HEIGHT  =                 2348 / [m] Height above sea level.                    
+SLATEL  = 'LPO2.5  '           / Telescope name known to SLALIB                 
+TELESCOP= 'INT     '           / 2.5m Isaac Newton Telescope                    
+TELSTAT = 'TRACKING'           / Telescope status: TRACKING or GUIDING normally.
+RA      = ' 14:43:46.201'      / RA  (220.9425040722087500 degrees)             
+DEC     = '+28:44:07.02'       / DEC ( 28.7352839821988330 degrees)             
+EQUINOX = 'B1950.00'           / Equinox of coordinates                         
+RADECSYS= 'FK4     '           / mean place old (before the 1976 IAU) system    
+XAPNOM  =         0.0000000000 / nominal aperture in x (0.00 arcsec)            
+YAPNOM  =         0.0000000000 / nominal aperture in y (0.00 arcsec)            
+XAPOFF  =         0.0000000000 / total aperture offset in x (0.00 arcsec)       
+YAPOFF  =         0.0000000000 / total aperture offset in y (0.00 arcsec)       
+MJD-OBS =        51039.8602077 / Modified Julian Date of midtime of observation 
+JD      =      2451040.3602077 / Julian Date of midtime of observation          
+STSTART = ' 16:59:24.0'        / Local sidereal time at start of observation    
+ST      = ' 16:59:24.0'        / Local sidereal time at start of observation    
+AZIMUTH =           277.778480 / Mean azimuth of observation (degrees)          
+ZD      =            29.200487 / Mean zenith-distance of observation (degrees)  
+FSTATION= 'CASSEGRAIN'         / Focal station of observation                   
+PLATESCA=             1.502645 / [d/m] Platescale (  5.41arcsec/mm)             
+TELFOCUS=             0.014303 / Telescope focus (metres)                       
+ROTTRACK=                    T / Rotator always tracks sky on equatorial mount  
+ROTSKYPA=           129.998198 / Turntable position angle (degrees)             
+PARANGLE=            81.606581 / Parallactic angle at observation midpoint      
+VIGNETTE=                    F / Can we see out?                                
+DOMEAZ  =           282.618912 / Mean dome azimuth during observation           
+AIRMASS =             1.145286 / Effective mean airmass                         
+TEMPTUBE=            17.440534 / Truss Temperature (degrees Celsius)            
+CAT-NAME= 'UCM1443+2844'       / Target input-catalogue name                    
+CAT-RA  = ' 14:43:46.200'      / Target Right Ascension                         
+CAT-DEC = '+28:44:07.00'       / Target Declination                             
+CAT-EQUI= 'B1950.00'           / Equinox of target coordinates                  
+CAT-EPOC=              1950.00 / Target epoch of proper motions                 
+PM-RA   =             0.000000 / Target proper-motion RA (sec time/year)        
+PM-DEC  =             0.000000 / Target proper-motion (sec arc/year)            
+PARALLAX=             0.000000 / Target Parallax (arcsec)                       
+RADVEL  =             0.000000 / Target radial velocity (km/s)                  
+RATRACK =             0.000000 / Differential-tracking rate RA (arcsec/sec)     
+DECTRACK=             0.000000 / Differential-tracking rate Dec (arcsec/sec)    
+AGTVPOSX= 0.499996             / TV X position in meters                        
+AGTVPOSY= 0.500027             / TV Y position in meters                        
+AGTVFILT= 'F0 Clear          ' / TV filter name                                 
+AGTVSHUT= 'SHUT              ' / State of TV shutter                            
+AGPOSX  = 0.521599             / Autoguider X position in meters                
+AGPOSY  = 0.408291             / Autoguider Y position in meters                
+ASNDFILT= 'F0 Clear          ' / ND filter name in beam above the slit          
+ASCFILT = 'F2 GG495          ' / Colour filter name in beam above the slit      
+AGARCLMP= ' CuNe             ' / Arc lamps in use                               
+COMPMPOS= 'IN                ' / Comparison mirror position                     
+AUTOFILT= 'F3 RED            ' / Autoguider filter name                         
+AGCFILNA= 'F0 Clear          ' / Comparison ND filter A name                    
+AGCFILNB= 'F0 Clear          ' / Comparison ND filter B name                    
+INSTRUME= 'IDS              '  / Name of the instrument                         
+CAMERA  = '500               ' / Focal length of camera in use                  
+SLITWID =         1.450000E-04 / Slit width in meters                           
+PSLITWID=                0.046 / Slit width projected onto detector in mm       
+SLTWDSKY=                0.784 / Slit width projected onto sky in arcseconds    
+DEKKERID= 'D-IPCS            ' / Dekker slide name                              
+DEKPOS  = 'P0 Clear          ' / Name of Dekker position in the beam            
+BSCFILT = 'F0 Clear          ' / Name of colour filter in beam below the slit   
+BSNDFILT= 'F0 Own            ' / Name of ND filter in beam below the slit 
+COLLNAME= 'Ag-red            ' / Collimator name                                
+COLLFOC =                  206 / Collimator focus in encoder units              
+HARTMANR= 'OPEN              ' / State of right Hartmann shutter                
+HARTMANL= 'OPEN              ' / State of left  Hartmann shutter                
+GRATNAME= 'R1200Y            ' / Grating name                                   
+GLINESMM=                 1200 / Grating rulings in lines/mm                    
+GRATBLAZ=             6000.000 / Grating blaze in Angstroms                     
+GRATANGL=              127.000 / Grating angle in degrees                       
+GRATSHUT= 'OPEN              ' / State of grating shutter                       
+CENWAVE =             6761.062 / Central wavelength in Angstroms                
+DATE-OBS= '1998-08-14        '          / Date of start of observation          
+UTSTART = '20:38:43.0        '          / UTC of start of observation hh:mm:ss  
+ELAPSED =                2.000          / Time from end of CLR to shutter close 
+DARKTIME=                1.000          / Time from end of CLR to start of r/o  
+EXPOSED =                1.000          / Exposure time excluding pauses,in secs
+EXPTIME =                1.000          / Exposure time excluding pauses,in secs
+DETECTOR= 'TEK5              '          / Name of the detector                  
+PREFLASH=                0.000          / Length of Preflash in seconds         
+BUNIT   = 'ADU               '          / Unit of the array of image data       
+GAIN    =                1.530          / Electrons per ADU                     
+READNOIS=                4.820          / Readout noise in electrons per pix    
+CCDSPEED= 'QUICK             '          / Readout speed of the CCD              
+CCDNCHIP=                    1          / Number of CCDs in this head           
+CCDCHIP =                    1          / Head number of this CCD               
+CCDTYPE = 'TEK1024AR         '          / Type of CCD used in this detector     
+CCDXSIZE=                 1124          / X Size in pixels of digitised frame   
+CCDYSIZE=                 1124          / Y Size in pixels of digitised frame   
+CCDXIMSI=                 1024          / X Size of useful imaging area         
+CCDYIMSI=                 1024          / Y Size of useful imaging area         
+CCDXIMST=                   50          / X Start pixel of useful imaging area  
+CCDYIMST=                    0          / Y Start pixel of useful imaging area  
+CCDWMODE=                    T          / True is windows are enabled           
+CCDWXO1 =                    0          / Offset of window 1 in X               
+CCDWYO1 =                  405          / Offset of window 1 in Y               
+CCDWXS1 =                 1124          / Size of window 1 in X                 
+CCDWYS1 =                  400          / Size of window 1 in Y                 
+CCDWXO2 =                    0          / Offset of window 2 in X               
+CCDWYO2 =                    0          / Offset of window 2 in Y               
+CCDWXS2 =                    0          / Size of window 2 in X          
+CCDWYS2 =                    0          / Size of window 2 in Y                 
+CCDWXO3 =                    0          / Offset of window 3 in X               
+CCDWYO3 =                    0          / Offset of window 3 in Y               
+CCDWXS3 =                    0          / Size of window 3 in X                 
+CCDWYS3 =                    0          / Size of window 3 in Y                 
+CCDWXO4 =                    0          / Offset of window 4 in X               
+CCDWYO4 =                    0          / Offset of window 4 in Y               
+CCDWXS4 =                    0          / Size of window 4 in X                 
+CCDWYS4 =                    0          / Size of window 4 in Y                 
+CCDXPIXE=         2.400000e-05          / Size in meters of the pixels, in X    
+CCDYPIXE=         2.400000e-05          / Size in meters of the pixels, in Y    
+CCDXBIN =                    1          / Binning factor, in X                  
+CCDYBIN =                    1          / Binning factor, in Y                  
+CCDSTEMP=                  173          / Required temperature of CCD, in Kevlin
+CCDATEMP=                  173          / Actual temperature of CCD, in Kevlin  
+CHIPNAME= 'A5506-4           ' / Name of CCD chip                               
+DASCHAN =                    1 / DAS channel                                    
+TRIMSEC = '[51:1074,1:400]   ' / Illuminated region of image                    
+BIASSEC = '[1:50,1:400]      ' / Bias region of image                           
+WINSEC1 = '[1:1124,1:400]    ' / Readout window 1                               
+WINSEC2 = '[0:0,0:0]         ' / Readout window 2                               
+WINSEC3 = '[0:0,0:0]         ' / Readout window 3                               
+WINSEC4 = '[0:0,0:0]         ' / Readout window 4                               
+COMMENT This is padding to correct for missing descriptors earlier in the header
+COMMENT This is padding to correct for missing descriptors earlier in the header
+COMMENT This is padding to correct for missing descriptors earlier in the header
+COMMENT This is padding to correct for missing descriptors earlier in the header
+HISTORY This is the end of the header written by the ING observing-system.      
+END                                                                                            </pre>
+<p>En los ejemplos de las prácticas veremos que estas cabeceras pueden contener información con la historia de su procesado previo.</p>
+</div>
+<div class="section" id="paquetes-de-reduccion-de-datos">
+<h4>Paquetes de reducción de datos<a class="headerlink" href="#paquetes-de-reduccion-de-datos" title="Permalink to this headline">¶</a></h4>
+<p>La reducción de las observaciones astronómicas con imágenes digitales al principio de estar disponibles era una tarea a la que los astrónomos se enfrentaban con sus propios medios. No sólo para leer los ficheros sino para calibrar y extraer la información de los mismos. De aquellos tiempos quedan astrónomos que prefieren desarrollar sus propios programas.<br />
+Sin embargo aparecieron enseguida paquetes de reducción desarrollados por observatorios o centros de investigación que fueron de gran ayuda sobre todo para los astrónomos con menos conocimientos de programación. En cualquier caso supuso un avance ya que permitieron a los investigadores dedicar el tiempo a la reducción de los datos y no al desarrollo de software. Estas herramientas fundamentales se mantenían con ayuda de expertos cuyo cometido era fundamentalmente éste y también con la aportación de astrónomos.</p>
+<div class="section" id="starlink">
+<h5>STARLINK<a class="headerlink" href="#starlink" title="Permalink to this headline">¶</a></h5>
+<p>Otro problema adicional era el acceso a ordenadores capaces de realizar este trabajo. Por ejemplo en el año 1978 se decidió en el Reino Unido establecer <a class="reference external" href="http://starlink.eao.hawaii.edu/starlink">STARLINK</a> con una red de 6 ordenadores (superminicomputers DEC VAX 11/780) conectados entre sí. Resulta instructivo comprobar lo que se ha avanzado desde entonces (5000 Mbytes of disc space and 12 Mbytes of memory).</p>
+<div class="figure align-default" id="starlink-fig">
+<a class="reference internal image-reference" href="../_images/intro_02_starlink.png"><img alt="../_images/intro_02_starlink.png" src="../_images/intro_02_starlink.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">Source: <a class="reference external" href="http://www.chilton-computing.org.uk/acd/starlink/p002.htm">http://www.chilton-computing.org.uk/acd/starlink/p002.htm</a></span><a class="headerlink" href="#starlink-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Los primeros ordenadores VAX (sistema operativo VMS) dieron paso a los miniVAX y luego al sistema operativo Unix en estos ordenadores y otros de SUN y finalmente pudieron usar PCs con Linux.  El proyecto dejó de mantenerse en 2005 después de 25 años de funcionamiento. Por suerte para los nostálgicos el Joint Astronomy Centre siguió desarrollando software hasta 2015 y actualmente está mantenido por East Asian Observatory. El código es abierto (‘open software’).</p>
+</div>
+<div class="section" id="figaro">
+<h5>FIGARO<a class="headerlink" href="#figaro" title="Permalink to this headline">¶</a></h5>
+<p>El paquete de software <a class="reference external" href="http://star-www.rl.ac.uk/docs/sun86.htx/sun86.html">FIGARO</a> fue inicialmente desarrollado por Keith Shortridge  en los primeros 1980s para analizar los datos del observatorio de Monte Palomar. Escrito fundamentalmente en Fortran estaba compuesto de múltiples subrutinas para tareas de todo tipo en la reducción de observaciones astronómicas. Su uso se extendió rápidamente por los centros de investigación de todo el mundo. Era relativamente sencillo desarrolar rutinas propias para tareas diferentes e incorporarlas en el paquete.</p>
+</div>
+<div class="section" id="midas">
+<h5>MIDAS<a class="headerlink" href="#midas" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="https://www.eso.org/sci/software/esomidas/">ESO-MIDAS</a> fue desarrollado por el European Southern Observatory siguiendo los pasos de STARLINK en 1980 y usaba ordenadores VAX con sistema operativo VMS que posteriormente migró a UNIX. Su estructura es modular con rutinas accesibles por comandos que admiten parámetros siguiendo la filosofía del sistema de procesado de imagen ‘Image handling and Processing system’ <a class="reference external" href="https://link.springer.com/chapter/10.1007%2F0-306-48080-8_4">IHAP</a> que estaba basado en ordenadores Hewlett-Packard. Se pueden desarrollar procedimientos que combinan varios comandos sucesivos para crear cadenas de procesado (‘pipelines’) con su sistema MCL (‘MIDAS control language’). Su uso fue muy popular y aun hoy continua empleándose.<br />
+En sus orígenes se necesitaba también un ordenador grande y una serie de periféricos para interaccionar con el sistema escribir los comandos y lanzar las aplicaciones (terminal o monitor) y otras terminales gráficas para mostrar imágenes o espectros, por ejemplo. Las rutinas de graficado de MIDAS se escribieron con el estándard de AGL (ASTRONET Graphic Library) desarrrolado por ASTRONET. Más tarde se las rutinas de Image Display Interface desarrolladas en colaboración con ST ScI, UK STARLINK, KPNO y Trieste Observatory.  Actualmente todo es más acesible ya que puede instalarse en ordenadores personales con sistemas operativos Linux y también sistemas Mac OSX. Las diferentes terminales gráficas aparecen como ventanas en el escritorio.</p>
+</div>
+<div class="section" id="idl">
+<h5>IDL<a class="headerlink" href="#idl" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="https://www.l3harrisgeospatial.com/Software-Technology/IDL">IDL</a> (‘Interactive Data Language’) es un lenguage de programación para análisis de datos que se usa entre otros campos en astronomía, ciencias de la atmósfera o análisis de imágenes en medicina.</p>
+</div>
+<div class="section" id="iraf">
+<h5>IRAF<a class="headerlink" href="#iraf" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="http://ast.noao.edu/data/software">IRAF</a> ‘Image Reduction and Analysis Facility’ es un software desarrollado en NOAO con el fin de procesar observaciones astronómicas. Escrito para sistema operativo Unix originalmente se usa en la actualidad en plataformas Linux o mac OS. IRAF está estructurado en tareas (‘tasks’) que están incluidas en paquetes. Dentro del proyecto IRAF existen desarrollos especiales como STSDAS (‘Space Telescope Science Data Analysis System’) para procesar datos de los instrumentos de HST (Hubble Space Telescope). IRAF ha sido tal vez el software más popular ya que algunos desarrolladores de instrumentación astronómica para grandes telescopios han escrito paquetes de procesado y tareas especiales para la reducción de las observaciones como nuevos paquetes.</p>
+</div>
+<div class="section" id="astropy">
+<h5>Astropy<a class="headerlink" href="#astropy" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.astropy.org/">Astropy</a><br />
+Las observaciones realizadas con modernos intrumentos astronómicos pueden ser reducidas por cadenas de procesado (‘pipelines’) sobre la marcha. De esta forma el investigador dispone de los datos reducidos inmediatamente. La exigencia de proporcionar esta utilidad es habitual en el desarrollo de instrumentación de primer nivel para asegurar el rendimiento científico de la inversión realizada. Para procesados más delicados o con mayor detalle en algún aspecto es normal que el investigador desee hacer una reducción más manual usando sus propios métodos y usando, generalmente, las herramientas disponibles. El proyecto Astropy es un esfuerzo conjunto (comunitario) de desarrollo de software para astronomía en Python <a class="reference external" href="https://www.aanda.org/articles/aa/full_html/2013/10/aa22068-13/aa22068-13.html">Astropy: A community Python package for astronomy</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="visualizacion-e-inspeccion-de-imagenes">
+<h3>Visualización e inspección de imágenes<a class="headerlink" href="#visualizacion-e-inspeccion-de-imagenes" title="Permalink to this headline">¶</a></h3>
+<p>Existen visualizadores de las imágenes procedentes de observaciones astronómicas en formato FITS. Incluso pueden estar incluidos en programas de manejo de imágenes de uso general. Por supuesto los paquetes de reducción mencionados anteriormente disponen de sus comandos para visualización.</p>
+<div class="section" id="saoimageds9">
+<h4>SAOimageDS9<a class="headerlink" href="#saoimageds9" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://sites.google.com/cfa.harvard.edu/saoimageds9">SAOimageDS9</a>
+es uno de los programas favoritos que, por ejemplo, funciona dentro de IRAF como como su sistema de visualización. Pero una de las características más importantes de este software que permite cargar y ver varias imágenes FITS (y tablas binarias) a la vez es que funciona independientemente (stand-alone application) de otros paquetes de software y no necesita instalación o ficheros adicionales. Funciona con menús desde su GUI (graphical user interface) o por medio de comandos. SAOimageDS9 tiene su origen en SAOimage desarrollado por Mike Van Hilst en el Smithsonian Astrophysical Observatory, Center for Astrophysics, Harvard University en 1990. Unos años después Eric Mandel desarrolla SAOtng (SAOImage, The Next Generation) y a finales de los 1990s William Joye empezó a reescribir el software que se llama desde entonces SAOimageDS9 (Deep Space 9).</p>
+<p>El programa se descarga desde <a class="reference external" href="http://ds9.si.edu">http://ds9.si.edu</a> y existen versiones para Windows, Mac y Linux. Los manuales, guía y tutoriales se encuentran en la página de <a class="reference external" href="https://sites.google.com/cfa.harvard.edu/saoimageds9/documentation">documentación SAOimageDS9</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/ref/index.html">SAOImageDS9 Reference Manual</a></p></li>
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/user/index.html">SAOImageDS9 Users Manual</a></p></li>
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/user/gui/index.html">Introduction to the ds9 Interface</a></p></li>
+<li><p><a class="reference external" href="http://www.jb.man.ac.uk/~gbendo/Sci/Pict/DS9guide.pdf">Introduction to Astronomy Images and the DS9 Image Viewer</a> tutorial de George J. Bendo</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=C8QBwrKbEtc">IPAC introduction to DS9, en cuatro videos</a> by <a class="reference external" href="https://www.ipac.caltech.edu/science/staff/luisa-rebull">Luisa Rebull</a> si tienes más tiempo y te gustan los tutoriales en video.</p></li>
+</ul>
+<p>La recomendación es ir aprendiendo poco a poco usando la herramienta y encontrando las funcionalidades a medida que las necesitamos. Se puede añadir a DS9 <a class="reference external" href="https://github.com/ericmandel/funtools">Funtools</a> que es una librería FITS y paquete con utilidades.</p>
+<div class="section" id="ejemplo">
+<h5>Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this headline">¶</a></h5>
+<p>Como una primera introducción podemos descargarnos imágenes FITS del par de galaxias NGC274-NGC275 en las bandas u, g y r de la exploración <a class="reference external" href="https://www.sdss.org/">SDSS</a> del <a class="reference external" href="https://dr12.sdss.org/fields">DR12 Science Archive Server (SAS)</a></p>
+<div class="figure align-default" id="ds9-1-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_1.png"><img alt="../_images/intro_03_ds9_1.png" src="../_images/intro_03_ds9_1.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">Imagen del par de galaxias en interación e la página de descarga de SDSS
+<a class="reference external" href="https://dr12.sdss.org/fields/name?name=NGC274">https://dr12.sdss.org/fields/name?name=NGC274</a></span><a class="headerlink" href="#ds9-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Tras descargarlas tenemos las tres imágenes como ficheros FITS frame-u-008067-4-0054.fits, frame-g-008067-4-0054.fits, frame-r-008067-4-0054.fits. Empecemos mostrando la imagen en banda g. Para ello en DS9 usamos los menús ‘file’ + ‘open’ y selecionamos el directorio y fichero. Se mostrará en la ventana.</p>
+<div class="figure align-default" id="ds9-2-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_2.png"><img alt="../_images/intro_03_ds9_2.png" src="../_images/intro_03_ds9_2.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Tras cargar la primera imagen.</span><a class="headerlink" href="#ds9-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-3-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_3.png"><img alt="../_images/intro_03_ds9_3.png" src="../_images/intro_03_ds9_3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">No se ve la imagen completa sino un trozo. Arriba a la derecha vemos una miniatura y un cuadrado verde con al zona recortada que vemos en la ventana. El cuadro de más a la derecha muestra una ampliación del punto donde tenemos el cursor.</span><a class="headerlink" href="#ds9-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-4-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_4.png"><img alt="../_images/intro_03_ds9_4.png" src="../_images/intro_03_ds9_4.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">Tras hacer zoom para imagen completa. Nótese que aparecen arriba a la izquierda el nombre del fichero y las coordenadas de imagen (píxeles) y celestes (WCS world coordinate system) ya que en este caso es una imagen completamente procesada incluyendo astrometría.</span><a class="headerlink" href="#ds9-4-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Las imágenes de las galaxias aparecen saturadas porque la escala empleada para mostrar la imagen se queda corta y hay valores en los píxeles de las galaxias por encima de 0.12 que es el límite superior elegido automáticamente (abajo a la derecha). Con el menú de escala y colocando nuestros límites a mano entre 0 y 5 unidades se obtiene una representación que permite ver las variaciones en la galaxia.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_5.png"><img alt="../_images/intro_03_ds9_5.png" src="../_images/intro_03_ds9_5.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">Diálogo de límites para la escala de la representación gráfica que muestra un histograma de los valores de los píxeles de la imagen. Se pueden cambiar con el cursor o escribiendo los valores deseados.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-6-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_6.png"><img alt="../_images/intro_03_ds9_6.png" src="../_images/intro_03_ds9_6.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">Tras hacer zoom y centrar las galaxias usando una tabla de color (‘lookup table’) de tipo arcoiris.</span><a class="headerlink" href="#ds9-6-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-7-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_7.png"><img alt="../_images/intro_03_ds9_7.png" src="../_images/intro_03_ds9_7.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Tras hacer zoom y centrar las galaxias usando una tabla de color (‘lookup table’) de tipo arcoiris.</span><a class="headerlink" href="#ds9-7-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos cargar otra imagen en otro canal o ‘frame’ usando el menú ‘frame’+’new’ y eligiendo el fichero.</p>
+<div class="figure align-default" id="ds9-8-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_8.png"><img alt="../_images/intro_03_ds9_8.png" src="../_images/intro_03_ds9_8.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">Nuevo fichero cargado en el canal (‘frame’) 2. De momento usa el mismo zoom que el canal 1 pero no está centrado en las galaxias.</span><a class="headerlink" href="#ds9-8-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-9-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_9.png"><img alt="../_images/intro_03_ds9_9.png" src="../_images/intro_03_ds9_9.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">Usando el menu de ‘frame’+’match’+’image’+’WCS’ centramos las dos imágenes en el mismo sitio. Se usa de referencia la imagen seleccionada. En este caso la primera.</span><a class="headerlink" href="#ds9-9-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos ver las dos imágenes porque estamos en modo tejar (‘tile’) pero podemos seleccionar para ver sólo una (‘single’) o incluso hacer parpadeo entre las cargadas. Cargemos la última imagen correspondiente a la banda u.</p>
+<div class="figure align-default" id="ds9-10-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_10.png"><img alt="../_images/intro_03_ds9_10.png" src="../_images/intro_03_ds9_10.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">Vemos las tres imágenes cargadas en 3 canales diferentes. Para que se vean así en columnas hay que elegirlo en el menu de ‘frame’+’farme parameters’+’tile’.</span><a class="headerlink" href="#ds9-10-fig" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>NED buscar y cargar cargar imagen</p></li>
+<li><p>Regiones y Fotometría sencilla</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="aladin">
+<h4>ALADIN<a class="headerlink" href="#aladin" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://aladin.u-strasbg.fr/">Aladin</a>, etc.</p>
+</div>
+</div>
+<div class="section" id="programacion-en-python-y-cuadernos-de-jupyter">
+<h3>Programación en Python y cuadernos de Jupyter<a class="headerlink" href="#programacion-en-python-y-cuadernos-de-jupyter" title="Permalink to this headline">¶</a></h3>
+<p>Ventajas e inconvenientes frente a los paquetes tradicionales.</p>
+<div class="section" id="importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones">
+<h4>Importancia de la utilización de un sistema de control de versiones<a class="headerlink" href="#importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones" title="Permalink to this headline">¶</a></h4>
+<p>Introducción a [Git]https://git-scm.com/)</p>
+</div>
+<div class="section" id="acceso-a-catalogos-on-line-desde-python">
+<h4>Acceso a catálogos on line desde Python<a class="headerlink" href="#acceso-a-catalogos-on-line-desde-python" title="Permalink to this headline">¶</a></h4>
+<p>Realización de queries a <a class="reference external" href="https://vizier.u-strasbg.fr/viz-bin/VizieR">Vizier</a>
+y <a class="reference external" href="https://aladin.u-strasbg.fr/">Aladin</a>.
+Utilización del paquete <a class="reference external" href="https://pypi.org/project/pyvo/">PyVO</a> para acceder a datos astronómicos en archivos que siguen los estándares definidos por el IVOA (International Virtual Observatory Alliance).</p>
+</div>
+</div>
+<div class="section" id="cuaderno-de-observaciones">
+<h3>Cuaderno de observaciones<a class="headerlink" href="#cuaderno-de-observaciones" title="Permalink to this headline">¶</a></h3>
+<p>Importancia del logbook de observación para el procesado posterior de las imágenes.</p>
+</div>
+<div class="section" id="la-llegada-de-fotones-a-un-detector">
+<h3>La llegada de fotones a un detector<a class="headerlink" href="#la-llegada-de-fotones-a-un-detector" title="Permalink to this headline">¶</a></h3>
+<p>Utilizando un array de pequeñas dimensiones, se simula la llegada poissoniana de fotones a un detector y la posterior conversión analógica-digital. Esta simulación permite ilustrar conceptos básicos de relación señal/ruido y propagación de incertidumbres.</p>
+</div>
+<div class="section" id="imagenes-de-calibracion">
+<h3>Imágenes de calibración<a class="headerlink" href="#imagenes-de-calibracion" title="Permalink to this headline">¶</a></h3>
+<p>Bias, dark, flat fields de baja y alta frecuencia, arcos para calibración en longitud de onda. Se explican sus características y utilización. Definición de región útil del detector y regiones de under/overscan. Utilización de binning durante las observaciones para incrementar la relación señal/ruido y/o reducir el tiempo de lectura.</p>
+</div>
+<div class="section" id="ejemplo-de-reduccion-de-imagenes-ccd">
+<h3>Ejemplo de reducción de imágenes CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-imagenes-ccd" title="Permalink to this headline">¶</a></h3>
+<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 2, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos), la combinación de imágenes individuales y la calibración astrométrica.</p>
+</div>
+<div class="section" id="ejemplo-de-reduccion-de-espectros-ccd">
+<h3>Ejemplo de reducción de espectros CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-espectros-ccd" title="Permalink to this headline">¶</a></h3>
+<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 3, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos, calibración en longitud de onda, corrección de iluminación) y la combinación de imágenes individuales.</p>
+</div>
+<div class="section" id="estrategias-para-la-estimacion-de-incertidumbres">
+<h3>Estrategias para la estimación de incertidumbres<a class="headerlink" href="#estrategias-para-la-estimacion-de-incertidumbres" title="Permalink to this headline">¶</a></h3>
+<p>Propagación analítica frente a la utilización de técnicas de bootstrapping y Monte Carlo.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="espectroscopia.html" title="previous page">Espectroscopía</a>
+    <a class='right-next' id="next-link" href="P2_Fotometria_CCD.html" title="next page">P2 Fotometría CCD</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

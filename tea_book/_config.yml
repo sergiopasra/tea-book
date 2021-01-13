@@ -1,0 +1,26 @@
+#######################################################################################
+# Book settings
+title : Técnicas Experimentales en Astrofísica
+author: J.Zamorano, N. Cardiel, S. Pascual and J. Gallego
+logo: 'ucm_logo.png'
+
+# Information about where the book exists on the web
+description: >-
+  This is a sequence of lectures on processing astronomical observations using Python programming.
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks           : cache
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar         : false
+
+# #######################################################################################
+# Interact link settings
+notebook_interface            : "notebook"
+
+parse: 
+  myst_extended_syntax: true

@@ -1,0 +1,20 @@
+- file: intro
+
+- part: Documentos
+  chapters: 
+  - file: docs/index
+    sections:
+      - file: docs/fotometria
+      - file: docs/espectroscopia
+      - file: docs/P1_Introduccion
+      - file: docs/P2_Fotometria_CCD
+      - file: docs/P3_Espectroscopia_Rendija_Larga
+      - file: docs/about_py
+      - file: docs/getting_started
+      - file: docs/python_by_example
+      - file: docs/learn_more
+
+- part: Notebooks
+  chapters: 
+  - file: notebooks/index-notebooks
+  - file: notebooks/fotometria_1.ipynb

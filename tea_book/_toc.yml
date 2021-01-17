@@ -1,17 +1,48 @@
 - file: intro
+  numbered: true
+  sections:
+    - file: docs/index
+    - file: docs/fotometria
+      sections:
+        - file: docs/fotometria_01
+        - file: docs/fotometria_02
+        - file: docs/fotometria_03
+        - file: docs/fotometria_04
+        - file: docs/fotometria_05
+        - file: docs/fotometria_06
+    - file: docs/espectroscopia
+      sections:
+        - file: docs/espectroscopia_01
+        - file: docs/espectroscopia_02
+        - file: docs/espectroscopia_03
+    - file: docs/P1_Introduccion_00
+      sections:
+        - file: docs/P1_Introduccion_01
+        - file: docs/P1_Introduccion_02
+        - file: docs/P1_Introduccion_03
+        - file: docs/P1_Introduccion_04
+        - file: docs/P1_Introduccion_05
+        - file: docs/P1_Introduccion_06
+    - file: docs/P2_Fotometria_CCD_00
+      sections:
+        - file: docs/P2_Fotometria_CCD_01
+        - file: docs/P2_Fotometria_CCD_02
+        - file: docs/P2_Fotometria_CCD_03
+        - file: docs/P2_Fotometria_CCD_04
+    - file: docs/P3_Espectroscopia_Rendija_Larga
+    - file: notebooks/index-notebooks-ccdproc
+      sections:
+        - file: notebooks/ccdproc_01_ImageCollection_v1.ipynb
+        - file: notebooks/ccdproc_02_Trimming_v1.ipynb
+        - file: notebooks/ccdproc_03_Master_BIAS_v1.ipynb
+        - file: notebooks/ccdproc_04_Substract_BIAS_v1.ipynb
+        - file: notebooks/ccdproc_05_Master_FLAT_v1.ipynb
+        - file: notebooks/ccdproc_06_Flatfielding_v1.ipynb
+        - file: notebooks/fotometria_1.ipynb
+    - file: notebooks/index-notebooks-examples
+      sections:
+        - file: notebooks/example_01_Read_Display_FITS_v3.ipynb
+        - file: notebooks/example_02_Master_DARK_v3.ipynb
+        - file: notebooks/example_03_Master_Flat_v3.ipynb
+        - file: notebooks/example_04_combining_images_v1.ipynb
 
-- part: Documentos
-  chapters: 
-  - file: docs/index
-    sections:
-      - file: docs/fotometria
-      - file: docs/espectroscopia
-      - file: docs/P1_Introduccion
-      - file: docs/P2_Fotometria_CCD
-      - file: docs/P3_Espectroscopia_Rendija_Larga
-      - file: docs/about_py
-
-- part: Notebooks
-  chapters: 
-  - file: notebooks/index-notebooks
-  - file: notebooks/fotometria_1

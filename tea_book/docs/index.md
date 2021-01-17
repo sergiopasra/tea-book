@@ -1,6 +1,6 @@
 # Técnicas Experimentales en Astrofísica 
 
-This is a sequence of lectures on processing astronomical observations using Python programming, written by Jaime Zamorano, Nicolás cardiel, Segio Pascual and Jesús Gallego. 
+This is a sequence of lectures on processing astronomical observations using Python programming, written by Jaime Zamorano, Nicolás Cardiel, Sergio Pascual and Jesús Gallego. 
 
 ```{note}
 These lectures were built using the new Sphinx-based [Jupyter Book
@@ -9,12 +9,14 @@ These lectures were built using the new Sphinx-based [Jupyter Book
 intended mainly as a demonstration of these tools.
 Instructions for how to build them from source can be found in the Jupyter
 Book documentation.
-
-```{figure} /_static/lecture_specific/index/Alumnos_3.5_CalarAlto.png
-:scale: 70%
 ```
 
-These lectures are being prepared for the students of 'Técnicas Experimentales en Astrofísica' of [Máster en Astrofísica](https://www.ucm.es/masterastrofisica) of [Universidad Complutense de Madrid](https://www.ucm.es/)
+
+```{figure} /_static/lecture_specific/index/alumnos_3.5_CalarAlto_3D.png
+:scale: 50%
+```
+
+These lectures are being prepared for the students of 'Técnicas Experimentales en Astrofísica' of [Máster en Astrofísica](https://www.ucm.es/masterastrofisica) of [Universidad Complutense de Madrid](https://www.ucm.es/). Enjoy the picture at [Calar Alto 3.5m master UCM 2017](https://theta360.com/s/dgZ9fWseSCpcj3SVnQW5VDVE8)
 
 ## Objetivos
 En esta asignatura se pretende que los estudiantes aprendan los métodos y técnicas profesionalesde observación astronómica. Adquirirán conocimientos avanzados de las técnicas de observación, reducción y procesado de datos en Astrofísica, con especial énfasis en observaciones fotométricas y espectroscópicas en el óptico.
@@ -24,22 +26,23 @@ En el aspecto práctico, los alumnos trabajarán en grupos de 3 estudiantes, apr
 
 ## Programa resumido de la asignatura
 El programa consta de dos temas de teoría (impartidas en el aula) y de 4 prácticas (a desarrollar en las salas de informática del Departamento y en el Observatorio de Calar Alto):
-### Clases de teoría
-#### 1. Fotometría
+<pre>
+Clases de teoría
+1. Fotometría
 - Sistemas fotométricos
 - Fotometría fotoeléctrica. Fotometría CCD
 - Fotometría absoluta. Transformación al sistema estándar
 - Fotometría diferencial
 - Fotometría de objetos extensos
 - Fotometría sintética a partir de espectros
-#### 2. Espectroscopía
+2. Espectroscopía
 - Parámetros de un espectrógrafo y su impacto en las observaciones 
 - Espectroscopía sin rendija, con rendija única, multirendija, multiobjeto con fibras y rebanadores de imágenes
 - Elección del espectrógrafo y configuración instrumental
 - Observaciones espectroscópicas
 
-### Programa de prácticas
-#### 1. Introducción al software de procesado de observaciones astronómicas
+Programa de prácticas
+1. Introducción al software de procesado de observaciones astronómicas
 - Introducción básica a LINUX y transferencia ftp de ficheros
 - Breve descripción de paquetes tradicionales de reducción de datos
 - Programación en Python y cuadernos de Jupyter
@@ -53,9 +56,9 @@ El programa consta de dos temas de teoría (impartidas en el aula) y de 4 práct
 - Ejemplo de reducción de imágenes CCD
 - Ejemplo de reducción de espectros CCD
 - Estrategias para la estimación de incertidumbres
-#### 2. Fotometría CCD: reducción de una campaña de observación de objetos extensos realizada con el Nordic Optical Telescope (La Palma)
-#### 3. Espectroscopía de rendija larga: reducción de una campaña de observación con el instrumento IDS del Isaac Newton Telescope (La Palma)
-#### 4. Proyecto de observación en un telescopio profesional
+2. Fotometría CCD: reducción de una campaña de observación de objetos extensos realizada con el Nordic Optical Telescope (La Palma)
+3. Espectroscopía de rendija larga: reducción de una campaña de observación con el instrumento IDS del Isaac Newton Telescope (La Palma)
+4. Proyecto de observación en un telescopio profesional
 - Preparación del proyecto científico y observacional
 - Realización de observaciones en el Observatorio de Calar Alto
 - Reducción de observaciones y análisis de datos

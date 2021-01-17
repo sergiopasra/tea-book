@@ -22,5 +22,10 @@ html:
 # Interact link settings
 notebook_interface            : "notebook"
 
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
+
 parse: 
   myst_extended_syntax: true

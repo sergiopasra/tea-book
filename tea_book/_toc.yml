@@ -32,9 +32,9 @@
     - file: docs/P3_Espectroscopia_Rendija_Larga
     - file: notebooks/index-notebooks-ccdproc
       sections:
-        - file: notebooks/ccdproc_01_ImageCollection_v1.ipynb
-        - file: notebooks/ccdproc_02_Trimming_v1.ipynb
-        - file: notebooks/ccdproc_03_Master_BIAS_v1.ipynb
+        - file: notebooks/ccdproc_01_ImageCollection.ipynb
+        - file: notebooks/ccdproc_02_Trimming.ipynb
+        - file: notebooks/ccdproc_03_Master_BIAS.ipynb
         - file: notebooks/ccdproc_04_Substract_BIAS_v1.ipynb
         - file: notebooks/ccdproc_05_Master_FLAT_v1.ipynb
         - file: notebooks/ccdproc_06_Flatfielding_v1.ipynb

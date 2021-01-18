@@ -1,0 +1,11 @@
+# Some parameters for nicer graphs
+text.usetex: False
+font.family : sans-serif
+font.sans-serif : Verdana
+font.size : 12.
+lines.linewidth : 4.
+axes.labelsize: large
+grid.linewidth: 1.0
+grid.linestyle: :
+image.origin: lower
+image.cmap: gray

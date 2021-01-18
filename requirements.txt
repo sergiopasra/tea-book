@@ -1,3 +1,5 @@
-matplotlib
-astropy
 jupyter-book
+matplotlib
+scipy
+astropy
+ccdproc

@@ -11,7 +11,9 @@ description: >-
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks           : cache
+  execute_notebooks: cache
+  timeout: -1
+
 
 #######################################################################################
 # HTML-specific settings

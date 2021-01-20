@@ -65,7 +65,7 @@ Representación gráfica en escala de grises, en contornos (isofotas), perfil de
 ## brillo de fondo de cielo
 El cielo libre de objetos celestes brilla. En realidad lo que brilla es la atmósfera terrestre que dispersa la luz que le llega. El mayor contribuyente al brillo de cielo es la Luna (espectro solar reflejado por la Luna) en sitios de poca contaminación lumínica. Las noches de observación se llaman oscuras cuando la Luna no está presente y no aumenta el brillo de cielo. Las noches brillantes tienen brillo de cielo mayor por causa de la Luna. Noches grises tendría parte de noche oscura. 
 
-```{figure} /_static/lecture_specific/fotometria/foto_34_Brillo_luna.png
+```{figure} /_static/lecture_specific/fotometria/foto_34_Brillo_Luna.png
 ---
 width: 400px
 name: Foto-brillo_luna-fig

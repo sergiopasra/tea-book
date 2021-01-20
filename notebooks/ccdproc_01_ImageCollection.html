@@ -1,0 +1,1433 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.1. ccdproc-01: Classify images &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.2. ccdproc-02: Trimming" href="ccdproc_02_Trimming.html" />
+    <link rel="prev" title="7. TEA Notebooks ccdproc" href="index-notebooks-ccdproc.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/ccdproc_01_ImageCollection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/ccdproc_01_ImageCollection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   7.1.1. Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-images-in-a-directory">
+     7.1.1.1. Working with images in a directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-for-files-with-different-size">
+     7.1.1.2. Looking for files with different size
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-files-by-type-and-filter">
+     7.1.1.3. Selecting files by type and filter
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ccdproc-01-classify-images">
+<h1><span class="section-number">7.1. </span>ccdproc-01:   Classify images<a class="headerlink" href="#ccdproc-01-classify-images" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">7.1.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Start CCD reduction using ccdproc</p></li>
+<li><p>Creating lists of images</p></li>
+<li><p>Examples</p></li>
+</ol>
+<pre>
+Máster en Astrofísica UCM  -- Técnicas Experimentales en Astrofísica  
+Jaime Zamorano and Nicolás Cardiel
+
+This notebook has reproduced parts of the the astropy ccdproc docs: 
+https://ccdproc.readthedocs.io/en/latest/image_management.html
+
+Version 1.0 2021/01/11  
+</pre><p>Note that the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> package should be installed. In this sense, have a look to the
+astropy installation description: https://docs.astropy.org/en/stable/install.html.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;./tea.mplstyle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-images-in-a-directory">
+<h3><span class="section-number">7.1.1.1. </span>Working with images in a directory<a class="headerlink" href="#working-with-images-in-a-directory" title="Permalink to this headline">¶</a></h3>
+<p>We will use the files of the first night of observations at NOT (Nordic Optical Telescope) 2008 that can be downloaded from   ftp://astrax.fis.ucm.es/pub/users/jaz/NOT_2008_04_12-14/N1/
+or
+http://guaix.fis.ucm.es/~jaz/master_TEA/observaciones_NOT_2008/N1/</p>
+<p><code class="docutils literal notranslate"><span class="pre">directory</span></code> should point to the directory with the downloaded images</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;N1&#39;</span>
+<span class="n">dirname</span> <span class="o">=</span> <span class="s1">&#39;N1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version simple</span>
+<span class="c1"># solo descarga si es necesario</span>
+<span class="c1">#!curl -C -  -O ftp://astrax.fis.ucm.es/pub/users/jaz/NOT_2008_04_12-14/NOT_20080412_N1.tar.gz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version simple</span>
+<span class="c1">#!mkdir -p N1</span>
+<span class="c1">#!tar axf NOT_20080412_N1.tar.gz --strip-components=1 -C N1</span>
+<span class="c1"># o bien</span>
+<span class="c1">#!tar -x -f NOT_20080412_N1.tar.gz -a --strip-components=1 -C $directory</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+# Version complicada, solo descarga si es necesario
+TARBALL=NOT_20080412_N1.tar.gz
+DIR=N1
+URI=ftp://astrax.fis.ucm.es/pub/users/jaz/NOT_2008_04_12-14/&quot;$TARBALL&quot;
+if [ ! -f &quot;$TARBALL&quot; ]; then
+    echo &quot;$TARBALL does not exist, download&quot;
+    curl -C -  -O &quot;$URI&quot;
+fi
+if  [ ! -d &quot;$DIR&quot; ]; then
+    mkdir -p $DIR
+    tar -x -f NOT_20080412_N1.tar.gz -a --strip-components=1 -C $DIR
+fi
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a list containing all the FITS files in that directory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only works in notebooks</span>
+<span class="c1"># we can pass the python variable to shell</span>
+<span class="n">filelist</span> <span class="o">=</span> <span class="o">!</span>ls <span class="nv">$directory</span>/AL*.fits
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+<span class="n">filelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;AL*.fits&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>    <span class="c1"># printing only from 10 to 20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;N1/AL12011.fits&#39;), PosixPath(&#39;N1/AL12012.fits&#39;), PosixPath(&#39;N1/AL12013.fits&#39;), PosixPath(&#39;N1/AL12014.fits&#39;), PosixPath(&#39;N1/AL12015.fits&#39;), PosixPath(&#39;N1/AL12016.fits&#39;), PosixPath(&#39;N1/AL12017.fits&#39;), PosixPath(&#39;N1/AL12018.fits&#39;), PosixPath(&#39;N1/AL12019.fits&#39;), PosixPath(&#39;N1/AL12020.fits&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s open one of the files to explore the HEADER keywords</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HDUList_object</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">102</span><span class="p">])</span>
+<span class="n">HDUList_object</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: N1/AL12103.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     143   (2198, 2052)   int16 (rescales to uint16)   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primary_HDU</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract primary header</span>
+<span class="n">primary_header</span> <span class="o">=</span> <span class="n">primary_HDU</span><span class="o">.</span><span class="n">header</span>
+
+<span class="c1"># Index header object with keyword name and print value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ALrd120103.fits GC4496A R 3x300s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">primary_header</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:8}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">primary_header</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SIMPLE   = True
+BITPIX   = 16
+NAXIS    = 2
+NAXIS1   = 2198
+NAXIS2   = 2052
+EXTEND   = False
+BSCALE   = 1.0
+BZERO    = 32768.0
+ORIGIN   = NOAO-IRAF FITS Image Kernel July 2003
+DATE     = 2014-02-26T08:05:35
+IRAF-TLM = 2014-02-26T08:05:34
+OBJECT   = GC4496A R 3x300s
+OBSERVAT = LaPalma
+TELESCOP = NOT
+INSTRUME = ALFOSC_FASU
+DETNAME  = EEV 2k x 2k
+DATE-OBS = 2008-04-13T00:01:26
+FILENAME = ALrd120103.fits
+OBSERVER = 
+IMAGETYP = 
+EQUINOX  = 2000.0
+EXPTIME  = 300.0
+TM_START = 86
+TM_END   = 467
+GAINM    = HIGH
+AMPLMODE = A
+CCDTEMP  = -120.3
+LN2TEMP  = -190.4
+MPP      = 1
+CHIPID   = E2V42-40Roy v1.6
+XOVERSC  = 100
+YOVERSC  = 0
+P_DEWAR  = Not available
+TM-START = 86
+SHSTAT   = OPEN
+DETXBIN  = 1
+DETYBIN  = 1
+NWINDOWS = 1
+DETWIN1  = [   1:2198,   1:2052]
+ALAPRTNM = Open
+ALAPRTID = 0
+ALAPRPOS = 7
+ALAPRSTP = 279150
+ALFLTNM  = R_Bes 650_130
+ALFLTID  = 76
+ALFLTPOS = 4
+ALFLTSTP = 160300
+ALGRNM   = Open (Lyot)
+ALGRID   = 0
+ALGRPOS  = 7
+ALGRSTP  = 280100
+ALFOCUS  = 1810
+ALCENWAV = N/A
+FAFLTNM  = Open
+FAFLTID  = 0
+FAFLTPOS = 0
+FBFLTNM  = Open
+FBFLTID  = 0
+FBFLTPOS = 0
+CLAMP1   = 0
+CLAMPNM1 =  He
+CLAMPID1 = OSRAM He/10 inst. 13-11-2006
+CLAMP2   = 0
+CLAMPNM2 =  Ne
+CLAMPID2 = OSRAM Ne/10 c9 Germany
+CLAMP3   = 0
+CLAMPNM3 =  Halogen
+CLAMPID3 = OSRAM 64415 w448 10W 12V
+CLAMP4   = 0
+CLAMPNM4 =  ThAr Hollow Cathode
+CLAMPID4 = Cathodeon 3UAXTh S/N B77779
+CMIRROR  = 0
+FARETARD = OUT
+FARETANG = -9999
+UT       = 0.0238888889
+ST       = 12.2686111111
+RA       = 187.915832858
+DEC      = 3.9394572641
+RADECSYS = FK5
+TELALT   = 64.96
+AZIMUTH  = 350.53
+AIRMASS  = 1.1037399769
+FIELD    = 90.0
+ROTPOS   = 98.33
+CCDPROBE = park
+AUXPOS   = 22545
+AUYPOS   = 158951
+AUBXXPOS = 255
+AUBXYPOS = 255
+AUSTATUS = off
+TELFOCUS = 23359
+TCSTGT   = NGC4496A
+OBJRA    = 187.914
+OBJDEC   = 3.93944
+OBJPMRA  = 0.0
+OBJPMDEC = 0.0
+OBJEQUIN = 2000.0
+CREATOR  = NOT2MEF V1.5
+OBSGEO-X = 5327395.9638
+OBSGEO-Y = -1719170.4876
+OBSGEO-Z = 3051490.766
+OBS_MODE = Imaging
+DATE-AVG = 2008-04-13T00:03:56.0
+QCRDATE  = 2004-11-24
+BUNIT    = count
+CTYPE1   = RA---TAN
+CTYPE2   = DEC--TAN
+CRVAL1   = 187.915832858
+CRVAL2   = 3.9394572641
+CUNIT1   = deg
+CUNIT2   = deg
+CRPIX1   = 1085.0
+CRPIX2   = 997.0
+CD1_1    = -5.115e-05
+CD1_2    = -0.0
+CD2_1    = -0.0
+CD2_2    = 5.115e-05
+IMAGEID  = 1
+CCDNAME  = CCD8
+CCDSUM   = 1 1
+DARK     = 0.0
+QCDDATE  = UNDEFINED
+RDNOISE  = 5.3
+GAIN     = 0.736
+BIASSEC  = [3:52,1:2052]
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         = 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each telescope/instrument has differences in the <code class="docutils literal notranslate"><span class="pre">keyword</span></code>names.<br />
+For <a class="reference external" href="http://www.not.iac.es/instruments/alfosc/">ALFOSC at NOT</a> instead of <code class="docutils literal notranslate"><span class="pre">FILTER</span></code> they write <code class="docutils literal notranslate"><span class="pre">ALFLTID</span></code> and  <code class="docutils literal notranslate"><span class="pre">FBFLTID</span></code>  in the header. ALFOSC has  filterwheel A and filterwheel B and the filters should be mounted in one of the two depending of size and/or band width. More info at <a class="reference external" href="http://www.not.iac.es/instruments/filters/">NOT filters</a></p>
+<p>Let’s display this file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_data</span> <span class="o">=</span> <span class="n">primary_HDU</span><span class="o">.</span><span class="n">data</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+(2052, 2198)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">naxis2</span><span class="p">,</span> <span class="n">naxis1</span> <span class="o">=</span> <span class="n">image_data</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans.
+findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../_images/ccdproc_01_ImageCollection_21_1.png" src="../_images/ccdproc_01_ImageCollection_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HDUList_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the first of three 300s exposures of NGC4496 with the R filter.<br />
+The external parts of the chip (2052 x 2198) are black, i.e. no signal. according with the header information the region reserved for dark signal is BIASSEC  = [3:52,1:2052] but there is also a region at right. We will remove these regions by trimming the image. It is better to use <code class="docutils literal notranslate"><span class="pre">DS9</span></code> to select the region of interest.</p>
+</div>
+<div class="section" id="looking-for-files-with-different-size">
+<h3><span class="section-number">7.1.1.2. </span>Looking for files with different size<a class="headerlink" href="#looking-for-files-with-different-size" title="Permalink to this headline">¶</a></h3>
+<p>There are some auxiliary observations that were saved as FITS files. For instance those for focusing the telescope. There is no problem in processing them but there will be problems if there is an image with different size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">filelist</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">HDUList_object</span><span class="p">:</span>
+        <span class="n">primary_header</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;NAXIS1&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;NAXIS2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ALrd120001.fits Bias afternoon 2198 2052
+ALrd120002.fits Bias afternoon 2198 2052
+ALrd120003.fits Bias afternoon 2198 2052
+ALrd120004.fits Bias afternoon 2198 2052
+ALrd120005.fits Bias afternoon 2198 2052
+ALrd120006.fits Bias afternoon 2198 2052
+ALrd120007.fits Bias afternoon 2198 2052
+ALrd120008.fits Bias afternoon 2198 2052
+ALrd120009.fits Bias afternoon 2198 2052
+ALrd120010.fits Bias afternoon 2198 2052
+ALrd120011.fits Dome Flat R 2198 2052
+ALrd120012.fits Dome Flat R 2198 2052
+ALrd120013.fits Dome Flat R 2198 2052
+ALrd120014.fits Dome Flat R 2198 2052
+ALrd120015.fits Dome Flat R 2198 2052
+ALrd120016.fits Dome Flat R 2198 2052
+ALrd120017.fits Dome Flat R 2198 2052
+ALrd120018.fits Dome Flat R 2198 2052
+ALrd120019.fits Dome Flat R 2198 2052
+ALrd120020.fits Dome Flat R 2198 2052
+ALrd120021.fits Dome Flat NB#78 2198 2052
+ALrd120022.fits Dome Flat NB#49 2198 2052
+ALrd120023.fits Dome Flat NB#78 2198 2052
+ALrd120024.fits Dome Flat NB#78 2198 2052
+ALrd120025.fits Dome Flat NB#78 2198 2052
+ALrd120026.fits Dome Flat NB#78 2198 2052
+ALrd120027.fits Dome Flat NB#78 2198 2052
+ALrd120028.fits Dome Flat NB#78 2198 2052
+ALrd120029.fits Dome Flat NB#78 2198 2052
+ALrd120030.fits Dome Flat NB#78 2198 2052
+ALrd120031.fits Dome Flat NB#78 2198 2052
+ALrd120032.fits Dome Flat NB#78 2198 2052
+ALrd120033.fits Dome Flat NB#49 2198 2052
+ALrd120034.fits Dome Flat NB#49 2198 2052
+ALrd120035.fits Dome Flat NB#49 2198 2052
+ALrd120036.fits Dome Flat NB#49 2198 2052
+ALrd120037.fits Dome Flat NB#49 2198 2052
+ALrd120038.fits Dome Flat NB#49 2198 2052
+ALrd120039.fits Dome Flat NB#49 2198 2052
+ALrd120040.fits Dome Flat NB#49 2198 2052
+ALrd120041.fits Dome Flat NB#49 2198 2052
+ALrd120042.fits Dome Flat NB#49 2198 2052
+ALrd120043.fits Dome Flat NB#49 2198 2052
+ALrd120044.fits Sky Flat evening 2198 2052
+ALrd120045.fits Sky Flat evening 2198 2052
+ALrd120046.fits Sky Flat evening 2198 2052
+ALrd120047.fits Sky Flat evening 2198 2052
+ALrd120048.fits Sky Flat evening 2198 2052
+ALrd120049.fits Sky Flat evening 2198 2052
+ALrd120050.fits Sky Flat evening 2198 2052
+ALrd120051.fits Sky Flat evening 2198 2052
+ALrd120052.fits Sky Flat evening 2198 2052
+ALrd120053.fits Sky Flat evening 2198 2052
+ALrd120054.fits Sky Flat evening 2198 2052
+ALrd120055.fits Sky Flat evening 2198 2052
+ALrd120056.fits Sky Flat evening 2198 2052
+ALrd120057.fits Sky Flat evening 2198 2052
+ALrd120058.fits Sky Flat evening 2198 2052
+ALrd120059.fits Sky Flat evening 2198 2052
+ALrd120060.fits Sky Flat evening 2198 2052
+ALrd120061.fits Sky Flat evening 2198 2052
+ALrd120062.fits Sky Flat evening 2198 2052
+ALrd120063.fits Sky Flat evening 800 800
+ALrd120064.fits HZ44 focusing 2198 2052
+ALrd120065.fits HZ44 focusing 2198 2052
+ALrd120066.fits HZ44 focusing 2198 2052
+ALrd120067.fits HZ44 focusing 2198 2052
+ALrd120068.fits HZ44 focusing 2198 2052
+ALrd120069.fits HZ44 focusing 2198 2052
+ALrd120070.fits HZ44 focusing 2198 2052
+ALrd120071.fits HZ44 focusing 2198 2052
+ALrd120072.fits HZ44 focusing 2198 2052
+ALrd120073.fits HZ44 focusing 2198 2052
+ALrd120074.fits HZ44 focusing 2198 2052
+ALrd120075.fits HZ44 focusing 2198 2052
+ALrd120076.fits HZ44 focusing 2198 2052
+ALrd120077.fits HZ44 R 2198 2052
+ALrd120078.fits HZ44 R 2198 2052
+ALrd120079.fits HZ44 #79 2198 2052
+ALrd120080.fits HZ44 #49 2198 2052
+ALrd120081.fits BD+75d325 #49 2198 2052
+ALrd120082.fits BD+75d325 #49 2198 2052
+ALrd120083.fits BD+75d325 #78 2198 2052
+ALrd120084.fits BD+75d325 R 2198 2052
+ALrd120085.fits BD+75d325 R 2198 2052
+ALrd120086.fits Feige34 R 2198 2052
+ALrd120087.fits Feige34 #78 2198 2052
+ALrd120088.fits Feige34 #49 2198 2052
+ALrd120089.fits NGC3395 R 3x300s 2198 2052
+ALrd120090.fits NGC3395 R 3x300s 2198 2052
+ALrd120091.fits NGC3395 R 3x300s 2198 2052
+ALrd120092.fits C3395 #49 3x900s 2198 2052
+ALrd120093.fits C3395 #49 3x900s 2198 2052
+ALrd120094.fits C3395 #49 3x900s 2198 2052
+ALrd120095.fits NGC3982 R 3x300s 2198 2052
+ALrd120096.fits NGC3982 R 3x300s 2198 2052
+ALrd120097.fits NGC3982 R 3x300s 2198 2052
+ALrd120098.fits C3982 #78 3x900s 2198 2052
+ALrd120099.fits C3982 #78 3x900s 2198 2052
+ALrd120100.fits C3982 #78 3x900s 2198 2052
+ALrd120101.fits C3982 #78 3x900s 2198 2052
+ALrd120102.fits GC4496A R 3x300s 2198 2052
+ALrd120103.fits GC4496A R 3x300s 2198 2052
+ALrd120104.fits GC4496A R 3x300s 2198 2052
+ALrd120105.fits GC4496A R 3x300s 2198 2052
+ALrd120106.fits GC4496A R 3x300s 2198 2052
+ALrd120107.fits 4496A #49 3x900s 2198 2052
+ALrd120108.fits 4496A #49 3x900s 2198 2052
+ALrd120109.fits 4496A #49 3x900s 2198 2052
+ALrd120110.fits NGC4941 R 3x300s 2198 2052
+ALrd120111.fits NGC4941 R 3x300s 2198 2052
+ALrd120112.fits NGC4941 R 3x300s 2198 2052
+ALrd120113.fits C4941 #78 3x900s 2198 2052
+ALrd120114.fits C4941 #78 3x900s 2198 2052
+ALrd120115.fits C4941 #78 3x900s 2198 2052
+ALrd120116.fits NGC5363 R 3x300s 2198 2052
+ALrd120117.fits NGC5363 R 3x300s 2198 2052
+ALrd120118.fits NGC5363 R 3x300s 2198 2052
+ALrd120119.fits C5363 #78 3x900s 2198 2052
+ALrd120120.fits C5363 #78 3x900s 2198 2052
+ALrd120121.fits C5363 #78 3x900s 2198 2052
+ALrd120122.fits C5363 #78 3x900s 2198 2052
+ALrd120123.fits C5363 #78 3x900s 2198 2052
+ALrd120124.fits C5363 #78 3x900s 2198 2052
+ALrd120125.fits C5363 #78 3x900s 2198 2052
+ALrd120126.fits C5363 #78 3x900s 2198 2052
+ALrd120127.fits C5363 #78 3x900s 2198 2052
+ALrd120128.fits C5363 #78 3x900s 2198 2052
+ALrd120129.fits C5363 #78 3x900s 2198 2052
+ALrd120130.fits C5363 #78 3x900s 2198 2052
+ALrd120131.fits C5363 #78 3x900s 2198 2052
+ALrd120132.fits C5363 #78 3x900s 2198 2052
+ALrd120133.fits C5363 #78 3x900s 2198 2052
+ALrd120134.fits C5363 #78 3x900s 2198 2052
+ALrd120135.fits C5363 #78 3x900s 2198 2052
+ALrd120136.fits C5363 #78 3x900s 2198 2052
+ALrd120137.fits C5363 #78 3x900s 2198 2052
+ALrd120138.fits C5363 #78 3x900s 2198 2052
+ALrd120139.fits C5363 #78 3x900s 2198 2052
+ALrd120140.fits C5363 #78 3x900s 2198 2052
+ALrd120141.fits C5363 #78 3x900s 2198 2052
+ALrd120142.fits C5363 #78 3x900s 2198 2052
+ALrd120143.fits C5363 #78 3x900s 2198 2052
+ALrd120144.fits C5363 #78 3x900s 2198 2052
+ALrd120145.fits C5363 #78 3x900s 2198 2052
+ALrd120146.fits C5363 #78 3x900s 2198 2052
+</pre></div>
+</div>
+</div>
+</div>
+<p>The image number 63 is different with size 800,800. It is better to remove it to avoid problems during the processing.</p>
+<ul class="simple">
+<li><p>ALrd120062.fits Sky Flat evening 2198 2052</p></li>
+<li><p>ALrd120063.fits Sky Flat evening 800 800</p></li>
+<li><p>ALrd120064.fits HZ44 focusing 2198 2052</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>rm -f <span class="nv">$dirname</span>/ALrd120063.fits
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selecting-files-by-type-and-filter">
+<h3><span class="section-number">7.1.1.3. </span>Selecting files by type and filter<a class="headerlink" href="#selecting-files-by-type-and-filter" title="Permalink to this headline">¶</a></h3>
+<p>We wish to create lists containing the BIAS files to build the master BIAS or those scientific files taken with the same filter to apply the corresponding Flat Field, to name two examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ccdproc</span> <span class="kn">import</span> <span class="n">ImageFileCollection</span>
+<span class="kn">from</span> <span class="nn">ccdproc.utils.sample_directory</span> <span class="kn">import</span> <span class="n">sample_directory_with_files</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;N1&#39;</span>
+<span class="n">ic_all</span> <span class="o">=</span> <span class="n">ImageFileCollection</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ic_all</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: AstropyDeprecationWarning: block_reduce was moved to the astropy.nddata.blocks module.  Please update your import statement. [astropy.nddata.utils]
+WARNING: AstropyDeprecationWarning: block_replicate was moved to the astropy.nddata.blocks module.  Please update your import statement. [astropy.nddata.utils]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;file&#39;, &#39;simple&#39;, &#39;bitpix&#39;, &#39;naxis&#39;, &#39;naxis1&#39;, &#39;naxis2&#39;, &#39;extend&#39;, &#39;bscale&#39;, &#39;bzero&#39;, &#39;origin&#39;, &#39;date&#39;, &#39;iraf-tlm&#39;, &#39;object&#39;, &#39;observat&#39;, &#39;telescop&#39;, &#39;instrume&#39;, &#39;detname&#39;, &#39;date-obs&#39;, &#39;filename&#39;, &#39;observer&#39;, &#39;imagetyp&#39;, &#39;equinox&#39;, &#39;exptime&#39;, &#39;tm_start&#39;, &#39;tm_end&#39;, &#39;gainm&#39;, &#39;amplmode&#39;, &#39;ccdtemp&#39;, &#39;ln2temp&#39;, &#39;mpp&#39;, &#39;chipid&#39;, &#39;xoversc&#39;, &#39;yoversc&#39;, &#39;p_dewar&#39;, &#39;tm-start&#39;, &#39;shstat&#39;, &#39;detxbin&#39;, &#39;detybin&#39;, &#39;nwindows&#39;, &#39;detwin1&#39;, &#39;alaprtnm&#39;, &#39;alaprtid&#39;, &#39;alaprpos&#39;, &#39;alaprstp&#39;, &#39;alfltnm&#39;, &#39;alfltid&#39;, &#39;alfltpos&#39;, &#39;alfltstp&#39;, &#39;algrnm&#39;, &#39;algrid&#39;, &#39;algrpos&#39;, &#39;algrstp&#39;, &#39;alfocus&#39;, &#39;alcenwav&#39;, &#39;fafltnm&#39;, &#39;fafltid&#39;, &#39;fafltpos&#39;, &#39;fbfltnm&#39;, &#39;fbfltid&#39;, &#39;fbfltpos&#39;, &#39;clamp1&#39;, &#39;clampnm1&#39;, &#39;clampid1&#39;, &#39;clamp2&#39;, &#39;clampnm2&#39;, &#39;clampid2&#39;, &#39;clamp3&#39;, &#39;clampnm3&#39;, &#39;clampid3&#39;, &#39;clamp4&#39;, &#39;clampnm4&#39;, &#39;clampid4&#39;, &#39;cmirror&#39;, &#39;faretard&#39;, &#39;faretang&#39;, &#39;ut&#39;, &#39;st&#39;, &#39;ra&#39;, &#39;dec&#39;, &#39;radecsys&#39;, &#39;telalt&#39;, &#39;azimuth&#39;, &#39;airmass&#39;, &#39;field&#39;, &#39;rotpos&#39;, &#39;ccdprobe&#39;, &#39;auxpos&#39;, &#39;auypos&#39;, &#39;aubxxpos&#39;, &#39;aubxypos&#39;, &#39;austatus&#39;, &#39;telfocus&#39;, &#39;tcstgt&#39;, &#39;objra&#39;, &#39;objdec&#39;, &#39;objpmra&#39;, &#39;objpmdec&#39;, &#39;objequin&#39;, &#39;creator&#39;, &#39;obsgeo-x&#39;, &#39;obsgeo-y&#39;, &#39;obsgeo-z&#39;, &#39;obs_mode&#39;, &#39;date-avg&#39;, &#39;qcrdate&#39;, &#39;bunit&#39;, &#39;ctype1&#39;, &#39;ctype2&#39;, &#39;crval1&#39;, &#39;crval2&#39;, &#39;cunit1&#39;, &#39;cunit2&#39;, &#39;crpix1&#39;, &#39;crpix2&#39;, &#39;cd1_1&#39;, &#39;cd1_2&#39;, &#39;cd2_1&#39;, &#39;cd2_2&#39;, &#39;imageid&#39;, &#39;ccdname&#39;, &#39;ccdsum&#39;, &#39;dark&#39;, &#39;qcddate&#39;, &#39;rdnoise&#39;, &#39;gain&#39;, &#39;biassec&#39;, &#39;logcomme&#39;, &#39;cdelt1&#39;, &#39;cdelt2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Selecting the keywords to be used in classifying the files<br />
+ALFLTID =                   76 / ALFOSC filter wheel. NOT filter number<br />
+FAFLTID =                    0 / FASU filter wheel 1/A NOT filter number        FBFLTID =                    0 / FASU filter wheel 2/B NOT filter number</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span> <span class="p">,</span> <span class="s1">&#39;EXPTIME&#39;</span> <span class="p">,</span> <span class="s1">&#39;ALFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FAFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FBFLTID&#39;</span><span class="p">]</span>
+<span class="n">ic1</span> <span class="o">=</span> <span class="n">ImageFileCollection</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span> <span class="c1"># only keep track of keys</span>
+<span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">colnames</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;file&#39;, &#39;OBJECT&#39;, &#39;EXPTIME&#39;, &#39;ALFLTID&#39;, &#39;FAFLTID&#39;, &#39;FBFLTID&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matches = (ic1.summary[&#39;filter&#39;] == &#39;R&#39;) &amp; (ic1.summary[&#39;exposure&#39;] &lt; 15)</span>
+<span class="c1">#matches = (ic1.summary[&#39;imagetyp&#39;] == &#39;BIAS&#39;) </span>
+<span class="c1">#matches = (ic1.summary[&#39;FBFLTID&#39;] == 78)</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="p">(</span><span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">600</span><span class="p">)</span>
+<span class="n">my_files</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">matches</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    file    
+------------
+AL12092.fits
+AL12093.fits
+AL12094.fits
+AL12098.fits
+AL12099.fits
+AL12100.fits
+AL12107.fits
+AL12108.fits
+AL12109.fits
+AL12113.fits
+AL12114.fits
+AL12115.fits
+AL12119.fits
+AL12120.fits
+AL12121.fits
+AL12135.fits
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_files</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">files_filtered</span><span class="p">(</span><span class="n">FBFLTID</span><span class="o">=</span><span class="mi">78</span><span class="p">,</span> <span class="n">exptime</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="c1">#my_files = ic1.files_filtered(exptime=15)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AL12046.fits&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bias_list</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">files_filtered</span><span class="p">(</span><span class="n">regex_match</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">imagetyp</span><span class="o">=</span><span class="s1">&#39;bias|light&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bias_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AL12001.fits&#39; &#39;AL12002.fits&#39; &#39;AL12003.fits&#39; &#39;AL12004.fits&#39;
+ &#39;AL12005.fits&#39; &#39;AL12006.fits&#39; &#39;AL12007.fits&#39; &#39;AL12008.fits&#39;
+ &#39;AL12009.fits&#39; &#39;AL12010.fits&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_flats</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">files_filtered</span><span class="p">(</span><span class="n">regex_match</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="nb">object</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_flats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AL12011.fits&#39; &#39;AL12012.fits&#39; &#39;AL12013.fits&#39; &#39;AL12014.fits&#39;
+ &#39;AL12015.fits&#39; &#39;AL12016.fits&#39; &#39;AL12017.fits&#39; &#39;AL12018.fits&#39;
+ &#39;AL12019.fits&#39; &#39;AL12020.fits&#39; &#39;AL12021.fits&#39; &#39;AL12022.fits&#39;
+ &#39;AL12023.fits&#39; &#39;AL12024.fits&#39; &#39;AL12025.fits&#39; &#39;AL12026.fits&#39;
+ &#39;AL12027.fits&#39; &#39;AL12028.fits&#39; &#39;AL12029.fits&#39; &#39;AL12030.fits&#39;
+ &#39;AL12031.fits&#39; &#39;AL12032.fits&#39; &#39;AL12033.fits&#39; &#39;AL12034.fits&#39;
+ &#39;AL12035.fits&#39; &#39;AL12036.fits&#39; &#39;AL12037.fits&#39; &#39;AL12038.fits&#39;
+ &#39;AL12039.fits&#39; &#39;AL12040.fits&#39; &#39;AL12041.fits&#39; &#39;AL12042.fits&#39;
+ &#39;AL12043.fits&#39; &#39;AL12044.fits&#39; &#39;AL12045.fits&#39; &#39;AL12046.fits&#39;
+ &#39;AL12047.fits&#39; &#39;AL12048.fits&#39; &#39;AL12049.fits&#39; &#39;AL12050.fits&#39;
+ &#39;AL12051.fits&#39; &#39;AL12052.fits&#39; &#39;AL12053.fits&#39; &#39;AL12054.fits&#39;
+ &#39;AL12055.fits&#39; &#39;AL12056.fits&#39; &#39;AL12057.fits&#39; &#39;AL12058.fits&#39;
+ &#39;AL12059.fits&#39; &#39;AL12060.fits&#39; &#39;AL12061.fits&#39; &#39;AL12062.fits&#39;
+ &#39;AL12063.fits&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index-notebooks-ccdproc.html" title="previous page"><span class="section-number">7. </span>TEA Notebooks ccdproc</a>
+    <a class='right-next' id="next-link" href="ccdproc_02_Trimming.html" title="next page"><span class="section-number">7.2. </span>ccdproc-02:   Trimming</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

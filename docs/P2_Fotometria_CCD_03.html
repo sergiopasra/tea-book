@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.3. Correción de Flat Field &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.4. Pasos finales" href="P2_Fotometria_CCD_04.html" />
+    <link rel="prev" title="5.2. Correción de BIAS" href="P2_Fotometria_CCD_02.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P2_Fotometria_CCD_03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P2_Fotometria_CCD_03.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P2_Fotometria_CCD_03.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generacion-de-un-master-flat-field-por-filtro">
+   5.3.1. Generación de un máster flat field por filtro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#corrigiendo-de-variacion-espacial-de-sensibilidad">
+   5.3.2. Corrigiendo de variación espacial de sensibilidad
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="correcion-de-flat-field">
+<h1><span class="section-number">5.3. </span>Correción de Flat Field<a class="headerlink" href="#correcion-de-flat-field" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generacion-de-un-master-flat-field-por-filtro">
+<h2><span class="section-number">5.3.1. </span>Generación de un máster flat field por filtro<a class="headerlink" href="#generacion-de-un-master-flat-field-por-filtro" title="Permalink to this headline">¶</a></h2>
+<p>El FlatField representa la respuesta espacial del CCD y necesitamos determinarlo bien ya que se aplicará a todas las imágenes para corregir este efecto. Normalmente se obtienen FlatFields de cúpula y FlatField de cielo. En el primer caso tenemos la ventaja de disponer del tiempo que sea necesario ya que se trata de iluminar la cúpula con lámparas y tomar imágenes. Los FlatField de cielo se toman en los crepúsculos apuntando el telescopio a regiones libres de estrellas brillantes (Blank Fields). No siempre es fácil conseguirlos ya que el tiempo es limitado y las condiciones de luz varían muy rápidamente. Recordemos que deben tomarse para cada filtro de los que se estén empleando. En primera aproximación, se prefiere FlatField de cielo ya que reproduce mejor el color del cielo pero si no son de calidad suficiente o no se dispone de ellos se usan los de cúpula.</p>
+<p>Veamos de cuantos FlatField disponemos y si son de calidad suficiente. Para buscamos en el resultado los ficheros correspondientes a FlatFields. Ya vimos que esta información aparece en el nombre del objeto observado <code class="docutils literal notranslate"><span class="pre">object</span></code> pero no en el descriptor <code class="docutils literal notranslate"><span class="pre">ccdtype</span></code> como es lo habitual. Puede usarse también el cuaderno de observaciones para comprobar. Usamos Image.Collection que ya aprendimos a usar antes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;imagetyp&#39;</span><span class="p">,</span><span class="s1">&#39;OBJECT&#39;</span> <span class="p">,</span> <span class="s1">&#39;EXPTIME&#39;</span> <span class="p">,</span> <span class="s1">&#39;ALFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FAFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FBFLTID&#39;</span><span class="p">]</span>
+<span class="n">ic1</span> <span class="o">=</span> <span class="n">ImageFileCollection</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span> <span class="c1"># only keep track of keys</span>
+<span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">colnames</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+['imagetyp', 'OBJECT', 'EXPTIME', 'ALFLTID', 'FAFLTID', 'FBFLTID']
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_flats</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">files_filtered</span><span class="p">(</span><span class="n">regex_match</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="nb">object</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_flats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+['zt_ALrd120011.fits' 'zt_ALrd120012.fits' 'zt_ALrd120013.fits'
+ 'zt_ALrd120014.fits' 'zt_ALrd120015.fits' 'zt_ALrd120016.fits'
+ 'zt_ALrd120017.fits' 'zt_ALrd120018.fits' 'zt_ALrd120019.fits'
+ 'zt_ALrd120020.fits' 'zt_ALrd120021.fits' 'zt_ALrd120022.fits'
+ 'zt_ALrd120023.fits' 'zt_ALrd120024.fits' 'zt_ALrd120025.fits'
+...
+ 'zt_ALrd120056.fits' 'zt_ALrd120057.fits' 'zt_ALrd120058.fits'
+ 'zt_ALrd120059.fits' 'zt_ALrd120060.fits' 'zt_ALrd120061.fits'
+ 'zt_ALrd120062.fits']
+</pre>
+<p>O mejor todavía listamos los ficheros, sus nombres, filtros y tiempo de exposición. La identificación de los filtros de las observaciones con filtros de banda ancha aparece en ‘ALFLTID’ y las correspondientes a banda estrecha (que se colocan en FASU B) en  ‘FBFLTID’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_of_flats</span><span class="p">)):</span>
+    <span class="n">HDUList_object</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">list_of_flats</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">primary_header</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;exptime&#39;</span><span class="p">]</span>
+          <span class="p">,</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;ALFLTID&#39;</span><span class="p">],</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;FBFLTID&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+zt_ALrd120011.fits Dome Flat R 1.0 76 0
+zt_ALrd120012.fits Dome Flat R 1.0 76 0
+zt_ALrd120013.fits Dome Flat R 1.0 76 0
+zt_ALrd120014.fits Dome Flat R 1.0 76 0
+...
+zt_ALrd120049.fits Sky Flat evening 11.0 0 78
+zt_ALrd120050.fits Sky Flat evening 17.0 0 78
+zt_ALrd120051.fits Sky Flat evening 18.0 0 49
+zt_ALrd120052.fits Sky Flat evening 27.0 0 49
+zt_ALrd120053.fits Sky Flat evening 43.0 0 49
+zt_ALrd120054.fits Sky Flat evening 10.0 0 49
+...
+zt_ALrd120059.fits Sky Flat evening 4.9 76 0
+zt_ALrd120060.fits Sky Flat evening 7.0 76 0
+zt_ALrd120061.fits Sky Flat evening 10.0 76 0
+zt_ALrd120062.fits Sky Flat evening 15.0 76 0
+</pre>
+<p>Con esta información y la del cuaderno de observación tenemos una tabla completa donde ya anticipa algunos problemas de exceso de cuentas o filtro girado. Como siempre visualizarlo con DS9 ayuda a salir de dudas.</p>
+<pre>
+zt_AL12011-ztAL12020   Dome Flat R       1s 
+zt_AL12021             Dome Flat NB#78   10s   9 kcuentas
+zt_AL12022             Dome Flat NB#49   30s  39 kc demasiado alto
+zt_AL12023-zt_AL12032  Dome Flat NB#78   30s  24
+zt_AL12033-zt_AL12042  Dome Flat NB#49   20s  no valen (filtro girado)
+zt_AL12043             Dome Flat NB#49   10s  filtro en posición correcta
+
+zt_AL12044             Sky Flat NB#78    0.1s   3 kc
+zt_AL12045             Sky Flat NB#78    1.2s  11 kc
+zt_AL12046             Sky Flat NB#78    3.5s  27 kc
+zt_AL12047             Sky Flat NB#78    5.0s  30 kc
+zt_AL12048             Sky Flat NB#78    7.5s  29 kc
+zt_AL12049             Sky Flat NB#78     11s  32 kc
+zt_AL12050             Sky Flat NB#78     17s  31 kc
+zt_AL12051             Sky Flat NB#49     18s  30 kc
+zt_AL12052             Sky Flat NB#49     27s  30 kc
+zt_AL12053             Sky Flat NB#49     43s  28 kc a otro blank field
+zt_AL12054             Sky Flat NB#49     10s  18 kc
+zt_AL12055             Sky Flat NB#49     22s  24 kc
+zt_AL12056             Sky Flat NB#49     33s  24 kc
+
+zt_AL12057             Sky Flat #76      2.5s  26 kc   Filtro R de Bessel
+zt_AL12058             Sky Flat #76      3.3s  24 kc
+zt_AL12059             Sky Flat #76      4.9s  27 kc
+zt_AL12060             Sky Flat #76      7.0s  27 kc
+zt_AL12061             Sky Flat #76       10s  28 kc
+zt_AL12062             Sky Flat #76       15s  27 kc
+</pre>
+<div class="figure align-default" id="flats-1-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_1.png"><img alt="../_images/p2_05_flats_1.png" src="../_images/p2_05_flats_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.15 </span><span class="caption-text">Imágenes de flats zt_ALrd120033 y zt_ALrd120043. La primera muestra el filtro descolocado en la rueda de filtros. Toda la serie con ese problema debe descartarse. Los observadores se dieron cuenta al final de la serie de 10 flats y se puedo corregir el problema.</span><a class="headerlink" href="#flats-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Se aprenden varias cosas con esta tabla construida con el cuaderno de observaciones: (a) Se ha buscado que los FlatField tengan alrededor de 30 kc para que, siendo un nivel alto, estemos seguros de estar en el régimen lineal del CCD; (b) Los filtros estrechos se han observado antes que el filtro ancho ya que en la puesta de sol cada vez tenemos menos luz disponible y (c) se ha conseguido un buen registro de FlatFields de cielo con un nivel de cuentas adecuado. Para el cálculo de los tiempos de exposición se usaron las tablas que aparecen en Tyson et al. (1993) AJ 105,1206. Los valores de señal en cada imagen se pueden obtener realizando estadística para comprobar que coinciden con lo anotado en el cuaderno de observaciones.</p>
+<p>En nuestro caso tenemos tres filtros empleados y un número reducido de imágenes y mejor que hacer un procedimiento automático trae cuenta generar directamente las listas de ficheros correspondientes a FLATS de cada banda fotométrica. así que tras la inspección de las imágenes decidimos incluir en las listas los ficheros</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FF_list_78</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120044&#39;</span> <span class="p">,</span> <span class="s1">&#39;120045&#39;</span> <span class="p">,</span> <span class="s1">&#39;120046&#39;</span> <span class="p">,</span> <span class="s1">&#39;120047&#39;</span>
+            <span class="p">,</span> <span class="s1">&#39;120048&#39;</span> <span class="p">,</span> <span class="s1">&#39;120049&#39;</span> <span class="p">,</span> <span class="s1">&#39;120050&#39;</span><span class="p">]</span>
+<span class="n">FF_list_49</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120051&#39;</span> <span class="p">,</span> <span class="s1">&#39;120052&#39;</span> <span class="p">,</span> <span class="s1">&#39;120053&#39;</span> 
+            <span class="p">,</span> <span class="s1">&#39;120054&#39;</span> <span class="p">,</span> <span class="s1">&#39;120055&#39;</span> <span class="p">,</span> <span class="s1">&#39;120056&#39;</span><span class="p">]</span>
+<span class="n">FF_list_76</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120057&#39;</span> <span class="p">,</span> <span class="s1">&#39;120058&#39;</span> <span class="p">,</span> <span class="s1">&#39;120059&#39;</span> 
+            <span class="p">,</span> <span class="s1">&#39;120060&#39;</span> <span class="p">,</span> <span class="s1">&#39;120061&#39;</span> <span class="p">,</span> <span class="s1">&#39;120062&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>donde para ahorrarnos ecribir sólo hemos puesto parte del nombre. Así 120044 corresponde al fichero ALrd120044.fits.</p>
+<p>Leemos los ficheros correspondientes a cada filtro</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image_flats_78</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">FF_list_78</span><span class="p">:</span>
+    <span class="n">image_flats_78</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;zt_ALrd&#39;</span><span class="o">+</span><span class="n">file</span><span class="o">+</span><span class="s1">&#39;.fits&#39;</span><span class="p">))</span> 
+<span class="n">image_flats_49</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">FF_list_49</span><span class="p">:</span>
+    <span class="n">image_flats_49</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;zt_ALrd&#39;</span><span class="o">+</span><span class="n">file</span><span class="o">+</span><span class="s1">&#39;.fits&#39;</span><span class="p">))</span> 
+<span class="n">image_flats_76</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">FF_list_76</span><span class="p">:</span>
+    <span class="n">image_flats_76</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;zt_ALrd&#39;</span><span class="o">+</span><span class="n">file</span><span class="o">+</span><span class="s1">&#39;.fits&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>para poder trabajar con ellos. De momento es interesante visualizarlos y hacer un poco de estadística. No queremos usar una imagen con poca señal para combinar con otras de mejor calidad porque seguramente estropearemos el resultado.</p>
+<div class="figure align-default" id="flats-2-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_2.png"><img alt="../_images/p2_05_flats_2.png" src="../_images/p2_05_flats_2.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.16 </span><span class="caption-text">Se muestran seis de los Flats correspondientes al filtro estrecho #78 tomadas consecutivamente en el crepúsculo vespertino.</span><a class="headerlink" href="#flats-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>El oscurecimiento del cielo es muy rápido y la cantidad de luz disponible es cada vez menor por lo que los observadores deben aumentar el tiempo de exposición en cada toma para lograr imágenes con al señal adecuada. En este caso se pretendía obtener unas 30 mil cuentas y se fue aumentando la exposición al principio hasta llegar a ese valor y se eligió el tiempo de las siguientes tomas para mantenerlo en ese nivel.</p>
+<p>Como los dos primeros FLATs tienen menos cuentas podríamos retirarlos de la combinación. Desde luego el primero con 3000 cuentas frente a 30000 hay que retirarlo. Como tenemos suficientes retiramos los dos primeros</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#FF_list_78 = [&#39;120044&#39; , &#39;120045&#39; , &#39;120046&#39; , &#39;120047&#39;</span>
+<span class="c1">#            , &#39;120048&#39; , &#39;120049&#39; , &#39;120050&#39;]</span>
+<span class="n">FF_list_78</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120046&#39;</span> <span class="p">,</span> <span class="s1">&#39;120047&#39;</span><span class="p">,</span> <span class="s1">&#39;120048&#39;</span> <span class="p">,</span> <span class="s1">&#39;120049&#39;</span> <span class="p">,</span> <span class="s1">&#39;120050&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="flats-3-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_3.png"><img alt="../_images/p2_05_flats_3.png" src="../_images/p2_05_flats_3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.17 </span><span class="caption-text">Se muestran dos de los Flats correspondientes al filtro ancho #76 (filtro R de Bessel) tomadas consecutivamente en el crepúsculo vespertino.</span><a class="headerlink" href="#flats-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>En este caso las observaciones con filtro ancho (más señal que en los estrechos) se realizaron al final del crepúsculo cuando ya estaba el cielo más oscuro. En estas dos últimas tomas se aprecia la imagen de una estrella. Los apuntados del telescopio para Flats de cielo se hacen a zonas ‘libres de estrellas’ (‘Blank fields’) para evitar en lo posible que suceda esto. Además entre cada toma se mueve un poco el telescopio para que las posibles imágenes de estrellas aparezcan en diferentes lugares del detector.</p>
+<p>Agrupamos los ficheros correspondientes a los FLats de cada filtro en un <code class="docutils literal notranslate"><span class="pre">combiner</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">combiner_49</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">image_flats_49</span><span class="p">)</span>
+<span class="n">combiner_76</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">image_flats_76</span><span class="p">)</span>
+<span class="n">combiner_78</span> <span class="o">=</span> <span class="n">Combiner</span><span class="p">(</span><span class="n">image_flats_78</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>y combinamos para cada filtro</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># median combine </span>
+<span class="n">master_flat_76</span> <span class="o">=</span> <span class="n">combiner_76</span><span class="o">.</span><span class="n">median_combine</span><span class="p">()</span>
+<span class="n">master_flat_78</span> <span class="o">=</span> <span class="n">combiner_78</span><span class="o">.</span><span class="n">median_combine</span><span class="p">()</span>
+<span class="n">master_flat_49</span> <span class="o">=</span> <span class="n">combiner_49</span><span class="o">.</span><span class="n">median_combine</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="flats-4-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_4.png"><img alt="../_images/p2_05_flats_4.png" src="../_images/p2_05_flats_4.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.18 </span><span class="caption-text">Se muestran un flat del filtro ancho donde aparece al imagen de una estrella y la combinación de  los flats donde desaparece esa estrella.</span><a class="headerlink" href="#flats-4-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>El master FLAT presenta una degradación del número de cuentas hacia los bordes que puede ser en parte debido a viñeteo. La corrección con estos FLATS permitirá corregir este efecto.</p>
+<p>Antes de procesar las imágenes de ciencia vamos a comprobar que la rutina <code class="docutils literal notranslate"><span class="pre">ccdproc.flat_correct</span></code> divide por un FLAT normalizado. Si no fuere así tendríamos que normalizar el master FLAT. La división por una imagen con valores
+cercanos a la unidad permite mantener el nivel aproximado de cuentas que es muy útil para calcular la relación señal ruido. Usamos la imagen 102</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">102</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">],</span><span class="s1">&#39;  filter: &#39;</span><span class="p">,</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;ALFLTID&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+GC4496A R 3x300s   filter:  76
+</pre>
+<p>y la procesamos para corregir de FLAT</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reduced_image</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">flat_correct</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">master_flat_76</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si las mostramos juntas comprobamos que tienen niveles parecidos.</p>
+<div class="figure align-default" id="flats-5-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_5.png"><img alt="../_images/p2_05_flats_5.png" src="../_images/p2_05_flats_5.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Se muestran una imagen de ciencia y la misma una vez corre¡gida de FLAT.</span><a class="headerlink" href="#flats-5-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="flats-6-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_6.png"><img alt="../_images/p2_05_flats_6.png" src="../_images/p2_05_flats_6.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.20 </span><span class="caption-text">Detalle en la esquina inferior izquierda de las imágenes de la figura anterior.</span><a class="headerlink" href="#flats-6-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="flats-7-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_7.png"><img alt="../_images/p2_05_flats_7.png" src="../_images/p2_05_flats_7.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.21 </span><span class="caption-text">Los tres master FLAT correspondientes a los tres filtros empleados en al noche 1.</span><a class="headerlink" href="#flats-7-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="flats-8-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_8.png"><img alt="../_images/p2_05_flats_8.png" src="../_images/p2_05_flats_8.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.22 </span><span class="caption-text">Los tres master FLAT correspondientes a los tres filtros empleados en al noche 1 mostrados en DS9 con otra tabla de color.</span><a class="headerlink" href="#flats-8-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Finalmente, para los tres master FLAT,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">master_flat_49</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">image_flats_49</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">master_flat_49</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;super FLAT combining &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">image_flats_49</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; FLATS images&#39;</span>
+<span class="n">master_flat_49</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>  <span class="o">=</span>  <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; astropy median combine&#39;</span>
+<span class="n">master_flat_49</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;FLATS images from &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">image_flats_49</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">image_flats_49</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span>
+
+<span class="n">master_flat_49</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;N1_master_flat_49&#39;</span> 
+
+<span class="n">master_flat_49</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;flat_N1_49.fits&#39;</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="corrigiendo-de-variacion-espacial-de-sensibilidad">
+<h2><span class="section-number">5.3.2. </span>Corrigiendo de variación espacial de sensibilidad<a class="headerlink" href="#corrigiendo-de-variacion-espacial-de-sensibilidad" title="Permalink to this headline">¶</a></h2>
+<p>Ya estamos preparados para corregir de Flat Field (‘Flat Fielding’) todas las imágenes que interesen. Recordemos que debemos aplicar el Flat Field correspondiente a cada filtro. Entonces la primera tarea es hacer una lista con las imágenes que queremos procesar en este paso. No tiene sentido corregir BIAS o FLATs de Flat Field, por ejemplo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ccdproc</span> <span class="kn">import</span> <span class="n">ImageFileCollection</span>
+<span class="kn">from</span> <span class="nn">ccdproc.utils.sample_directory</span> <span class="kn">import</span> <span class="n">sample_directory_with_files</span>
+
+<span class="n">directory</span><span class="o">=</span><span class="s1">&#39;/Users/jzamorano/Desktop/NOT_2008/N1/&#39;</span>   <span class="c1"># change the path to your working directory</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span> <span class="p">,</span> <span class="s1">&#39;EXPTIME&#39;</span> <span class="p">,</span> <span class="s1">&#39;ALFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FAFLTID&#39;</span> <span class="p">,</span> <span class="s1">&#39;FBFLTID&#39;</span><span class="p">]</span>
+<span class="n">ic1</span> <span class="o">=</span> <span class="n">ImageFileCollection</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="n">keys</span><span class="p">)</span> <span class="c1"># only keep track of keys</span>
+<span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">colnames</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seleccionamos todas las imágenes obtenidas con el filtro con id=78</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="p">(</span><span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;FBFLTID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">78</span><span class="p">)</span>
+<span class="n">sci_list_78</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">matches</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_78</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+      file       
+   flat_N1_78.fits
+zt_ALrd120021.fits
+zt_ALrd120023.fits
+zt_ALrd120024.fits
+......
+zt_ALrd120119.fits
+zt_ALrd120120.fits
+zt_ALrd120121.fits
+zt_ALrd120122.fits
+Length = 36 rows
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sci_images_78</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sci_list_78</span><span class="p">:</span>
+    <span class="n">sci_images_78</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">file</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y listamos la información de algunos descriptores</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Filename          Object        exp Mean std min  max&#39;</span><span class="p">)</span>
+<span class="n">exposure</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sci_list_78</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> 
+          <span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span> 
+          <span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">],</span> 
+          <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> 
+          <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> 
+          <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> 
+          <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">sci_images_78</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+Filename            Object            exp Mean  std  min  max
+0 N1_master_flat_78  Sky Flat evening 0.1 22789 8116 32.5 32932.0
+1 zt_ALrd120021.fits Dome Flat NB#78 10.0 6753 2509 -8.5 16666.0
+2 zt_ALrd120023.fits Dome Flat NB#78 30.0 20303 7538 11.5 29560.5
+3 zt_ALrd120024.fits Dome Flat NB#78 30.0 20363 7560 11.5 29627.0
+4 zt_ALrd120025.fits Dome Flat NB#78 30.0 20356 7557 21.5 29766.0
+5 zt_ALrd120026.fits Dome Flat NB#78 30.0 20313 7541 20.5 29711.0
+6 zt_ALrd120027.fits Dome Flat NB#78 30.0 20242 7514 16.5 33439.5
+7 zt_ALrd120028.fits Dome Flat NB#78 30.0 20229 7509 16.5 41590.0
+8 zt_ALrd120029.fits Dome Flat NB#78 30.0 20227 7509 27.5 30235.5
+9 zt_ALrd120030.fits Dome Flat NB#78 30.0 20333 7548 16.5 37827.5
+10 zt_ALrd120031.fits Dome Flat NB#78 30.0 20320 7543 12.5 29711.5
+11 zt_ALrd120032.fits Dome Flat NB#78 30.0 20320 7543 16.5 31909.0
+12 zt_ALrd120044.fits Sky Flat evening 0.1 2693 962 -29.0 6723.0
+13 zt_ALrd120045.fits Sky Flat evening 1.199 8912 3405 13.5 65182.0
+14 zt_ALrd120046.fits Sky Flat evening 3.5 20878 7435 32.5 34683.5
+15 zt_ALrd120047.fits Sky Flat evening 5.0 22790 8114 27.5 32932.0
+16 zt_ALrd120048.fits Sky Flat evening 7.5 24451 8705 46.5 35316.0
+17 zt_ALrd120049.fits Sky Flat evening 11.0 23964 8531 33.5 39714.0
+18 zt_ALrd120050.fits Sky Flat evening 17.0 23630 8412 34.5 34251.5
+19 zt_ALrd120067.fits HZ44 focusing 30.0 11 11 -44.5 9684.5
+20 zt_ALrd120068.fits HZ44 focusing 30.0 11 12 -45.0 7712.5
+21 zt_ALrd120073.fits HZ44 focusing 20.0 9 8 -37.0 3707.5
+22 zt_ALrd120074.fits HZ44 focusing 20.0 9 8 -40.0 3870.0
+23 zt_ALrd120079.fits HZ44 #79 50.0 10 26 -43.5 9088.5
+24 zt_ALrd120083.fits BD+75d325 #78 30.0 12 80 -35.5 44488.0
+25 zt_ALrd120087.fits Feige34 #78 40.0 9 27 -47.5 15274.5
+26 zt_ALrd120098.fits C3982 #78 3x900s 900.0 140 74 -50.0 12259.5
+27 zt_ALrd120099.fits C3982 #78 3x900s 900.0 339 131 -47.0 16072.5
+28 zt_ALrd120100.fits C3982 #78 3x900s 900.0 204 93 -48.0 19197.0
+29 zt_ALrd120113.fits C4941 #78 3x900s 900.0 119 223 -45.0 65179.5
+30 zt_ALrd120114.fits C4941 #78 3x900s 900.0 116 186 -45.5 65179.5
+31 zt_ALrd120115.fits C4941 #78 3x900s 900.0 77 196 -50.0 65181.5
+32 zt_ALrd120119.fits C5363 #78 3x900s 900.0 50 159 -46.0 65179.0
+33 zt_ALrd120120.fits C5363 #78 3x900s 900.0 49 157 -47.5 65179.5
+34 zt_ALrd120121.fits C5363 #78 3x900s 900.0 52 162 -50.5 65180.0
+35 zt_ALrd120122.fits C5363 #78 3x900s 180.0 11 31 -46.5 48333.0
+</pre>
+<p>Al imprimir colocando el número de orden me es más fácil seleccionar. Antes de sci_list_78[19] son imágenes de Flat Field y desde sci_list_78[26] en adelante son observaciones de un GRB (Gamma Ray Burst) que una alerta nos obligó a realizar y parar nuestro proyecto. Por lo tanto</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sci_list_78</span> <span class="o">=</span> <span class="n">sci_list_78</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_78</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+   file       
+zt_ALrd120067.fits
+zt_ALrd120068.fits
+zt_ALrd120073.fits
+zt_ALrd120074.fits
+zt_ALrd120079.fits
+zt_ALrd120083.fits
+zt_ALrd120087.fits
+</pre>
+<p>Y ahora corregimos de Flat Field esas imágenes y las grabamos en nuestro directorio añadiéndole información de esta parte del procesado. En el nombre le añadimos una ‘f’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sci_list_78</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">f_image</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">flat_correct</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">master_flat_78</span><span class="p">)</span>
+    <span class="n">name_of_file</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">name_of_file</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; astropy ccdproc flat_correct &#39;</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;using NOT2008/N1/master_flat_78.fits master FLAT&#39;</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;writting &#39;</span><span class="o">+</span><span class="n">name_of_file</span><span class="o">+</span> <span class="s1">&#39; in &#39;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">name_of_file</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="flats-9-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_9.png"><img alt="../_images/p2_05_flats_9.png" src="../_images/p2_05_flats_9.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Las líneas del final de la cabecera de las imágenes corregidas tienen información del procesado hasta ahora, incluyendo el recorte, la substracción del BIAS y la corrección de Flat Field.</span><a class="headerlink" href="#flats-9-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Análogamente para los otros filtros,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="p">(</span><span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;FBFLTID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">49</span><span class="p">)</span>
+<span class="n">sci_list_49</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">matches</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_49</span><span class="p">)</span>
+<span class="n">sci_list_49</span> <span class="o">=</span> <span class="n">sci_list_49</span><span class="p">[</span><span class="mi">19</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_49</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sci_list_49</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">f_image</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">flat_correct</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">master_flat_49</span><span class="p">)</span>
+    <span class="n">name_of_file</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">name_of_file</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; astropy ccdproc flat_correct &#39;</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;using NOT2008/N1/master_flat_49.fits master FLAT&#39;</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;writting &#39;</span><span class="o">+</span><span class="n">name_of_file</span><span class="o">+</span> <span class="s1">&#39; in &#39;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">name_of_file</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matches</span> <span class="o">=</span> <span class="p">(</span><span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;ALFLTID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">76</span><span class="p">)</span>
+<span class="n">sci_list_76</span> <span class="o">=</span> <span class="n">ic1</span><span class="o">.</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="n">matches</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_76</span><span class="p">)</span>
+<span class="n">sci_list_76</span> <span class="o">=</span> <span class="n">sci_list_76</span><span class="p">[</span><span class="mi">17</span><span class="p">:</span><span class="mi">41</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sci_list_76</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sci_list_76</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">f_image</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">flat_correct</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">master_flat_76</span><span class="p">)</span>
+    <span class="n">name_of_file</span> <span class="o">=</span> <span class="s1">&#39;f&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">name_of_file</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; astropy ccdproc flat_correct &#39;</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;using NOT2008/N1/master_flat_76.fits master FLAT&#39;</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;writting &#39;</span><span class="o">+</span><span class="n">name_of_file</span><span class="o">+</span> <span class="s1">&#39; in &#39;</span><span class="o">+</span><span class="n">directory</span><span class="p">)</span>
+    <span class="n">f_image</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="n">name_of_file</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez acabado este paso despejamos el directorio de trabajo moviendo los ficheros recortados y corregidos de BIAS (“zt_*”) a un subdirectorio auxiliar que llamamos 2_corregidos_bias.</p>
+<pre>
+N1 $> mkdir 2_corregidos_bias
+N1 $> mv zt_* 2_corregidos_bias
+</pre>
+<p>quedando nuestro directorio de trabajo,</p>
+<pre>
+N1 $ ls
+0_originales        fzt_ALrd120070.fits fzt_ALrd120081.fits fzt_ALrd120091.fits fzt_ALrd120111.fits
+1_recortados        fzt_ALrd120071.fits fzt_ALrd120082.fits fzt_ALrd120095.fits fzt_ALrd120112.fits
+2_corregidos_bias   fzt_ALrd120072.fits fzt_ALrd120083.fits fzt_ALrd120096.fits fzt_ALrd120116.fits
+flat_N1_49.fits     fzt_ALrd120073.fits fzt_ALrd120084.fits fzt_ALrd120097.fits fzt_ALrd120117.fits
+flat_N1_76.fits     fzt_ALrd120074.fits fzt_ALrd120085.fits fzt_ALrd120102.fits fzt_ALrd120118.fits
+flat_N1_78.fits     fzt_ALrd120075.fits fzt_ALrd120086.fits fzt_ALrd120103.fits zero_N1.fits
+fzt_ALrd120066.fits fzt_ALrd120077.fits fzt_ALrd120087.fits fzt_ALrd120104.fits
+fzt_ALrd120067.fits fzt_ALrd120078.fits fzt_ALrd120088.fits fzt_ALrd120105.fits
+fzt_ALrd120068.fits fzt_ALrd120079.fits fzt_ALrd120089.fits fzt_ALrd120106.fits
+fzt_ALrd120069.fits fzt_ALrd120080.fits fzt_ALrd120090.fits fzt_ALrd120110.fits
+</pre>
+<p>Podemos y denbemos ver el resultado del procesado por si hay algún error muy evidente.</p>
+<div class="figure align-default" id="flats-10-fig">
+<a class="reference internal image-reference" href="../_images/p2_05_flats_10.png"><img alt="../_images/p2_05_flats_10.png" src="../_images/p2_05_flats_10.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.24 </span><span class="caption-text">Flat field en el filtro #76, una imagen original y la misma imagen corregida. Se han corregido efectos aparentes en la variación espacial de la sensibilidad y se nota que el fondo se ha aplanado.</span><a class="headerlink" href="#flats-10-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P2_Fotometria_CCD_02.html" title="previous page"><span class="section-number">5.2. </span>Correción de BIAS</a>
+    <a class='right-next' id="next-link" href="P2_Fotometria_CCD_04.html" title="next page"><span class="section-number">5.4. </span>Pasos finales</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

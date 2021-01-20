@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.2. Instrumentos y métodos &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. Fotometría absoluta" href="fotometria_03.html" />
+    <link rel="prev" title="2.1. Introducción a la Fotometría" href="fotometria_01.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/fotometria_02.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-visual-y-fotografica">
+   2.2.1. Fotometría visual y fotográfica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-fotoelectrica">
+   2.2.2. Fotometría fotoeléctrica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-ccd">
+   2.2.3. Fotometría CCD
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#observaciones-de-fotometria-ccd">
+     2.2.3.1. Observaciones de fotometría CCD
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="instrumentos-y-metodos">
+<h1><span class="section-number">2.2. </span>Instrumentos y métodos<a class="headerlink" href="#instrumentos-y-metodos" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Este capítulo asume conocimientos básicos de fotometría astronómica
+explicados en la signaturas de Astrofísica previas al Máster.
+En particular de Astrofísica y de Astronomía Observacional del Grado en Física
+y de Instrumentación Astronómica del máster en Astrofísica.</p>
+</div>
+<div class="section" id="fotometria-visual-y-fotografica">
+<h2><span class="section-number">2.2.1. </span>Fotometría visual y fotográfica<a class="headerlink" href="#fotometria-visual-y-fotografica" title="Permalink to this headline">¶</a></h2>
+<p>La clasificación de estrellas de acuerdo a su brillo aparente que realizó el astrónomo griego Hiparcos está basada en la comparación de sus observaciones a simple vista sin ninguna instrumentación óptica. Estableció una escala de magnitudes siendo las estrellas en la categoría de primera magnitud las más brillantes. Esta ‘fotometría visual’ utiliza el ojo humano como detector y no emplea filtros. Por lo tanto la banda de paso viene definida por la respuesta espectral del ojo. Todavía hoy en día se utiliza la fotometría visual en observaciones de astrónomos aficionados que pueden observar y medir (por comparación) las magnitudes de estrellas más débiles que el límite impuesto por la sensibilidad del ojo.</p>
+<p>Con el desarollo de la fotografía a mediados del siglo XIX se dispuso de un detector que colocado en el foco de un telescopio permitía registrar estrellas más débiles y en un rango espectral diferente a la banda visual. Con emulsiones fotográficas sensibles en diferentes intervalos espectrales (detector) y filtros se podían tomar imágenes de campos estelares o de objetos extensos (al ser un detector de imagen o panorámico) en difrentes bandas fotométricas. Estas observaciones de ‘fotometría fotográfica’, a diferencia de las visuales, dejan una placa fotográfica  que, correctamente almacenada, puede volver a medirse  las veces que se desee incluso después de muchos años. aunque su formato no es digital, las placas pueden ser escaneadas para producir un fichero tratable con ordenadores.</p>
+</div>
+<div class="section" id="fotometria-fotoelectrica">
+<h2><span class="section-number">2.2.2. </span>Fotometría fotoeléctrica<a class="headerlink" href="#fotometria-fotoelectrica" title="Permalink to this headline">¶</a></h2>
+<p>Los astrónomos utilizaton en sus observaciones los fotodetectores más sencillos en cuanto éstos estuvieron disponibles. La ‘Fotometría Fotoeléctrica’ supuso un gran avance en sensibilidad permitiendo observar y medir objetos más débiles. Los fotómetros fotoeléctricos tienen como detector una célula fotoeléctrica o mejor un fotomultiplicador. Este dispositivo
+electrónico transforma los fotones incidentes en corriente eléctrica que puede ser medida. Las ventajas principales son su linealidad, de la que carece la emulsión fotográfica, y su mayor eficiencia cuántica.</p>
+<ul class="simple">
+<li><p>Stebbins, Whitford &amp; Kron  (ca. 1940)         fotocélulas</p></li>
+<li><p>Johnson, Morgan, Whitford et al. (ca. 1950)   fotomultiplicadores</p>
+<ul>
+<li><p>RCA 1P21 (fotomultiplicador sensible al azul)</p></li>
+<li><p>Sistema de Johnson  bandas U B V con RCA 1P21</p></li>
+</ul>
+</li>
+<li><p>Sistema de Strömgren ubvy</p></li>
+<li><p>Kron (1958)    Fotocátodo S1  (sensible al rojo)</p></li>
+<li><p>Johnson et al. (1966)   bandas R I</p>
+<ul>
+<li><p>Fotocátodo S25 y GaAs (mucho más sensibles que 1P21)</p></li>
+</ul>
+</li>
+<li><p>Bessel (1976) U B V R I con el mismo fotomultiplicador</p>
+<ul>
+<li><p>Aumento de la lista de estándars primarias y secundarias
+Cousins (1976-1980)     Cousins UBVRI
+Landolt (1973-1983)     Landolt UBVRI</p></li>
+</ul>
+</li>
+</ul>
+<p>Desgraciadamente estos sistemas son algo diferentes por usar filtros distintos.</p>
+</div>
+<div class="section" id="fotometria-ccd">
+<h2><span class="section-number">2.2.3. </span>Fotometría CCD<a class="headerlink" href="#fotometria-ccd" title="Permalink to this headline">¶</a></h2>
+<p>La fotometría fotoeléctrica sólo permite observar una estrella cada vez o una parte de un objeto extenso, es decir que no tiene la capacidad de un detector de imagen con resolución espacial. La ‘Fotometría CCD’ (casi la única que se usa en la actualidad) desplazó a la fotometría fotoeléctrica ya que tiene como gran ventaja el uso de un detector panorámico. Las imágenes obtenidas con un detector CCD contienen información de los objetos celestes contenidos en el campo de visión del sistema. Estas observaciones simultáneas de múltiples objetos tienen la gran ventaja del ahorro de tiempo de observación y la garantía de observación en el mismo lapso de tiempo lo que es ideal para fotometría diferencial.</p>
+<p>Por citar algunos inconvenientes tenemos los propios de la observación con CCDs (tiempos muertos leyendo el detector, por ejemplo) y el procesado de las imágenes CCD. Con la fotometría fotoeléctrica se obtenían mejor precisión fotométrica en menos tiempo de observación. También existen problemas relacionados con la variación de la transmisión de los filtros interferenciales con el ángulo de llegada de la luz, lo que se traduce en diferencias de banda de paso en zonas de la imagen según te alejas del eje óptico. También existe una gran variedad de CCDs en el mercado con diferencias considerables en la respuesta espectral en el azul que no facilitan la calibración de la banda U, por ejemplo.</p>
+<p>Todos estos inconvenientes quedan en un segundo plano con la facilidad de uso de los CCDs y de su procesado posterior. Los CCDs se sitúan en criostatos que mantienen la temperatura del chip a temperatiras bajas (-120ºC típicamente) para evitar ruido térmico y con estabilización de temperatura para mantener su sensibilidad constante a lo largo de la observación.</p>
+<div class="section" id="observaciones-de-fotometria-ccd">
+<h3><span class="section-number">2.2.3.1. </span>Observaciones de fotometría CCD<a class="headerlink" href="#observaciones-de-fotometria-ccd" title="Permalink to this headline">¶</a></h3>
+<p>Los intrumentos  empleados para fotometría son cámaras CCD que disponen de una rueda de filtros seleccionables. Estas cámaras se elige en base a los requerimientos del proyecto de investigación y a su disponibilidad. Los parámetros importantes son el campo de visión que depende de la escala de placa del telescopio, de la amplificación de la cámara y del tamaño del CCD que se coloca en el plano focal de la cámara.</p>
+<p>La lista de intrumentos para realizar fotometría de imagen y sus características se pueden consultar en los portales de los observatorios. Con la ayuda de los astrónomos de apoyo se configura de manera óptima a nuestras necesidades.</p>
+<p>Como detector se emplea un CCD. Si el CCD es muy grande o la óptica de la cámara instrumento no es suficiente, sólo se usa parte de la imagen que proporciona el CCD. En ese caso se selecciona una región del mismo (ventana) en el momento de la observación  para no archivar ficheros innecesariamente grandes. Se ahorra espacio y tiempo de lectura del CCD.</p>
+<p>Por ejemplo para las observaciones de CAFOS que proporciona un campo de visión de diámetro 16 arcmin y con un CCD tiene dimensiones de <span class="math notranslate nohighlight">\(2048 \times 2048\)</span> píxeles se suele usar la parte central de <span class="math notranslate nohighlight">\(11 \times 11 \; arcmin^2\)</span> que no está viñeteada y que corresponde a una ventana de <span class="math notranslate nohighlight">\(1024 \times 1024\)</span> píxeles en el centro del CCD.</p>
+<div class="figure align-default" id="foto-cafos-window-fig">
+<a class="reference internal image-reference" href="../_images/foto_39_CAFOS_window.png"><img alt="../_images/foto_39_CAFOS_window.png" src="../_images/foto_39_CAFOS_window.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Recorte de la imagen CCD de CAFOS para seleccionar la zona central de <span class="math notranslate nohighlight">\(11 \times 11 \; arcmin^2\)</span>.</span><a class="headerlink" href="#foto-cafos-window-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="foto-cafos-fov-fig">
+<a class="reference internal image-reference" href="../_images/foto_40_CAFOS_FoV.png"><img alt="../_images/foto_40_CAFOS_FoV.png" src="../_images/foto_40_CAFOS_FoV.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Imagen completa de CAFOS mostrando la región útil y la ventana cuadrada que suele recortarse.</span><a class="headerlink" href="#foto-cafos-fov-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Las observaciones de fotometría de imagen incluyen</p>
+<ul class="simple">
+<li><p>Las imágenes usadas para calibración del CCD: los BIAS y DARK para medir el nivel de pedestal y la corriente de oscuridad si la hubiera. De esta manera podemos retirar la parte aditiva de la señal.
+Los Flat Field (bien con imágenes de lámparas en la cúpula (‘Dome flats’) o imágenes de cielo en crepúsculo (Sky flats’) para determinar la variación espacial de la sensibilidad del CCD.</p></li>
+<li><p>Imágenes de los campos que contienen los objetos motivo de nuestro proyecto científico.</p></li>
+<li><p>Idem de estrellas estándar para calibración fotométrica. El flujo en las bandas fotométricas de estas estándares fotométricas es conocido y por comparación entre el resultado de la observación podemos determinar las constantes instrumentales y los coeficientes de extinción (véase fotometría absoluta).</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fotometria_01.html" title="previous page"><span class="section-number">2.1. </span>Introducción a la Fotometría</a>
+    <a class='right-next' id="next-link" href="fotometria_03.html" title="next page"><span class="section-number">2.3. </span>Fotometría absoluta</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

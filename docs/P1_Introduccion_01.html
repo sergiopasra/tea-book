@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1. Introducción &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. Redución de observaciones astronómicas" href="P1_Introduccion_02.html" />
+    <link rel="prev" title="4. Práctica 1 Procesado de observaciones astronómicas" href="P1_Introduccion_00.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P1_Introduccion_01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P1_Introduccion_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P1_Introduccion_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recomendaciones-previas">
+   4.1.1. Recomendaciones previas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nombres-de-los-ficheros">
+     4.1.1.1. Nombres de los ficheros
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#control-de-versiones-y-cabecera">
+     4.1.1.2. Control de versiones y cabecera
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion-basica-a-linux-y-transferencia-de-ficheros">
+   4.1.2. Introducción básica a LINUX y transferencia de ficheros
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comandos-basicos-de-linux">
+     4.1.2.1. Comandos básicos de Linux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manejo-de-ficheros-y-carpetas">
+     4.1.2.2. Manejo de ficheros y carpetas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transferencia-de-ficheros-entre-ordenadores">
+     4.1.2.3. Transferencia de ficheros entre ordenadores
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ftp">
+       4.1.2.3.1. FTP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ssh">
+       4.1.2.3.2. SSH
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduccion">
+<h1><span class="section-number">4.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recomendaciones-previas">
+<h2><span class="section-number">4.1.1. </span>Recomendaciones previas<a class="headerlink" href="#recomendaciones-previas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nombres-de-los-ficheros">
+<h3><span class="section-number">4.1.1.1. </span>Nombres de los ficheros<a class="headerlink" href="#nombres-de-los-ficheros" title="Permalink to this headline">¶</a></h3>
+<p>Aunque parezca de menor importancia se debe procurar que el nombre de los ficheros informe de su contenido no sólo al autor. Si enviamos un fichero a un colaborador o a un profesor para su evaluación, el destinatario tendrá la información básica si se la proporcionamos. Por ejemplo</p>
+<pre>
+Malos ejemplos a evitar:  
+ - práctica 2.pdf     	(acentos, espacios, informa poco)
+ - memoria_final.pdf 	(no informa nada)  
+Mejor:  
+ - TEA_G2_practica_3_v2.pdf
+ - Grupo3_practica2_v1.pdf
+</pre>
+</div>
+<div class="section" id="control-de-versiones-y-cabecera">
+<h3><span class="section-number">4.1.1.2. </span>Control de versiones y cabecera<a class="headerlink" href="#control-de-versiones-y-cabecera" title="Permalink to this headline">¶</a></h3>
+<p>La cabecera de las memorias  deben informar de sus autores, grupo, asignatura y fecha. La fecha puede servir de control de la versión. Más completo es añadir la versión y la fecha:</p>
+<pre>
+TÉCNICAS EXPERIMENTALES EN ASTROFÍSICA 
+Práctica 2      Fotometría CCD 
+GRUPO 6: Carmelo de Castro, Felipe Paredes y Daniel Revilla
+Versión 2. 12 abril 2020
+</pre>
+</div>
+</div>
+<div class="section" id="introduccion-basica-a-linux-y-transferencia-de-ficheros">
+<h2><span class="section-number">4.1.2. </span>Introducción básica a LINUX y transferencia de ficheros<a class="headerlink" href="#introduccion-basica-a-linux-y-transferencia-de-ficheros" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.linux.org/">Linux</a> es el sistema operativo preferido por los investigadores en el campo de la Astronomía. Para usuarios que vengan del mundo de Windows es fácil aprender lo básico para empezar a trabajar como usuario e ir aprendiendo sobre la marcha.</p>
+<p>Linux dispone de un escritorio con iconos que llevan a las carpeta de ficheros o a las aplicaciones. Su uso es intuitivo. Los ficheros se encuentar en una estructura de directorios y subdirectorios. Normalmente se usa la terminal para introducir comandos (cli, command line interface). El intérprete de comandos se encarga de realizar las operaciones solicitadas. Se pueden encontrar manuales para principiantes en muchos sitios. Por ejemplo redhat.com  <a class="reference external" href="https://www.redhat.com/sysadmin/10-commands-terminal">Linux 10-commands-terminal</a> o de maker.pro <a class="reference external" href="https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners">basic-linux-commands-for-beginners</a></p>
+<div class="section" id="comandos-basicos-de-linux">
+<h3><span class="section-number">4.1.2.1. </span>Comandos básicos de Linux<a class="headerlink" href="#comandos-basicos-de-linux" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>pwd (print working directory) muestra el directorio donde nos encontramos</p></li>
+</ul>
+<pre>
+sidrax:Jupyter jzamorano@sidrax$ pwd  
+/home/jzamorano/0_TEA/Jupyter
+</pre>
+<p>Lo que se encuentra delante del símbolo $ es lo que se conoce como el ‘prompt’.
+Contiene información del nombre del ordenador y del directorio donde nos encontramos.
+Si escribimos el comando pwd la respuesta sale en la siguiente línea que en este caso informa de que estamos en el subdirectorio Jupyter que cuelga de 0_TEA en el ‘home’ (directorio raíz) del usuario jzamorano.</p>
+<ul class="simple">
+<li><p>ls (list) es el comando para lista el contenido del directorio donde nos encontramos</p></li>
+</ul>
+<pre>
+sidrax:Jupyter jzamorano$ ls  
+</pre>
+<p>Podemos usar el asterisco  para listar sólo algunos ficheros etc.</p>
+</div>
+<div class="section" id="manejo-de-ficheros-y-carpetas">
+<h3><span class="section-number">4.1.2.2. </span>Manejo de ficheros y carpetas<a class="headerlink" href="#manejo-de-ficheros-y-carpetas" title="Permalink to this headline">¶</a></h3>
+<p>Comandos touch, cd, mkdir, cp, mv, more, head, tail, etc</p>
+</div>
+<div class="section" id="transferencia-de-ficheros-entre-ordenadores">
+<h3><span class="section-number">4.1.2.3. </span>Transferencia de ficheros entre ordenadores<a class="headerlink" href="#transferencia-de-ficheros-entre-ordenadores" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ftp">
+<h4><span class="section-number">4.1.2.3.1. </span>FTP<a class="headerlink" href="#ftp" title="Permalink to this headline">¶</a></h4>
+<p>FTP es un protocolo estándar para transferencia de ficheros. Con esta utilidad podemos mover ficheros entre diferentes ordenadores (cliente y servidor) mediante comandos. Para que un servidor permita descargar ficheros es necesario autenticarse (username &amp; password) salvo en el caso de servidores públicos donde se puede hacer una conexión anónima.</p>
+<div class="figure align-default" id="ftp-1-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_1.png"><img alt="../_images/intro_01_ftp_1.png" src="../_images/intro_01_ftp_1.png" style="height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Comandos básicos de ftp.</span><a class="headerlink" href="#ftp-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ftp-2-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_2.png"><img alt="../_images/intro_01_ftp_2.png" src="../_images/intro_01_ftp_2.png" style="height: 800px;" /></a>
+</div>
+<div class="figure align-default" id="ftp-3-fig">
+<a class="reference internal image-reference" href="../_images/intro_01_ftp_3.png"><img alt="../_images/intro_01_ftp_3.png" src="../_images/intro_01_ftp_3.png" style="height: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="ssh">
+<h4><span class="section-number">4.1.2.3.2. </span>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h4>
+<p>SSH (secure shell) es un protocolo encriptado que permite conexiones y transferencias seguras en redes que no lo son. En las conexiones podemos acceder a otro servidor y lanzar comandos o trabajar con ese ordenador remoto como si estuviéramos conectados en una terminal de él.</p>
+<p>Ejemplos de uso de ssh y scp.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P1_Introduccion_00.html" title="previous page"><span class="section-number">4. </span>Práctica 1 Procesado de observaciones astronómicas</a>
+    <a class='right-next' id="next-link" href="P1_Introduccion_02.html" title="next page"><span class="section-number">4.2. </span>Redución de observaciones astronómicas</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

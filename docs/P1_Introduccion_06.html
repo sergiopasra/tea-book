@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.6. Calibración CCD &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Práctica 2 Fotometría CCD" href="P2_Fotometria_CCD_00.html" />
+    <link rel="prev" title="4.5. Cuaderno de observaciones" href="P1_Introduccion_05.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P1_Introduccion_06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P1_Introduccion_06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P1_Introduccion_06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imagenes-ccd">
+   4.6.1. Imágenes CCD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-llegada-de-fotones-a-un-detector">
+   4.6.2. (La llegada de fotones a un detector)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imagenes-de-calibracion">
+   4.6.3. Imágenes de calibración
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias">
+     4.6.3.1. BIAS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#flat-fields">
+       4.6.3.1.1. FLAT FIELDs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#darks">
+     4.6.3.2. DARKs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasos-de-la-calibracion">
+   4.6.4. Pasos de la calibración
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-imagenes-ccd">
+   4.6.5. Ejemplo de reducción de imágenes CCD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-espectros-ccd">
+   4.6.6. Ejemplo de reducción de espectros CCD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estrategias-para-la-estimacion-de-incertidumbres">
+   4.6.7. Estrategias para la estimación de incertidumbres
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="calibracion-ccd">
+<h1><span class="section-number">4.6. </span>Calibración CCD<a class="headerlink" href="#calibracion-ccd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imagenes-ccd">
+<h2><span class="section-number">4.6.1. </span>Imágenes CCD<a class="headerlink" href="#imagenes-ccd" title="Permalink to this headline">¶</a></h2>
+<p>La observación con un detector de imagen como un CCD da lugar a un fichero que almacena un número (cuentas) recibidas en cada pixel. Por lo tanto la imagen resultante es una matriz de datos. Las cuentas en cada pixel se corresponden a la llegada de fotones de forma que la imagen calibrada puede usarse para medir en diferentes partes de la imagen y extraer información científica.<br />
+Ya sabemos que los fotones producen en el substrato del chip pares electrón-hueco y que los electrones se almacenan en el pozo de potencial creado bajo los electrodos de cada pixel. En la lectura ordenada del CCD estos electrones se cuentan con un conversor analógico-digital que los transforma en un número de cuentas o ADUs (analog-to-digital units’). La relación entre electrones y cuentas es la ganancia del detector. Para evitar efectuar esta conversión en las cuentas de píxeles que recibieron poca señal se suma una señal de pedestal o BIAS y así ya no estamos en valores cercanos a cero en sitios oscuros. Estos detectores se refrigeran para reducir la corriente de oscuridad que se añade a nuestra señal.</p>
+<div class="figure align-default" id="ccd-1-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_1.png"><img alt="../_images/intro_05_CCD_1.png" src="../_images/intro_05_CCD_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">La medida en cada pixel del CCD está relacionada con la cantidad de fotones que llegaron a cada pixel a través de esta expresión.</span><a class="headerlink" href="#ccd-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Para llegar a la imagen reducida (<span class="math notranslate nohighlight">\(I_{i,j}\)</span>) desde la matriz de nuestra observación (<span class="math notranslate nohighlight">\(X_{i,j}\)</span>) debemos conocer el valor del BIAS que se añadió a la imagen y también la corriente de oscuridad (<span class="math notranslate nohighlight">\(A_{i,j}\)</span>). Este ruido es muy pequeño en los detectores modernos si están convenientemente refrigerados. Es señal que se va acumulanto con el tiempo así que es mayor para observaciones largas. Una característica importante de los CCD es que su respuesta depende la posición del pixel en el chip. La variación de la respuesta espacial que aquí indicamos con (<span class="math notranslate nohighlight">\(B_{i,j}\)</span>) se determina también con imágenes de calibración.</p>
+</div>
+<div class="section" id="la-llegada-de-fotones-a-un-detector">
+<h2><span class="section-number">4.6.2. </span>(La llegada de fotones a un detector)<a class="headerlink" href="#la-llegada-de-fotones-a-un-detector" title="Permalink to this headline">¶</a></h2>
+<p>Utilizando un array de pequeñas dimensiones, se simula la llegada poissoniana de fotones a un detector y la posterior conversión analógica-digital. Esta simulación permite ilustrar conceptos básicos de relación señal/ruido y propagación de incertidumbres.<br />
+Pendiente de hacer pero se puede consultar <a class="reference external" href="https://mwcraig.github.io/ccd-as-book/01-00-Understanding-an-astronomical-CCD-image.html">CCD data reduction guide</a> written by Matt Craig and Lauren Chambers. Editing was done by Lauren Glattly.</p>
+</div>
+<div class="section" id="imagenes-de-calibracion">
+<h2><span class="section-number">4.6.3. </span>Imágenes de calibración<a class="headerlink" href="#imagenes-de-calibracion" title="Permalink to this headline">¶</a></h2>
+<p>Para calibrar las observaciones de ciencia se deben tomar imágenes auxiliares que sirven de calibración. Estas imágenes de calibración son los BIAS, DARKS y los FLATS. Es importante notar que las imágenes de calibración se toman en las mismas condiciones de temperatura ya que el ruido electrónico y la sensibilidad del CCD varían con la temperatura. Por eso se utilizan criostatos.</p>
+<div class="section" id="bias">
+<h3><span class="section-number">4.6.3.1. </span>BIAS<a class="headerlink" href="#bias" title="Permalink to this headline">¶</a></h3>
+<p>Se obtienen las imágenes de BIAS con exposiciones de tiempo de exposición nulo (0s) con el obturador cerrado. Por eso se llaman también  DARK 0. Representan el punto cero de la señal de un CCD que es un valor que decidieron los ingenieros que montaron el sistema. El BIAS puede contener algo de estructura, es decir que no es completamente plano. Como cualquier imagen CCD presenta ruido de lectura y electrónico. aunque el tiempo de exposición es nulo el tiempo de lectura no lo es. Durante ese tiempo caen rayos cósmicos que dejan su marca en forma de píxeles con señal alta. Se realizan series de BIAS para combinarlos ya que el BIAS final debe estar libre de rayos cósmicos. La combinación (‘average’ + ‘sigma clipping’) reduce el ruido un factor <span class="math notranslate nohighlight">\(\sqrt(N)\)</span>. En algunos casos puede ser necesario usar el ‘overscan’ que es una lectura de columnas del CCD que no existen o columnas tapadas del chip. La región de overscan está presente en todas las imágenes incluidas las de ciencia.</p>
+<div class="section" id="flat-fields">
+<h4><span class="section-number">4.6.3.1.1. </span>FLAT FIELDs<a class="headerlink" href="#flat-fields" title="Permalink to this headline">¶</a></h4>
+<p>Los ‘Flat Fields’ que podríamos traducir como imágenes de campo plano, se obtienen iluminando el CCD uniformemente.
+Son necesarios para determinar la variación espacial de sensibilidad. Esta variación depende de la longitud de onda por lo que debe determinarse para cada filtro empleado en las observaciones. Pero además las motas de polvo en el chip, la ventana o los filtros nos obligan a tomar flat fields en la misma noche de nuestra observación. Si una de estas motas se mueve de sitio el flat field de antes ya no vale ya que no corregirá la zona del chip donde se ha parado la mota de polvo y sobre corregirá la zona donde estaba antes.</p>
+<p>Se eligen los tiempos de exposición para que el número de cuentas esté aproximadamente a la mitad del nivel de saturación. También se realizan observaciuones de series de Flats para combinarlos en un ‘master Flat’.</p>
+<ul class="simple">
+<li><p>Flats de cúpula (‘dome flat’)<br />
+Se obtienen iluminando con lámparas el interior de la cúpula.
+Se pueden realizar en cualquier momento (día o noche).</p></li>
+<li><p>Flats de cielo (‘sky flat’)<br />
+Se apunta al cielo libre de objetos (‘blank field’) o a una nube.
+Se realizan en los crepúsculos  (anochecer o amanecer) (‘twilight’).
+Pueden obtenerse combinando muchas imágenes de ciencia si los objetos no llenan el campo de visión.</p></li>
+</ul>
+<p>Recordemos que los Flat Fields dependen del chip, de su temperatura, del filtro utilizado, de la posición de las motas de polvo. Por lo tanto se toman</p>
+<p>(a) en las mismas condiciones de temperatura del criostato porque la sensibilidad del CCD varía con la temperatura.<br />
+(b) para cada filtro empleado ya que la respuesta del CCD varía con la longitud de onda.</p>
+<p>Por supuesto estas condiciones se deben mantener a lo largo de la observación de los objetos problema.</p>
+</div>
+</div>
+<div class="section" id="darks">
+<h3><span class="section-number">4.6.3.2. </span>DARKs<a class="headerlink" href="#darks" title="Permalink to this headline">¶</a></h3>
+<p>En los CCDs profesionales de la actualidad la corriente de oscuridad es inapreciable. Se comprueba tomando exposiciones largas con el obturador cerrado. Si existe corriente de oscuridad se deben tomar imágenes DARK del mismo tiempo de exposición que las de ciencia.
+Se obtienen series de DARKs para combinarlos en un ‘master Dark’.</p>
+</div>
+</div>
+<div class="section" id="pasos-de-la-calibracion">
+<h2><span class="section-number">4.6.4. </span>Pasos de la calibración<a class="headerlink" href="#pasos-de-la-calibracion" title="Permalink to this headline">¶</a></h2>
+<p>Para cada noche de observación se visualizan y analizan las imágenes disponibles. Esto sirve para no procesar la imágenes ‘a ciegas’ y que se nos cuele un fichero mal grabado, por ejemplo. Tras este paso se retiran las imágenes que no sirven. Si es necesario se recorta de las imágenes la región de interés. Por razones obvias, es importante aplicar este recorte a todas las imágenes.</p>
+<div class="figure align-default" id="ccd-2-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_2.png"><img alt="../_images/intro_05_CCD_2.png" src="../_images/intro_05_CCD_2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.25 </span><span class="caption-text">Ejemplo de imagen original y recortada para retirar la zona sin señal válida.</span><a class="headerlink" href="#ccd-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>Corrección de nivel cero<br />
+Se combinan los BIAS para crear un BIAS maestro  (ZERO)<br />
+Se resta la imagen ZERO a todas las imágenes</p></li>
+<li><p>Corrección de FLAT<br />
+Se combinan los FLATS de cada filtro<br />
+Se normaliza dividiendo por el número medio de cuentas para crear el FLAT maestro<br />
+Se dividen las imágenes de ciencia por el FLAT maestro</p></li>
+</ul>
+<div class="figure align-default" id="ccd-3-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_3.png"><img alt="../_images/intro_05_CCD_3.png" src="../_images/intro_05_CCD_3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.26 </span><span class="caption-text">Ejemplo de flat fileds de cielo individuales y Flat Field maestro (abajo a la derecha). La combinación ha retirado las estrellas que aparecieron en las tomas de crepúsculo.</span><a class="headerlink" href="#ccd-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ccd-4-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_4.png"><img alt="../_images/intro_05_CCD_4.png" src="../_images/intro_05_CCD_4.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.27 </span><span class="caption-text">Ejemplo de imagen original y dividida por el Flat Field maestro.</span><a class="headerlink" href="#ccd-4-fig" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>Combinación de imágenes individuales<br />
+Si se ha observado el mismo campos en varias exposiciones, éstas se combinan para crear una imagen única. En el proceso hay que registrar (hacer que coincidan) las imágenes si el telescopio se desplazó entre las tomas individuales. La combinación de imágenes ayuda a retirar rayos cósmicos cuya posición de caida en el chip es aleatoria.</p></li>
+</ul>
+<div class="figure align-default" id="ccd-5-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_5.png"><img alt="../_images/intro_05_CCD_5.png" src="../_images/intro_05_CCD_5.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.28 </span><span class="caption-text">Misma región del chip de tres observaciones consecutivas del mismo campo con la misma estrella marcada en cada exposición.</span><a class="headerlink" href="#ccd-5-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ccd-7-fig">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_8.png"><img alt="../_images/intro_05_CCD_8.png" src="../_images/intro_05_CCD_8.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.29 </span><span class="caption-text">Identificación de estrellas usadas en la alineación de la imágenes.</span><a class="headerlink" href="#ccd-7-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/intro_05_CCD_7.png"><img alt="../_images/intro_05_CCD_7.png" src="../_images/intro_05_CCD_7.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.30 </span><span class="caption-text">Las tres imágenes alineadas a la misma referencia. Se han utilizado los mismos cortes para que se note cómo ha variado el brillo de cielo entre las tomas.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Estos pasos se siguen en las prácticas.</p>
+<p>Bias, dark, flat fields de baja y alta frecuencia, arcos para calibración en longitud de onda. Se explican sus características y utilización. Definición de región útil del detector y regiones de under/overscan. Utilización de binning durante las observaciones para incrementar la relación señal/ruido y/o reducir el tiempo de lectura.</p>
+</div>
+<div class="section" id="ejemplo-de-reduccion-de-imagenes-ccd">
+<h2><span class="section-number">4.6.5. </span>Ejemplo de reducción de imágenes CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-imagenes-ccd" title="Permalink to this headline">¶</a></h2>
+<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 2, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos), la combinación de imágenes individuales y la calibración astrométrica.</p>
+</div>
+<div class="section" id="ejemplo-de-reduccion-de-espectros-ccd">
+<h2><span class="section-number">4.6.6. </span>Ejemplo de reducción de espectros CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-espectros-ccd" title="Permalink to this headline">¶</a></h2>
+<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 3, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos, calibración en longitud de onda, corrección de iluminación) y la combinación de imágenes individuales.</p>
+</div>
+<div class="section" id="estrategias-para-la-estimacion-de-incertidumbres">
+<h2><span class="section-number">4.6.7. </span>Estrategias para la estimación de incertidumbres<a class="headerlink" href="#estrategias-para-la-estimacion-de-incertidumbres" title="Permalink to this headline">¶</a></h2>
+<p>Propagación analítica frente a la utilización de técnicas de bootstrapping y Monte Carlo.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P1_Introduccion_05.html" title="previous page"><span class="section-number">4.5. </span>Cuaderno de observaciones</a>
+    <a class='right-next' id="next-link" href="P2_Fotometria_CCD_00.html" title="next page"><span class="section-number">5. </span>Práctica 2     Fotometría CCD</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

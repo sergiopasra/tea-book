@@ -1,0 +1,554 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.5. Fotometría de objetos extensos &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.6. Fotometría sintética" href="fotometria_06.html" />
+    <link rel="prev" title="2.4. Fotometría diferencial" href="fotometria_04.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/fotometria_05.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnitud-integrada">
+   2.5.1. magnitud integrada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brillo-superficial">
+   2.5.2. brillo superficial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isofotas">
+   2.5.3. isofotas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfiles-de-brillo">
+   2.5.4. perfiles de brillo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brillo-de-fondo-de-cielo">
+   2.5.5. brillo de fondo de cielo
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fotometria-de-objetos-extensos">
+<h1><span class="section-number">2.5. </span>Fotometría de objetos extensos<a class="headerlink" href="#fotometria-de-objetos-extensos" title="Permalink to this headline">¶</a></h1>
+<p>Las medidas fotométricas de objetos puntuales como las estrellas se realizan sumando la señal registrada en la imagen en una abertura generalmente circular que contenga toda la estrella. Para restar el brillo de fondo de cielo (sky background) y obtener el flujo neto se mide y promedia en aberturas similares en posiciones cercanas a la estrella o en un anillo cercano centrado en la imagen de la estrella.</p>
+<div class="section" id="magnitud-integrada">
+<h2><span class="section-number">2.5.1. </span>magnitud integrada<a class="headerlink" href="#magnitud-integrada" title="Permalink to this headline">¶</a></h2>
+<p>En el caso de objetos extensos como galaxias podemos realizar la misma operación para obtener la magnitud integrada (integrated magnitude). En este caso la abertura tiene que contener la imagen de la galaxia. Para estimar el brillo de fondo de cielo podemos utilizar aberturas más pequeñas y escalar por el área de las mismas.</p>
+<div class="figure align-default" id="foto-extensos-1-fig">
+<a class="reference internal image-reference" href="../_images/foto_28_extensos.png"><img alt="../_images/foto_28_extensos.png" src="../_images/foto_28_extensos.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Medida del flujo total de una galaxia para obtener la magnitud integrada. Se observan aberturas en la imagen donde se ha medido para estimar el brillo de fondo de cielo. Como se aprecia se seleccionan zonas libres de imágenes de otros objetos del campo.</span><a class="headerlink" href="#foto-extensos-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Flujo neto   <span class="math notranslate nohighlight">\(F = (F+S) - S  \)</span></p>
+<p>Magnitud instrumental <span class="math notranslate nohighlight">\(m = -2.5 log F(c/s)\)</span></p>
+</div>
+<div class="section" id="brillo-superficial">
+<h2><span class="section-number">2.5.2. </span>brillo superficial<a class="headerlink" href="#brillo-superficial" title="Permalink to this headline">¶</a></h2>
+<p>El brillo superficial es una medida de la magnitud por unidad de área y se expresa en <span class="math notranslate nohighlight">\(mag/arcsec^2\)</span> (magnitudes por segundo de arco cuadrado). Como la escala de magnitudes es logarítmica:</p>
+<p>Brillo superficial  <span class="math notranslate nohighlight">\(S = -2.5 log F(c/s/A) = m -2.5 log(A)\)</span></p>
+<p>con el área <span class="math notranslate nohighlight">\(A\)</span> expresada en <span class="math notranslate nohighlight">\(arcsec^2\)</span>.</p>
+</div>
+<div class="section" id="isofotas">
+<h2><span class="section-number">2.5.3. </span>isofotas<a class="headerlink" href="#isofotas" title="Permalink to this headline">¶</a></h2>
+<p>Son las líneas que unen los puntos de la imagen con igual brillo superficial. Son curvas de nivel en los plots de contornos.</p>
+<div class="figure align-default" id="foto-extensos-2-fig">
+<a class="reference internal image-reference" href="../_images/foto_29_extensos_2.png"><img alt="../_images/foto_29_extensos_2.png" src="../_images/foto_29_extensos_2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.28 </span><span class="caption-text">Imagen de una galaxia espiral en codificación de falso color con azul en el nivel más bajo y rojo en el más alto.</span><a class="headerlink" href="#foto-extensos-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/foto_30_extensos_3.png"><img alt="../_images/foto_30_extensos_3.png" src="../_images/foto_30_extensos_3.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.29 </span><span class="caption-text">Plot de contornos de la galaxia espiral con niveles desde <span class="math notranslate nohighlight">\(24.5\;mag/arcsec^2\)</span> y pasos de
+<span class="math notranslate nohighlight">\(0.5\;mag/arcsec^2\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="perfiles-de-brillo">
+<h2><span class="section-number">2.5.4. </span>perfiles de brillo<a class="headerlink" href="#perfiles-de-brillo" title="Permalink to this headline">¶</a></h2>
+<p>Se puede obtener la variación del brillo superficial de un objeto extenso con la distancia al centro mediante el ajuste de las isofotas a elipses. Los perfiles de brillo superficial de las galaxias (por ejemplo) promediados acimutalmente sirven para su clasificación morfológica y para determinar alguna de sus propiedaes.</p>
+<div class="figure align-default" id="foto-vitores-perfiles-fig">
+<a class="reference internal image-reference" href="../_images/foto_36_Vitores_perfiles.png"><img alt="../_images/foto_36_Vitores_perfiles.png" src="../_images/foto_36_Vitores_perfiles.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.30 </span><span class="caption-text">Representación gráfica en escala de grises, en contornos (isofotas) y perfil de brillo ajustado a un bulbo y un disco para galaxias de la exploración UCM (UCM survey) de la tesis de Álvaro Vitores.</span><a class="headerlink" href="#foto-vitores-perfiles-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="foto-vitores-perfiles-2-fig">
+<a class="reference internal image-reference" href="../_images/foto_37_Vitores_perfiles_2.png"><img alt="../_images/foto_37_Vitores_perfiles_2.png" src="../_images/foto_37_Vitores_perfiles_2.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.31 </span><span class="caption-text">Representación gráfica en escala de grises, en contornos (isofotas), perfil de brillo ajustado a un bulbo y un disco y variación del ángulo de posición y elipticidad de elipses ajustadas a las isofotas para galaxias de la exploración UCM (UCM survey) de la tesis de Álvaro Vitores.</span><a class="headerlink" href="#foto-vitores-perfiles-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="brillo-de-fondo-de-cielo">
+<h2><span class="section-number">2.5.5. </span>brillo de fondo de cielo<a class="headerlink" href="#brillo-de-fondo-de-cielo" title="Permalink to this headline">¶</a></h2>
+<p>El cielo libre de objetos celestes brilla. En realidad lo que brilla es la atmósfera terrestre que dispersa la luz que le llega. El mayor contribuyente al brillo de cielo es la Luna (espectro solar reflejado por la Luna) en sitios de poca contaminación lumínica. Las noches de observación se llaman oscuras cuando la Luna no está presente y no aumenta el brillo de cielo. Las noches brillantes tienen brillo de cielo mayor por causa de la Luna. Noches grises tendría parte de noche oscura.</p>
+<div class="figure align-default" id="foto-brillo-luna-fig">
+<a class="reference internal image-reference" href="../_images/foto_34_Brillo_Luna.png"><img alt="../_images/foto_34_Brillo_Luna.png" src="../_images/foto_34_Brillo_Luna.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.32 </span><span class="caption-text">Aumento del brillo de cielo con la presencia de la Luna durante las observaciones astronómicas. <a class="reference external" href="http://www.ing.iac.es/Astronomy/observing/conditions/skybr/skybr.html">Benn &amp; Ellison (2007)</a>.</span><a class="headerlink" href="#foto-brillo-luna-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Además tenemos otros contribuyentes como la Luz zodiacal (luz solar difundida por polvo interplanetario) que sólo es posible apreciar en cielos muy oscuros, la radiación estelar difundida por granos de polvo interestelar y las auroras.</p>
+<p>Airglow: Es la luminiscencia nocturna del cielo emitida por átomos y moléculas de la alta atmósfera que son excitados por la radiación solar UV durante el día.</p>
+<ul class="simple">
+<li><p>OI 5577/6300/6363Å  (como en las auroras)</p></li>
+<li><p>NaD 5890/6 Å</p></li>
+<li><p>OH Bandas vibro-rotacionales de Meinel (en el rojo e infrarrojo)</p></li>
+<li><p>O2 8645Å 	O2 bandas de Herzberg</p></li>
+</ul>
+<p>El airglow depende de la actividad solar y es 1000x más brillante de día. Su intensidad varía de forma errática en escalas de tiempo de minutos y en un factor 2 durante la noche (en especial las bandas de OH). La emisión no depende de la latitud terrestre (salvo zonas de auroras) y tiene su máximo en distancias cenitales z≈80° (cerca del horizonte). Se origina en una capa fina a h=100-300 km.</p>
+<div class="figure align-default" id="foto-espectro-cielo-fig">
+<a class="reference internal image-reference" href="../_images/foto_31_espectro_cielo_oscuro.png"><img alt="../_images/foto_31_espectro_cielo_oscuro.png" src="../_images/foto_31_espectro_cielo_oscuro.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.33 </span><span class="caption-text">Espectro del cielo en una noche sin luna en el Observatorio del Roque de los Muchachos. La Palma night-sky brightness, Benn &amp; Ellison 1998, ING Technical Note 115.</span><a class="headerlink" href="#foto-espectro-cielo-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Luminiscencia de la alta atmósfera: Las observaciones desde satélites en órbitas cercanas se ven afectadas por:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Ly_\alpha\)</span> geocoronal (difusión resonante múltiple de la luz solar en la geocorona).</p></li>
+<li><p>Luminiscencia producida por el propio satélite que en su movimiento excita átomos y moléculas (en especial O2).</p></li>
+</ul>
+<div class="figure align-default" id="foto-brillo-contribuyentes-fig">
+<a class="reference internal image-reference" href="../_images/foto_32_brillo_contribuyentes.png"><img alt="../_images/foto_32_brillo_contribuyentes.png" src="../_images/foto_32_brillo_contribuyentes.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.34 </span><span class="caption-text">Contribuyentes al brillo de cielo nocturno. <span class="math notranslate nohighlight">\(S10 = 27.78 mag/arcsec^2\)</span>
+<span class="math notranslate nohighlight">\(220 S10 = 21.9 mag/arcsec^2\)</span>. S10, a unit of measurement of surface brightness used in astronomy and defined as the surface brightness of a star whose visual magnitude is 10 and whose light is smeared over one square degree.</span><a class="headerlink" href="#foto-brillo-contribuyentes-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Por desgracia un contribuyente importante es la contaminación lumínica. Por eso los observatorios se situan en lugares alejados de la actividad humana. El brillo de cielo nocturno es un factor de calidad a la hora de elgir la localización de un observatorio astronómico.</p>
+<div class="figure align-default" id="foto-espectro-brillo-cielo-madrid-fig">
+<a class="reference internal image-reference" href="../_images/foto_33_sand_Madrid.png"><img alt="../_images/foto_33_sand_Madrid.png" src="../_images/foto_33_sand_Madrid.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.35 </span><span class="caption-text">El espectro del cielo nocturno de Madrid presenta las líneas del espectro de las  lámparas del alumbrado público.</span><a class="headerlink" href="#foto-espectro-brillo-cielo-madrid-fig" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>En los estudios de contaminación lumínica se usa el <strong>Brillo de cielo nocturno</strong> (<em>Night Sky Brightness</em>) que contiene la contribución de los objetos celestes en el área muestreada. No se debe confundir con el <strong>Brillo de fondo de cielo</strong> (<em>Night sky background</em>) que se mide en zonas sin contribución de estrellas.</p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Ejemplo de cálculo de Brillo de fondo de cielo</strong>
+Supongamos que se miden 30 c/s/pixel en una imagen CCD  obtenida con un telescopio de distancia focal f=2m y píxeles de 50 micras de lado con un sistema de constante instrumental C=20 en una cierta banda.</p>
+<p><span class="math notranslate nohighlight">\(m = C – 2.5 log F(c/s/pixel)\)</span>   –&gt;  <span class="math notranslate nohighlight">\(m = 20 -  2.5 x log10(30) = 16.31 mag/pixel\)</span></p>
+<p>Escala de placa <span class="math notranslate nohighlight">\(P = 206265 / f(mm) = 206265 / 2000 = 103.13 arcsec/mm = 0.10313 arcsec/\mu m\)</span></p>
+<p>Área de 1 pixel sobre el cielo    <span class="math notranslate nohighlight">\(50 micras \times 0.10313 arcsec/\mu m = 6.19 arcsec\)</span>
+área de cielo en cada pixel                <span class="math notranslate nohighlight">\(6.19 \times 6.19 = 38.3 arcsec^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(m = C – 2.5 log F(c/s/arcsec2) =16.31 + 2.5 log 38.3 = 16.31 + 3.96 = 20.27 mag/arcsec^2\)</span></p>
+</div></blockquote>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fotometria_04.html" title="previous page"><span class="section-number">2.4. </span>Fotometría diferencial</a>
+    <a class='right-next' id="next-link" href="fotometria_06.html" title="next page"><span class="section-number">2.6. </span>Fotometría sintética</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1324 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.1. Example 1: Reading and displaying an image &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.2. Example 2: Master DARK" href="example_02_Master_DARK_v3.html" />
+    <link rel="prev" title="8. TEA Notebooks examples" href="index-notebooks-examples.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/example_01_Read_Display_FITS_v3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/example_01_Read_Display_FITS_v3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-fits-files-and-loading-the-image-data">
+   8.1.1. Opening FITS files and loading the image data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-the-image-data-and-getting-basic-statistics">
+   8.1.2. Viewing the image data and getting basic statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-a-histogram">
+   8.1.3. Plotting a histogram
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differences-in-syntax-between-iraf-and-python">
+   8.1.4. Differences in syntax between IRAF and Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#x-versus-y">
+     8.1.4.1. x versus y
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index-0">
+     8.1.4.2. index 0
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing">
+   8.1.5. Slicing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib-image-origin">
+   8.1.6. Matplotlib image origin
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="example-1-reading-and-displaying-an-image">
+<h1><span class="section-number">8.1. </span>Example 1:   Reading and displaying an image<a class="headerlink" href="#example-1-reading-and-displaying-an-image" title="Permalink to this headline">¶</a></h1>
+<p>Contents:
+How to read and display a FITS file.<br />
+Also in this tutorial: rotating images, histograms, obtaining slices, …</p>
+<pre>
+Máster en Astrofísica UCM  -- Técnicas Experimentales en Astrofísica  
+Jaime Zamorano and Nicolás Cardiel
+
+This notebook has reproduced parts of the STAK project notebooks:
+
+  - https://stak-notebooks.readthedocs.io/en/latest/index.html
+  - https://readthedocs.org/projects/stak-notebooks/downloads/pdf/latest/
+and the astropy tutorials: http://learn.astropy.org/FITS-images.html (by Lia R. Corrales)
+
+Version 2.0 2020/05/06  
+Version 3.0 2021/01/10  almost ready for 2020/21
+</pre><p>Note that the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> package should be installed. In this sense, have a look to the
+astropy installation description: https://docs.astropy.org/en/stable/install.html.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="k">as</span> <span class="nn">ml</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some parameters for nicer graphs</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans-serif&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Verdana&#39;</span><span class="p">]</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">12.</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;large&#39;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;grid.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;grid.linestyle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="opening-fits-files-and-loading-the-image-data">
+<h2><span class="section-number">8.1.1. </span>Opening FITS files and loading the image data<a class="headerlink" href="#opening-fits-files-and-loading-the-image-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;./FITS_files/&#39;</span>
+<span class="n">filename</span>  <span class="o">=</span> <span class="s1">&#39;ucmP_0054.fits&#39;</span>
+<span class="n">M51_file</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">+</span> <span class="n">filename</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we will open the FITS file. You can open the file in various modes, for this example we will open in update mode. The default mode is read only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the FITS file with Astropy</span>
+<span class="c1"># using the default readonly mode</span>
+<span class="n">HDUList_object</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">M51_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we will show the info print out for this HDUList object using the <code class="docutils literal notranslate"><span class="pre">info()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HDUList info call</span>
+<span class="n">HDUList_object</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: ./FITS_files/ucmP_0054.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     208   (1301, 1301)   int16 (rescales to uint16)   
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will extract the primary header into the variable <code class="docutils literal notranslate"><span class="pre">primary_header</span></code>. Note that since the index sequence that identifies a particular extension number starts at zero, the first extension is number 0. The <code class="docutils literal notranslate"><span class="pre">primary_header</span></code> object works as a Python dictionary, i.e., you can access any FITS keyword by its keyname (in this case the use of uppercase or lowercase characters is not relevant).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract primary header</span>
+<span class="n">primary_header</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+
+<span class="c1"># Index header object with keyword name and print value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ucmP_0054.fits
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primary_header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let browse the whole header contents (iterating through the different keywords):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">primary_header</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:8}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">primary_header</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SIMPLE   = True
+BITPIX   = 16
+NAXIS    = 2
+NAXIS1   = 1301
+NAXIS2   = 1301
+COMMENT  =   FITS (Flexible Image Transport System) format is defined in &#39;Astronomy
+  and Astrophysics&#39;, volume 376, page 359; bibcode: 2001A&amp;A...376..359H
+Filtro R-Cousins
+Filtro R-Cousins
+COMMENT  =   FITS (Flexible Image Transport System) format is defined in &#39;Astronomy
+  and Astrophysics&#39;, volume 376, page 359; bibcode: 2001A&amp;A...376..359H
+Filtro R-Cousins
+Filtro R-Cousins
+COMMENT  =   FITS (Flexible Image Transport System) format is defined in &#39;Astronomy
+  and Astrophysics&#39;, volume 376, page 359; bibcode: 2001A&amp;A...376..359H
+Filtro R-Cousins
+Filtro R-Cousins
+BLOCKED  = True
+BZERO    = 32768.0
+BSCALE   = 1.0
+BLANK    = 32768
+DATAMAX  = 0.0
+DATAMIN  = 0.0
+DATAMEAN = 0.0
+INSTRUME = CAFOS 2.2
+TELESCOP = CA-2.2
+OBJECT   = M51
+OBSERVER = Practicas UCM -- grupo3
+ORIGIN   = CAHA
+FILENAME = ucmP_0054.fits
+EXPTIME  = 200.0
+DARKTIME = 0.0
+RA       = 202.691942
+DEC      = 47.11902
+HA       = 12.781517
+AIRMASS  = 1.02911
+DATE     = 2019-04-12T01:12:13
+LST      = 14.364897
+UTC      = 1.203957
+UT_START = 4333.0
+UT_END   = 4590.0
+CTYPE1   = PIXEL
+CTYPE2   = PIXEL
+CRVAL1   = 399.0
+CRVAL2   = 399.0
+CRPIX1   = 1.0
+CRPIX2   = 1.0
+CDELT1   = 1.0
+CDELT2   = 1.0
+PC001001 = 1.0
+PC001002 = 0.0
+PC002001 = 1.0
+PC002002 = 0.0
+EQUINOX  = 2000.0
+RADECSYS = FK5
+MJD-OBS  = 58585.0501
+DATE-OBS = 2019-04-12T01:12:13
+OBSERVAT = CAHA
+IMAGETYP = science
+CAMID    = CCD15
+CCDNAME  = SITE#1d_15
+CCDPSIZ  = 24.0
+CCDORI   = XX
+CCDSPEED = normal
+CCDBINX  = 1
+CCDBINY  = 1
+CCDGAIN  = 20.0
+CCDSENS  = 1.43
+CCDMEAN  = 64.1
+CCDSAT   = 180000.0
+CCDRON   = 7.4
+CCDTEMP  = -106.0
+BIASSEC  = [0,400:0,1700]
+DATASEC  = [400,400:1700,1700]
+CCDSEC   = [400,400:1700,1700]
+ORIGSECX = 2048.0
+ORIGSECY = 2048.0
+CCDCONFN = /home/staff//CCD/ccd_lib//SITe1d_107s.CCD
+CCDLOGFN = cagui-YYMMDD_HH:MM.log
+CAHA DET CCDS = 1
+CAHA DET EXP TYPE = science
+CAHA DET CCD1 NAME = SITE
+CAHA DET CCD1 ID = CCD15
+CAHA DET CCD1 TEMP = -106.0
+CAHA DET CCD1 NX = 2048
+CAHA DET CCD1 NY = 2048
+CAHA DET CCD1 PSZX = 24.0
+CAHA DET CCD1 PSZY = 24.0
+CAHA DET CCD1 RON = 7.4
+CAHA DET CCD1 CF = 1.43
+CAHA DET CCD1 GAIN = 20.0
+CAHA DET CCD1 SATUR = 180000.0
+CAHA DET CCD1 MEAN = 64.1
+CAHA DET CCD1 READ SPEED = normal
+CAHA DET CCD1 READ SHIFT = 0
+CAHA DET CCD1 READ CLOCK = /home/staff//CCD/ccd_lib//SITe1d_107s.CCD
+CAHA DET CCD1 OVSCX = 119
+CAHA DET CCD1 DATAMIN = 0.0
+CAHA DET CCD1 DATAMAX = 0.0
+CAHA DET CCD1 DATAMEAN = 0.0
+CAHA DET CCD1 WINDOWS = 1
+CAHA DET CCD1 WIN1 STRX = 400
+CAHA DET CCD1 WIN1 STRY = 400
+CAHA DET CCD1 WIN1 NX = 1301
+CAHA DET CCD1 WIN1 NY = 1301
+CAHA DET CCD1 WIN1 BINX = 1
+CAHA DET CCD1 WIN1 BINY = 1
+CAHA DET CCD1 OUTPUTS = 1
+CAHA DET DARKTIM = 0.0
+CAHA DET REQTIM = 200.0
+CAHA DET SHUT TYPE = NN
+CAHA DET SHUT ID = NN
+CAHA DET SHUT TMOPEN = 0.0
+CAHA DET SHUT TMCLOSE = 0.0
+CAHA DET LOGFN = cagui-YYMMDD_HH:MM.log
+PA-CASS  = 14.5
+CAHA TEL GEOELEV = 2168.0
+CAHA TEL GEOLAT = 37.224
+CAHA TEL GEOLON = -2.5463
+CAHA TEL DOME.AZ = 145.0
+CAHA TEL DOME.EL_LOW_E = 70.0
+CAHA TEL DOME EL_UPP_E = 93.0
+TELSCALE = 85.4
+CAHA TEL FOCU ID = CASS
+CAHA TEL MIRR S1 COLLAREA = 2.94
+CAHA TEL FOCU F_RATIO = 8.0
+CAHA TEL FOCU LEN = 17.61
+CAHA TEL FOCU SCALE = 0.0826
+CAHA TEL FOCU VALUE = 23.32
+CAHA TEL POS SET RA = 3341.125
+CAHA TEL POS SET DEC = 27.12917
+CAHA TEL POS SET EQUINOX = 2000.0
+CAHA TEL POS AZ_START = 140.0
+CAHA TEL POS EL_START = 76.3
+CAHA TEL POS HA_START = 0.05325632
+CAHA ADA POSANG = 14.5
+INSTRKEY = CA_JUN_99
+INSTRID  = CAFOS 2.2
+INSTRMOD = Polarizer
+INSTRSTA = JUNE 1997
+INSTRANG = 0.0
+INSTRSCL = 0.53
+INSTRSC1 = 0.0
+INSTRSC2 = 0.0
+INSTRPIX = 24.0
+INSTRPX0 = 1048.27
+INSTRPY0 = 1055.75
+INSFOCUS = 1505.0
+INSFZERO = 105.0
+INSAPID  = FREE
+INSAPNAM = 
+INSAPX   = 1048.27
+INSAPY   = 1025.32
+INSAPDX  = 50000.0
+INSAPDY  = 169.0
+INSAPROT = 0
+INSFLID  = FILT- 4
+INSFLNAM = CousinsR
+INSFLFOC = 1400
+INSFLWL  = 641.2
+INSFLDWL = 157.5
+INSGRID  = GRISM-11
+INSGRNAM = FREE
+INSGRROT = 315.47
+INSGRWL0 = 0.0
+INSGRRES = 0
+INSPOFPI = FREE
+INSPOROT = 0
+INSFPZ   = 0
+INSFPWL  = not used
+INSFPDWL = not used
+INSFPORD = not used
+INSCALST = False
+INSCALID = Lamp
+INSCALNM =     /    /
+CAHA INS FOCU VALUE = 1505
+CAHA INS FOCU ZERO = 105
+CAHA INS APERT ID = FREE
+CAHA INS APERT NAME = 
+CAHA INS OAXISX = 1048.27
+CAHA INS OAXISY = 1055.75
+CAHA INS SLIT X = 1048.27
+CAHA INS SLIT Y = 1025.32
+CAHA INS SLIT LEN = 50000
+CAHA INS SLIT WID = 169
+CAHA INS FILT1 ID = FILT- 4
+CAHA INS FILT1 NAME = CousinsR
+CAHA INS FILT1 DFOCUS = 1400.0
+CAHA INS FILT1 WLEN = 641.2
+CAHA INS FILT1 WFWHM = 157.5
+CAHA INS GRIS1 ID = GRISM-11
+CAHA INS GRIS1 NAME = FREE
+CAHA INS GRIS1 ROTANG = 315.47
+CAHA INS GRIS1 WLEN = 0.0
+CAHA INS GRIS1 DISP = 0.0
+CAHA INS OPTI1 STATUS = False
+CAHA INS OPTI1 Z-VALUE = 0
+CAHA INS OPTI1 WLEN = 0.0
+CAHA INS OPTI1 WFWHM = 0.0
+CAHA INS OPTI1 ORDER = 0
+CAHA INS MIRR1 STATUS = False
+CAHA INS MIRR1 ID = Lamp
+CAHA INS SCALE = 0.53
+CAHA INS LAMP1 NAME = HGCD
+CAHA INS LAMP1 STATUS = OFF
+CAHA INS LAMP2 NAME = HE
+CAHA INS LAMP2 STATUS = OFF
+CAHA INS LAMP3 NAME = RB
+CAHA INS LAMP3 STATUS = OFF
+CAHA INS LAMP4 NAME = CONT
+CAHA INS LAMP4 STATUS = OFF
+CAHA DET DARKTIM = 0.0
+CAHA DET CCD1 TEMP = -106.0
+COMMENT  =   FITS (Flexible Image Transport System) format is defined in &#39;Astronomy
+  and Astrophysics&#39;, volume 376, page 359; bibcode: 2001A&amp;A...376..359H
+Filtro R-Cousins
+Filtro R-Cousins
+CAHA TEL POS AZ_END = 138.0
+CAHA TEL POS EL_END = 75.8
+CAHA TEL POS HA_END = 13.8553
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we extract the image data into a variable called <code class="docutils literal notranslate"><span class="pre">image_data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract image data</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[51247 52121 48378 ... 13568 13474 13622]
+ [   13   383   752 ...   686   678   668]
+ [    6   395   747 ...   673   667   673]
+ ...
+ [   26   403   762 ...   668   674   684]
+ [   13   389   769 ...   672   674   670]
+ [   19   397   751 ...  1657  1663  1646]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You data is now stored as a 2-D numpy array.</p>
+<p>Want to know the dimensions of the image? Just look at the shape of the array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+(1301, 1301)
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point, we can just close the FITS file.
+We have stored everything we wanted to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HDUList_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you don’t need to examine the FITS header, you can call <code class="docutils literal notranslate"><span class="pre">fits.getdata</span></code> to bypass the previous steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_data</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">getdata</span><span class="p">(</span><span class="n">M51_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+(1301, 1301)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="viewing-the-image-data-and-getting-basic-statistics">
+<h2><span class="section-number">8.1.2. </span>Viewing the image data and getting basic statistics<a class="headerlink" href="#viewing-the-image-data-and-getting-basic-statistics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">naxis2</span><span class="p">,</span> <span class="n">naxis1</span> <span class="o">=</span> <span class="n">image_data</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;low&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_25_0.png" src="../_images/example_01_Read_Display_FITS_v3_25_0.png" />
+</div>
+</div>
+<p>Let us get some basic statistics about our image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Min:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Max:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stdev:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min: 0
+Max: 65535
+Mean: 2197.5481226821917
+Stdev: 2056.216228065219
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-a-histogram">
+<h2><span class="section-number">8.1.3. </span>Plotting a histogram<a class="headerlink" href="#plotting-a-histogram" title="Permalink to this headline">¶</a></h2>
+<p>To make a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist()</span></code>, we need to cast the data from a 2-D array into a 1-D array. In this case, we are using the <code class="docutils literal notranslate"><span class="pre">ndarray.flatten()</span></code> to return the 1-D numpy array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1301, 1301)
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(1692601,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NBINS</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">histogram</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">NBINS</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pixels&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="c1">#ax.set_title(&#39;Image: &#39; + filename)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Image: ucmP_0054.fits&#39;)
+</pre></div>
+</div>
+<img alt="../_images/example_01_Read_Display_FITS_v3_31_1.png" src="../_images/example_01_Read_Display_FITS_v3_31_1.png" />
+</div>
+</div>
+<p>The histogram shows that most of the pixels values are below 10000.
+Let us plot the histogram with better detail.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that axarray will be an array (with two values, one for each histogram)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">40000</span><span class="p">,</span> <span class="mi">66000</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pixels&#39;</span><span class="p">)</span>
+                     
+    <span class="n">h</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">image_data</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">NBINS</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">M51_file</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Image: ./FITS_files/ucmP_0054.fits&#39;)
+</pre></div>
+</div>
+<img alt="../_images/example_01_Read_Display_FITS_v3_33_1.png" src="../_images/example_01_Read_Display_FITS_v3_33_1.png" />
+</div>
+</div>
+<p>It is evident that there are a few saturated pixels (values over <span class="math notranslate nohighlight">\(2^{16}-1 = 65535\)</span> counts), and also pixels with values above <span class="math notranslate nohighlight">\(50000\)</span> counts that are probably out of the linear regime of the CCD.</p>
+<p>We can display the image with a better looking aspect adding <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> parameters to the <code class="docutils literal notranslate"><span class="pre">imshow()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_36_0.png" src="../_images/example_01_Read_Display_FITS_v3_36_0.png" />
+</div>
+</div>
+<p>If you want to use a logarithmic color scale load the <code class="docutils literal notranslate"><span class="pre">LogNorm</span></code> object from matplotlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LogNorm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s compare the use of <code class="docutils literal notranslate"><span class="pre">LogNorm</span></code> (left image) with the default linear scaling (right image).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">LogNorm</span><span class="p">()</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(using LogNorm scaling)&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(using a linear scaling)&#39;</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">subtitle</span><span class="p">))</span>
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_40_0.png" src="../_images/example_01_Read_Display_FITS_v3_40_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="differences-in-syntax-between-iraf-and-python">
+<h2><span class="section-number">8.1.4. </span>Differences in syntax between IRAF and Python<a class="headerlink" href="#differences-in-syntax-between-iraf-and-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="x-versus-y">
+<h3><span class="section-number">8.1.4.1. </span>x versus y<a class="headerlink" href="#x-versus-y" title="Permalink to this headline">¶</a></h3>
+<p>When working with images (2-dimensional) arrays, IRAF has the index order <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code>.
+In Python’s Numpy package, the order is reversed: <code class="docutils literal notranslate"><span class="pre">[y,</span> <span class="pre">x]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># auxiliary function to display a rectangle and compute mean value within it</span>
+<span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">display_mean</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="s1">&#39;y-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x2</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="s1">&#39;y-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="s1">&#39;y-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="s1">&#39;y-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">display_mean</span><span class="p">:</span>
+        <span class="n">media</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">media</span><span class="p">)),</span> 
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+
+<span class="c1"># make use of the auxiliary image previously defined</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="n">display_mean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="n">display_mean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_44_0.png" src="../_images/example_01_Read_Display_FITS_v3_44_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="index-0">
+<h3><span class="section-number">8.1.4.2. </span>index 0<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h3>
+<p>Note for IRAF users:<br />
+IRAF indexes begin at 1 whereas Python arrays start at zero.
+So to pull out the first element of a 1-dimensional array
+you would use <code class="docutils literal notranslate"><span class="pre">array[0]</span></code>. To pull out the lower left corner
+of a 2-dimensional array you would use <code class="docutils literal notranslate"><span class="pre">array[0,0]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1150</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">800</span>
+<span class="n">companion_galaxy</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">companion_galaxy</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x128782110&gt;
+</pre></div>
+</div>
+<img alt="../_images/example_01_Read_Display_FITS_v3_46_1.png" src="../_images/example_01_Read_Display_FITS_v3_46_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slicing">
+<h2><span class="section-number">8.1.5. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
+<p>Slicing in IRAF and IDL is inclusive for the right side of the slice.
+In Python the right side of the slice is exclusive.
+For example, if you end a slice with the 4th index, <code class="docutils literal notranslate"><span class="pre">array[0:4]</span></code>,
+the fourth index element (actually the 5th element in the array since index begins at 0) will not be included in the slice.</p>
+<p>Let us create and plot a transversal cut along the center of the galaxies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="mi">1200</span><span class="p">,</span><span class="mi">600</span><span class="p">,</span><span class="mi">650</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_49_0.png" src="../_images/example_01_Read_Display_FITS_v3_49_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box_1</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box_1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">cross_x</span> <span class="o">=</span> <span class="n">box_1</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cross_x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">crosss_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">cross_x</span><span class="p">,</span> <span class="n">box_1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 1301)
+(1301,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cross_x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of counts&#39;)
+</pre></div>
+</div>
+<img alt="../_images/example_01_Read_Display_FITS_v3_51_1.png" src="../_images/example_01_Read_Display_FITS_v3_51_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+
+<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="mi">470</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1300</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_52_0.png" src="../_images/example_01_Read_Display_FITS_v3_52_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box_2</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[:,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">box_2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">cross_y</span> <span class="o">=</span> <span class="n">box_2</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cross_y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">corte_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">cross_y</span><span class="p">,</span><span class="n">box_2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1301, 50)
+(1301,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cross_y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of counts&#39;)
+</pre></div>
+</div>
+<img alt="../_images/example_01_Read_Display_FITS_v3_54_1.png" src="../_images/example_01_Read_Display_FITS_v3_54_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="matplotlib-image-origin">
+<h2><span class="section-number">8.1.6. </span>Matplotlib image origin<a class="headerlink" href="#matplotlib-image-origin" title="Permalink to this headline">¶</a></h2>
+<p>The default origin location for matplotlib plots (a common Python plotting library) will be in the upper-left. To change this to the lower left (common for images) you can use the <code class="docutils literal notranslate"><span class="pre">origin=lower</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">imshow</span></code> call as follows: <code class="docutils literal notranslate"><span class="pre">plt.imshow(...,</span> <span class="pre">origin='lower')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="s1">&#39;upper&#39;</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(default origin)&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="s1">&#39;lower&#39;</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(origin set to lower)&#39;</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">,</span> 
+                    <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">subtitle</span><span class="p">))</span>
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_56_0.png" src="../_images/example_01_Read_Display_FITS_v3_56_0.png" />
+</div>
+</div>
+<p>As any 2-d numpy array the images can be rotated to any angle</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">rotate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_data_PA30</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">image_data</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image_data</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(original image)&#39;</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image_data_PA30</span>
+        <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;(image rotated 30 deg.)&#39;</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;new X axis&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;new Y axis&#39;</span><span class="p">)</span>
+        
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">6000</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Image: </span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">subtitle</span><span class="p">))</span>
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/example_01_Read_Display_FITS_v3_59_0.png" src="../_images/example_01_Read_Display_FITS_v3_59_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index-notebooks-examples.html" title="previous page"><span class="section-number">8. </span>TEA Notebooks examples</a>
+    <a class='right-next' id="next-link" href="example_02_Master_DARK_v3.html" title="next page"><span class="section-number">8.2. </span>Example 2: Master DARK</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

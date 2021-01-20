@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.3. Fotometría absoluta &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.4. Fotometría diferencial" href="fotometria_04.html" />
+    <link rel="prev" title="2.2. Instrumentos y métodos" href="fotometria_02.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/fotometria_03.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   2.3.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecuaciones-fundamentales">
+   2.3.2. Ecuaciones fundamentales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observaciones-de-calibracion-para-fotometria-absoluta">
+   2.3.3. Observaciones de calibración para fotometría absoluta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transformacion-al-sistema-estandar">
+   2.3.4. Transformación al sistema estándar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasos-en-la-reduccion-de-las-observaciones">
+   2.3.5. Pasos en la reducción de las observaciones:
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fotometria-absoluta">
+<h1><span class="section-number">2.3. </span>Fotometría absoluta<a class="headerlink" href="#fotometria-absoluta" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduccion">
+<h2><span class="section-number">2.3.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
+<p>Las observaciones de fotometría astronómica necesitan, aparte de las observaciones de los objetos problema que son nuestro objetivo científico, medir los flujos de estrellas estándar (magnitud conocida) para calibrar nuestro sistema. De nuestras magnitudes instrumentales queremos llegar a magnitudes en el sistema estándar de manera que cualquier otro grupo de investigación pueda comparar sus medidas con las nuestras.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>La fotometría de objetos celestes deben presentar en sus resultados 
+magnitudes corregidas del efecto de la atmósfera y referidos al sistema estándar 
+</pre></div>
+</div>
+<p>Recordemos lo fundamental de la fotometría absoluta. La atmósfera terrestre actúa como un filtro absorbiendo parte de la radiación que la atraviesa. La absorción depende de la frecuencia de los fotones. El contribuyente principal de la extinción es la difusión Rayleight. El ozono impide observar por debajo de ~300nm que es el límite abrupto de nuestra atmósfera. Mientras la extinción por dispersión de Rayleight depende de lambda^-4, la extinción por aerosoles (partículas de polvo fino, gotas de agua y contaminación atmosférica que se encuentran más bajas que las moléculas que causan la difusión Rayleigh) depende poco de λ: es más gris.</p>
+<p>La fotometría absoluta es un método observacional que permite determinar la magnitud de los objetos observados. Hay que observar estrellas estándar a lo largo de la noche para determinar el coeficiente de extinción y la constante instrumental.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id3">
+<img alt="../_images/foto_14_absorcion.png" src="../_images/foto_14_absorcion.png" />
+<p class="caption"><span class="caption-number">Fig. 2.9 </span><span class="caption-text">La absorción atmosférica en el visible depende fuertemente de la longitud de onda.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="card-footer docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id4">
+<img alt="../_images/foto_14_absorcion_2.png" src="../_images/foto_14_absorcion_2.png" />
+<p class="caption"><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Curva de extinción media y los diferentes componentes.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id5">
+<img alt="../_images/aa15537-10-fig1.jpg" src="../_images/aa15537-10-fig1.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Modelo de transmisión media de la atmósfera para Cerro Paranal. Patat et al. A&amp;A
+527 (2011) A91 https://doi.org/10.1051/0004-6361/201015537</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="card-footer docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="figure align-default" id="id6">
+<img alt="../_images/aa15537-10-fig3.jpg" src="../_images/aa15537-10-fig3.jpg" />
+<p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Aerosol extinction derived from the observed data and the LBLRTM model. The long-dashed line is a best fit model for kaer(λ), with k0 = 0.014 and α = −1.38. Overplotted are also the Rayleigh (short-dashed), ozone (solid thin curve), and clean tropospheric aerosol (thick solid) Patat et al. A&amp;A 527 (2011) A91 https://doi.org/10.1051/0004-6361/201015537</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="caha-extincion-fig">
+<a class="reference internal image-reference" href="../_images/foto_caha_extincion.png"><img alt="../_images/foto_caha_extincion.png" src="../_images/foto_caha_extincion.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Curva de extinción media y sus diferentes contribuyentes (izda) y
+coeficientes de extinción en Calar Alto y ajuste  de los contribuyentes.
+U. Hopp &amp; M. Fernández en Calar Alto Newsletter nov. 2002.</span><a class="headerlink" href="#caha-extincion-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="ecuaciones-fundamentales">
+<h2><span class="section-number">2.3.2. </span>Ecuaciones fundamentales<a class="headerlink" href="#ecuaciones-fundamentales" title="Permalink to this headline">¶</a></h2>
+<p>En fotometría astronómica usamos el sistema de magnitudes que es una escala logarítmica e inversa. La magnitud observada de un objeto celeste se obtiene a partir del flujo medido con nuestro sistema instrumental. Si tenemos un detector digital que transforma fotones en señal en cuentas (ADUs analog to digital units) la magnitud en una cierta banda se obtiene a partir del flujo medido en cuentas/s</p>
+<div class="math notranslate nohighlight">
+\[
+m_{\lambda}=C_{\lambda} - 2.5 \times log_{10} F_{\lambda}(c/s)
+\]</div>
+<p>donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_{\lambda}\)</span> es la constante instrumental.</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{\lambda}\)</span> es la magnitud observada.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_{\lambda}\)</span> es el flujo neto (corregido de brillo de fondo de cielo) en cuentas por segundo.</p></li>
+</ul>
+<p>La constante instrumental es un parámetro de nuestro sistema que varía con la banda fotométrica ya que depende de la respuesta espectral de los filtros, de la reflectividad de los espejos, del tamaño del telescopio, de la eficiencia cuántica del detector. No se espera que este parámetro varíe durante una campaña de observación pero puede ser diferente cuando vuelves a observar con el mismo instrumental unos meses después si, por ejemplo, se ha degradado el sistema óptico o han aluminizado de nuevo los espejos del telescopios.</p>
+<p>El flujo que medimos en tierra de un objeto celeste es menor que el que mediríamos fuera de la atmósfera ya que ésta absorbe y difunde la radiación que la atraviesa. Esta extinción depende de la transparencia de la atmósfera a cada longitud de onda en un momento dado y en la dirección de observación y del recorrido de la radiación en la atmósfera.</p>
+<div class="figure align-default" id="airmass-fig">
+<a class="reference internal image-reference" href="../_images/foto_15_airmass.png"><img alt="../_images/foto_15_airmass.png" src="../_images/foto_15_airmass.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.14 </span><span class="caption-text">La extinción atmosférica depende de la cantidad de atmósfera atravesada por la radiación.</span><a class="headerlink" href="#airmass-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*}
+F_{\lambda}=F_{\lambda}^o \times 10^{-0.4 \; K_{\lambda} \; sec(z)}\\
+m_{\lambda}=m_{\lambda}^o - K_{\lambda} \; sec(z)
+\end{gather*}\]</div>
+<p>donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_{\lambda}\)</span> es el flujo observado</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_{\lambda}^o\)</span> es el flujo fuera de la atmósfera</p></li>
+<li><p><span class="math notranslate nohighlight">\(K_{\lambda}\)</span> es el coeficiente de extinción y</p></li>
+<li><p>sec(z) la secante de la distancia cenital o masa de aire (airmass).</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{\lambda}\)</span> es la magnitud observada y</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{\lambda}^o\)</span> la magnitud corregida de extinción o magnitud fuera de la atmósfera.</p></li>
+</ul>
+<p>Para realizar observaciones de fotometría absoluta necesitamos que las condiciones de transparencia de la atmósfera sean buenas y constantes a lo largo de una noche. Esas noches especiales se llaman noches fotométricas. Son noches despejadas con valores pequeños de la extinción: transparentes. Durante la noche se observan estrellas estándar (de flujo bien conocido) en un amplio valor de masas de aire, es decir diferentes alturas sobre el horizonte. La menor extinción (menon masa de aire) se consigue cuando se observa el objeto en el cénit: <span class="math notranslate nohighlight">\(sec(z)=1\)</span>).</p>
+<p>Se puede aplicar la técnica de fotometría absoluta a medias noches que de repente se estropean si se han conseguido suficientes observaciones de estrellas estándar pero es peligroso extrapolar. No se recomienda.</p>
+<div class="math notranslate nohighlight">
+\[
+m_{\lambda}=m_{\lambda}^o + K_{\lambda} \; sec(z)
+\; ; \; m_{\lambda}=C_{\lambda} - 2.5 \times log_{10} F_{\lambda}(c/s)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m_{\lambda}^o + 2.5 \times log_{10} F_{\lambda} (c/s) = C_{\lambda} - K_{\lambda} \; sec(z)
+\]</div>
+<p>De la combinación de las ecuaciones obtenemos la ecuación fundamental que liga las observaciones (flujo <span class="math notranslate nohighlight">\(F_{\lambda} (c/s)\)</span>) de las estrellas estándar cuya magnitud fuera de la atmósfera es conocida <span class="math notranslate nohighlight">\(m_{\lambda}^o\)</span> con la constante instrumental <span class="math notranslate nohighlight">\(C_{\lambda}\)</span>, el coeficiente de extinción <span class="math notranslate nohighlight">\(K_{\lambda}\)</span> y la masa de aire <span class="math notranslate nohighlight">\(sec(z)\)</span>.</p>
+<p>Podemos construir la gráfica <span class="math notranslate nohighlight">\(m_{\lambda}^o + 2.5 \times log_{10} F_{\lambda} (c/s)\)</span> versus <span class="math notranslate nohighlight">\(sec(z)\)</span> en la que cada observación de una estrella estándar proporciona un punto. El ajuste de una recta nos proporciona la ordenada en el origen que será <span class="math notranslate nohighlight">\(C_{\lambda}\)</span> y la pendiente <span class="math notranslate nohighlight">\(K_{\lambda}\)</span>. Los puntos seguirán una recta (recta de Bouguer) si el coeficiente de extinción ha permanecido constante a lo largo de la noche que es una condición impuesta a las noches fotométricas. O al revés, cuanto más se separen estas observaciones de una recta peor ha sido la noche.</p>
+<div class="figure align-default" id="ecuacion-fig">
+<a class="reference internal image-reference" href="../_images/foto_16_ecuacion.png"><img alt="../_images/foto_16_ecuacion.png" src="../_images/foto_16_ecuacion.png" style="width: 600px;" /></a>
+</div>
+<p>El coeficiente de extinción varía a lo largo de la noche para noches de baja calidad. La transparencia de la atmósfera no tiene por qué ser la misma en todas las direcciones. Las noches fotométricas deben tener transparencia constante en el tiempo y la dirección.</p>
+<p>La importancia de esta ecuación es que diferentes estrellas observadas en varios momentos y masas de aire contribuyen a determinar las constantes de la calibración. Si sólo deseáramos determinar la magnitud de un objeto fuera de la atmósfera podríamos observarlo durante toda la noche y usando la ecuación <span class="math notranslate nohighlight">\(m_{\lambda}=m_{\lambda}^o + K_{\lambda} \; sec(z)\)</span> extrapolar a <span class="math notranslate nohighlight">\(sec(z)=0\)</span> (fuera de la atmósfera).</p>
+<div class="figure align-default" id="bouguer-1-fig">
+<a class="reference internal image-reference" href="../_images/foto_17_Bouguer_1.png"><img alt="../_images/foto_17_Bouguer_1.png" src="../_images/foto_17_Bouguer_1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Ejemplo de dos rectas de Bouguer ajustadas a observaciones en bandas B y V de Johnson. Nótese la pendiente mayor en la banda B (mayor coeficiente de extinción).</span><a class="headerlink" href="#bouguer-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="bouguer-2-fig">
+<a class="reference internal image-reference" href="../_images/foto_18_Bouguer_2.png"><img alt="../_images/foto_18_Bouguer_2.png" src="../_images/foto_18_Bouguer_2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.16 </span><span class="caption-text">La dispersión de los datos da idea de la calidad de la noche y permite estimar la precisión de la fotometría.</span><a class="headerlink" href="#bouguer-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/foto_19_absoluta_metodo.png"><img alt="../_images/foto_19_absoluta_metodo.png" src="../_images/foto_19_absoluta_metodo.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.17 </span><span class="caption-text">Las observaciones auxiliares de estrellas estándar nos permiten determinar las constantes instrumentales y el coeficiente de exrtinción de esa noche.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/foto_20_absoluta_calibracion.png"><img alt="../_images/foto_20_absoluta_calibracion.png" src="../_images/foto_20_absoluta_calibracion.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.18 </span><span class="caption-text">Con el flujo en c/s de nuestro objeto de interés podemos determinar la magnitud instrumental y luego corregirla del efecto de la atmósfera gracias a que hemos determinado previamente <span class="math notranslate nohighlight">\(C_\lambda\)</span> y <span class="math notranslate nohighlight">\(K_\lambda\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="observaciones-de-calibracion-para-fotometria-absoluta">
+<h2><span class="section-number">2.3.3. </span>Observaciones de calibración para fotometría absoluta<a class="headerlink" href="#observaciones-de-calibracion-para-fotometria-absoluta" title="Permalink to this headline">¶</a></h2>
+<p>Se deben seleccionar estrellas estándar de l sistema fotométrico empleado y observarlas en diferentes momentos a lo largo de la noche. Normalmente se haven pausas en las observaciones de los objetos problema para hacer series de observaciiones de estrellas estándar, dos o tres cada noche. Esto permite disponer de medidas en diferentes horas para comprobar la estabilidad de la noche. Se eligen los momentos que no interfieran con nuestro proyecto científico y seleccionamos estrellas para conseguir muestrear a diferentes alturas sobre el horizonte para aumentar el rango de masas de aire.<br />
+Durante la observación se puede comprobar si esta estabilidad en cuanto a la transparencia atmosférica se mantiene con ayuda de los instrumentos dedicados a esta monitorización que tiene cada observatorio. Por ejemplo <a class="reference external" href="http://www.caha.es/CAVEX/cavex.php">CAHA extinction monitor</a> es una cámara de 55 grados de campo de visión que observa en dirección norte continuamente para medir el flujo en banda Johnson V de unas 15 o 20 estrellas brillantes y determinar la extinción que puede ser consultada en tiempo real.</p>
+<p>Para seleccionar las estrellas se puede recabar la información de artículos y páginas web. Por ejemplo Landolt &amp; Uomoto de 2007 The Astronomical Journal, Volume 133, Issue 3, pp. 768-790 <a class="reference external" href="https://iopscience.iop.org/article/10.1086/510485">Optical Multicolor Photometry of Spectrophotometric Standard Stars</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.ing.iac.es/~astrosw/standards.html">ING standards</a></p></li>
+<li><p><a class="reference external" href="https://www.eso.org/sci/observing/tools/standards/spectra.html">ESO Optical and UV Spectrophotometric Standard Stars</a></p></li>
+<li><p><a class="reference external" href="http://www.caha.es/pedraz/SSS/sss.html">CAHA Standard Stars and On-line Surveys </a></p></li>
+</ul>
+<p>Para elegir los mejores momentos de observación de las estrellas estándar se usan las aplicaciones que muestran la posición de las estrellas a lo largo de la noche como</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://catserver.ing.iac.es/staralt/index.php">ING STARALT</a></p></li>
+<li><p><a class="reference external" href="http://www.caha.es/pedraz/ves.html">CAHA VES</a></p></li>
+</ul>
+<div class="figure align-default" id="visibility-fig">
+<a class="reference internal image-reference" href="../_images/foto_38_standard_visibility.png"><img alt="../_images/foto_38_standard_visibility.png" src="../_images/foto_38_standard_visibility.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Gráfico con las alturas y masas de aire de estrellas estándar que pueden ser observadas una noche particular.</span><a class="headerlink" href="#visibility-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>En el gráfico realizado con STARALT de la figura se muestra cómo las estrellas de la lista culminan a diferentes horas de la noche de observación de acuerdo a su ascensión recta. El eje Y muestra alturas (izda.) y masas de aire (dcha.) para cada estrella. De todas las estrellas de la lista original se han seleccionado tres (marcadas en rojo) que se observarán en los momentos marcados en magenta. Este es un ejemplo simplificado ya que normalmente se observan más estrellas.</p>
+</div>
+<div class="section" id="transformacion-al-sistema-estandar">
+<h2><span class="section-number">2.3.4. </span>Transformación al sistema estándar<a class="headerlink" href="#transformacion-al-sistema-estandar" title="Permalink to this headline">¶</a></h2>
+<p>Los sistemas fotométricos se definen con unas bandas fotométricas y un conjunto de estrellas estándar. Cuando se pretende hacer fotometría refereida a un cierto sistema se busca una instrumentación que proporcione bandas similares. Por mucho cuidado que se tenga cada banda depende de los filtros empleados y de la respuesta espectral del CCD y seguramente difiere de lo empleado a la hora de difinir el sistema fotométrico. Dicho de otro modo la banda Johnson V que estamos usando no es exactamente la banda V que definió Johnson: existen pequeñas diferencias en la banda de paso.</p>
+<p>Cuando hacemos fotometría absoluta observamos estrellas cuya magnitud en las bandas del sistema fotométrico son conocidas. Son nuestras fuentes calibradoras. Eso permite determinar el punto cero (zero point) de nuestro sistema (<span class="math notranslate nohighlight">\(C_\lambda\)</span>, constante instrumental) que nos permite pasar de flujos medidos a magnitudes en esa banda. Ocurre con frecuencia que la calibración no es muy buena y muestra dispersión incluso en noches fotométricas y que por lo tanto no es achacable a la variabilidad de la transmisión de la atmósfera.</p>
+<div class="figure align-default" id="band-differences-fig">
+<a class="reference internal image-reference" href="../_images/foto_21_comp_v_pass.png"><img alt="../_images/foto_21_comp_v_pass.png" src="../_images/foto_21_comp_v_pass.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.20 </span><span class="caption-text">REPETIR
+The transmission curves of the standard Bessell V passband (which is a model for manufacturers of filters), and the “Harris V” filter at the WIYN Telescope at Kitt Peak National Observatory
+From: http://spiff.rit.edu/classes/phys445/lectures/color_terms/color_terms.html</span><a class="headerlink" href="#band-differences-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="hot-cool-fig">
+<a class="reference internal image-reference" href="../_images/foto_22_hot-cool.png"><img alt="../_images/foto_22_hot-cool.png" src="../_images/foto_22_hot-cool.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.21 </span><span class="caption-text">REPETIR
+Para estrellas de diferentes tipos espectrales estas diferencias de paso de banda son importantes.
+From: http://spiff.rit.edu/classes/phys445/lectures/color_terms/color_terms.html</span><a class="headerlink" href="#hot-cool-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>El número de total de fotones <span class="math notranslate nohighlight">\(N_\gamma\)</span> (<span class="math notranslate nohighlight">\(fotones/s/cm^2\)</span>) integrado en la banda fotométrica depende del espectro del objeto modulado por la respuesta espectral del sistema <span class="math notranslate nohighlight">\(T(\lambda)\)</span> (véase fotometría sintética). Al integrar los espectros de estrellas de diferentes tipos espectrales modulados por esas respuestas ligeramente diferentes producirán deasjustes que tenemos que corregir.</p>
+<p>En el cuaderno de Jupyter ‘Fotometria 1’ se muestra un ejemplo de fotometría absoluta con observaciones en el JKT del observatorio del Roque de los Muchachos realizadas en Julio de 1999 para la tesis doctoral de Pablo Pérez González. Mostramos aquí sólo algunas gráficas.</p>
+<div class="figure align-default" id="color-term-1-fig">
+<a class="reference internal image-reference" href="../_images/foto_23_JKT_color-term.png"><img alt="../_images/foto_23_JKT_color-term.png" src="../_images/foto_23_JKT_color-term.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Gráfica para las observaciones de estrellas estándar de la noche 7 de la campaña de obsercvación. Se ha codificado el color de cada observación de acuerdo al índice de color de la estrella estándar.</span><a class="headerlink" href="#color-term-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Se observa que las estrellas más rojas (índice de color (B-V) más grande) se separan hacia arriba del ajuste sencillo de la recta de Bouguer y viceversa. Pablo Pérez Gonzalez ajustó un término de color en la forma</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+m_B + 2.5 log(F_B)  =  C - K_B X + K_{B-R} (B-R) 
+\end{equation*}\]</div>
+<p>resultando</p>
+<div class="figure align-default" id="color-term-2-fig">
+<a class="reference internal image-reference" href="../_images/foto_24_JKT_color-term-2.png"><img alt="../_images/foto_24_JKT_color-term-2.png" src="../_images/foto_24_JKT_color-term-2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.23 </span><span class="caption-text">La dispersión original de los datos observacionales (izda.) ha quedado reducida con la corrección de color (dcha.).</span><a class="headerlink" href="#color-term-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>|Night   |  <span class="math notranslate nohighlight">\(C_B\)</span> | <span class="math notranslate nohighlight">\(K_B\)</span> | <span class="math notranslate nohighlight">\(K_{B-R}\)</span> |</p>
+<p>|Night 1 | 23.096 | 0.506 | 0.045     |</p>
+<p>|Night 2 | 22.770 | 0.204 | 0.056     |</p>
+<p>|Night 6 | 22.754 | 0.197 | 0.061     |</p>
+<p>|Night 7 | 22.872 | 0.289 | 0.061     |</p>
+<p>El resultado final del ajuste de rectas de Bouguer a cada noche muestra que la primera noche fue de peor transparencia. Las constantes instrumentales determinadas son un poco diferentes de noche a noche, lo que no es esperable. Una mejor determinación sería obligar en los ajustes a que la constante instrumental sea la misma a lo largo de toda la campaña.</p>
+<p>Para aplicar este término de color a las observaciones de los objetos problema se necesita observar éstos en al menos las dos bandas utilizadas y, por supuesto, conocer las magnitudes de las estrellas estándar en estas bandas.</p>
+</div>
+<div class="section" id="pasos-en-la-reduccion-de-las-observaciones">
+<h2><span class="section-number">2.3.5. </span>Pasos en la reducción de las observaciones:<a class="headerlink" href="#pasos-en-la-reduccion-de-las-observaciones" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Medir los flujos observados de cada estrella estándar
+    - Integrar señal en un círculo que contenga la estrella y otro(s) cercanos para obtener el valor del fondo de cielo
+    - Restar para obtener flujo neto de la estrella --&gt; F(cuentas)
+    - Dividir por el tiempo de exposición --&gt;  F (cuentas/s)
+2. Preparar una tabla con los resultados de cada observación
+    - Anotar la masa de aire de cada observación X = sec(z)
+    - Convertir flujos a magnitudes instrumentales
+    $m = C -2.5 log F(c/s)$        (C constante arbitraria)
+
+3. Obtener la constante instrumental y el coeficiente de extinción
+   - Representar 
+   - Ajustar recta de Bouguer   
+</pre></div>
+</div>
+<p>Una práctica completa de fotometría absoluta puede encontrase en <a class="reference external" href="http://skinakas2.physics.uoc.gr/en/outreach/projects/CCD_Photometry_project2/P2_CCD_PHOTOMETRY.pdf">CCD photometry project</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fotometria_02.html" title="previous page"><span class="section-number">2.2. </span>Instrumentos y métodos</a>
+    <a class='right-next' id="next-link" href="fotometria_04.html" title="next page"><span class="section-number">2.4. </span>Fotometría diferencial</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

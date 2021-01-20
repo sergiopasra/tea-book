@@ -1,0 +1,2023 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.4. ccdproc-04: BIAS correction &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.5. ccdproc-05: Master FLAT" href="ccdproc_05_Master_FLAT.html" />
+    <link rel="prev" title="7.3. ccdproc-03: Master BIAS" href="ccdproc_03_Master_BIAS.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../docs/P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/ccdproc_04_Substract_BIAS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/ccdproc_04_Substract_BIAS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   7.4.1. Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-images-in-a-directory">
+     7.4.1.1. Working with images in a directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics-and-display">
+     7.4.1.2. Statistics and display
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-the-master-bias-file">
+       7.4.1.2.1. Reading the master  BIAS file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-some-example-the-files">
+       7.4.1.2.2. Reading some example the files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analysing-the-images-data">
+       7.4.1.2.3. Analysing the images data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#display-of-the-example-files">
+       7.4.1.2.4. Display of the example files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manually-substracting-the-master-bias">
+     7.4.1.3. Manually substracting the master BIAS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-ccdproc-substract-bias">
+     7.4.1.4. Using ccdproc_substract_bias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correcting-all-files-from-bias">
+   7.4.2. Correcting all files from BIAS
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ccdproc-04-bias-correction">
+<h1><span class="section-number">7.4. </span>ccdproc-04:   BIAS correction<a class="headerlink" href="#ccdproc-04-bias-correction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">7.4.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Manually substract BIAS</p></li>
+<li><p>Analysing the results</p></li>
+<li><p>Using master BIAS to correct from BIAS all the images</p></li>
+</ol>
+<pre>
+Máster en Astrofísica UCM  -- Técnicas Experimentales en Astrofísica  
+Jaime Zamorano and Nicolás Cardiel
+
+This notebook has reproduced parts of the the astropy ccdproc docs: 
+https://ccdproc.readthedocs.io/en/latest/reduction_toolbox.html#subtract-bias-and-dark
+
+Version 1.0 2021/01/15  
+</pre><p>Note that the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> package should be installed. In this sense, have a look to the
+astropy installation description: https://docs.astropy.org/en/stable/install.html.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">CCDData</span>
+
+<span class="kn">import</span> <span class="nn">ccdproc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;./tea.mplstyle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-images-in-a-directory">
+<h3><span class="section-number">7.4.1.1. </span>Working with images in a directory<a class="headerlink" href="#working-with-images-in-a-directory" title="Permalink to this headline">¶</a></h3>
+<p>We will use the files of the first night of observations at NOT (Nordic Optical Telescope) 2008 that can be downloaded from   ftp://astrax.fis.ucm.es/pub/users/jaz/NOT_2008_04_12-14/N1/
+or
+http://guaix.fis.ucm.es/~jaz/master_TEA/observaciones_NOT_2008/N1/</p>
+<p><code class="docutils literal notranslate"><span class="pre">directory</span></code> should point to the working directory.</p>
+<p>At this step we have already created a combination of BIAS frames with the result of a master DARK that we called zero_N1.fits. This file should be in our working directory that also contents the trimmed images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dirname</span> <span class="o">=</span> <span class="s1">&#39;N1&#39;</span>   <span class="c1"># change the path to your working directory</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a list containing all the FITS files in that directory.<br />
+We asume that the images were already trimmed and their names begin with ‘t_’ (see previous notebooks ‘ccdproc_02’ and ‘ccdproc_03’)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">directory</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;t_*.fits&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>    <span class="c1"># printing only from 10 to 20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[PosixPath(&#39;N1/t_ALrd120011.fits&#39;), PosixPath(&#39;N1/t_ALrd120012.fits&#39;), PosixPath(&#39;N1/t_ALrd120013.fits&#39;), PosixPath(&#39;N1/t_ALrd120014.fits&#39;), PosixPath(&#39;N1/t_ALrd120015.fits&#39;), PosixPath(&#39;N1/t_ALrd120016.fits&#39;), PosixPath(&#39;N1/t_ALrd120017.fits&#39;), PosixPath(&#39;N1/t_ALrd120018.fits&#39;), PosixPath(&#39;N1/t_ALrd120019.fits&#39;), PosixPath(&#39;N1/t_ALrd120020.fits&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="statistics-and-display">
+<h3><span class="section-number">7.4.1.2. </span>Statistics and display<a class="headerlink" href="#statistics-and-display" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reading-the-master-bias-file">
+<h4><span class="section-number">7.4.1.2.1. </span>Reading the master  BIAS file<a class="headerlink" href="#reading-the-master-bias-file" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;zero_N1.fits&#39;</span>
+<span class="n">master_bias</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reading-some-example-the-files">
+<h4><span class="section-number">7.4.1.2.2. </span>Reading some example the files<a class="headerlink" href="#reading-some-example-the-files" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">science</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">102</span><span class="p">])</span>    <span class="c1"># file with a science observation</span>
+<span class="n">onebias</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filelist</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>      <span class="c1"># file with a single BIAS frame</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analysing-the-images-data">
+<h4><span class="section-number">7.4.1.2.3. </span>Analysing the images data<a class="headerlink" href="#analysing-the-images-data" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Filename          Object            exp  Mean std min  max&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">science</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">science</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span> <span class="n">science</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">],</span> 
+          <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">science</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">science</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">science</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">science</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onebias</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">onebias</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span> <span class="n">onebias</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">],</span> 
+          <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">onebias</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">onebias</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">onebias</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">onebias</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename          Object            exp  Mean std min  max
+t_ALrd120104.fits GC4496A R 3x300s 300.0 1791 632 342 65535
+t_ALrd120010.fits Bias afternoon 0.0 358 6 319 7516
+</pre></div>
+</div>
+</div>
+</div>
+<p>The science image of this example is one of the three 300s exposure observations of NGC4496A. The maximum value is 65535 which means that there is saturation in some pixels of the image. This is the highest number that can be represented by an unsigned 16-bit binary number (2^16 -1)</p>
+</div>
+<div class="section" id="display-of-the-example-files">
+<h4><span class="section-number">7.4.1.2.4. </span>Display of the example files<a class="headerlink" href="#display-of-the-example-files" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># auxiliary function to display a rectangle and compute mean value within it</span>
+<span class="k">def</span> <span class="nf">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">image_data</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x2</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">),</span> <span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">media</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">std</span>   <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="n">y1</span><span class="p">:</span><span class="n">y2</span><span class="p">,</span><span class="n">x1</span><span class="p">:</span><span class="n">x2</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y1</span><span class="o">+</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">media</span><span class="p">)),</span> 
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>        
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">x1</span><span class="o">+</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y2</span><span class="o">-</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">std</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> 
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">media</span><span class="p">,</span> <span class="n">std</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax0</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">onebias</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">340</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">380</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;BIAS   &#39;</span><span class="o">+</span><span class="n">onebias</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax0</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span> <span class="c1">#, label=&#39;Number of counts&#39;)</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax0</span><span class="p">,</span> <span class="n">onebias</span><span class="o">.</span><span class="n">data</span> <span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">science</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">science</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span> <span class="c1">#, label=&#39;Number of counts&#39;)</span>
+<span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">science</span><span class="o">.</span><span class="n">data</span> <span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1774.0871333333334, 47.679584345270655)
+</pre></div>
+</div>
+<img alt="../_images/ccdproc_04_Substract_BIAS_20_1.png" src="../_images/ccdproc_04_Substract_BIAS_20_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="manually-substracting-the-master-bias">
+<h3><span class="section-number">7.4.1.3. </span>Manually substracting the master BIAS<a class="headerlink" href="#manually-substracting-the-master-bias" title="Permalink to this headline">¶</a></h3>
+<p>Although we will use <code class="docutils literal notranslate"><span class="pre">ccdproc.subtract_bias</span></code> let’s substract the master BIAS from both images just to show that the procedure is a simple substraction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onebias_minus_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">onebias</span><span class="p">,</span> <span class="n">master_bias</span><span class="p">)</span>
+<span class="n">science_minus_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">science</span><span class="p">,</span> <span class="n">master_bias</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">onebias_minus_bias</span><span class="p">,</span><span class="n">science_minus_bias</span><span class="p">]</span>
+<span class="n">cuts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">8000</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="n">cuts</span><span class="p">[</span><span class="mi">0</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="n">cuts</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="s1">&#39;using numpy array substract&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span> <span class="c1">#, label=&#39;Number of counts&#39;)</span>
+    <span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ccdproc_04_Substract_BIAS_24_0.png" src="../_images/ccdproc_04_Substract_BIAS_24_0.png" />
+</div>
+</div>
+<p>As expected, the BIAS substracted BIAS has signal around 0 and the standard deviation does not change. For the science data, the result is a frame with lower signal (around 358 counts).</p>
+</div>
+<div class="section" id="using-ccdproc-substract-bias">
+<h3><span class="section-number">7.4.1.4. </span>Using ccdproc_substract_bias<a class="headerlink" href="#using-ccdproc-substract-bias" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bias_subtracted_onebias</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">subtract_bias</span><span class="p">(</span><span class="n">onebias</span><span class="p">,</span> <span class="n">master_bias</span><span class="p">)</span>
+<span class="n">bias_subtracted_science</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">subtract_bias</span><span class="p">(</span><span class="n">science</span><span class="p">,</span> <span class="n">master_bias</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">bias_subtracted_onebias</span><span class="p">,</span><span class="n">bias_subtracted_science</span><span class="p">]</span>
+<span class="n">cuts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">8000</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axarr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="n">cuts</span><span class="p">[</span><span class="mi">0</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="n">cuts</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; - BIAS&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="s1">&#39;using ccdproc.subtract_bias&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span> <span class="c1">#, label=&#39;Number of counts&#39;)</span>
+    <span class="n">draw_rectangle</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ccdproc_04_Substract_BIAS_28_0.png" src="../_images/ccdproc_04_Substract_BIAS_28_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="correcting-all-files-from-bias">
+<h2><span class="section-number">7.4.2. </span>Correcting all files from BIAS<a class="headerlink" href="#correcting-all-files-from-bias" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filelist</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">CCDData</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1">#, unit=&quot;adu&quot;)</span>
+    <span class="n">z_image</span> <span class="o">=</span> <span class="n">ccdproc</span><span class="o">.</span><span class="n">subtract_bias</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">master_bias</span><span class="p">)</span>
+    <span class="n">name_of_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;z</span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;FILENAME&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">z_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name_of_file</span>
+    <span class="n">nowtime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+    <span class="n">z_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nowtime</span><span class="si">}</span><span class="s1"> astropy ccdproc substract_bias&#39;</span>
+    <span class="n">z_image</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;HISTORY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;using NOT2008/N1/zero_N1.fits master BIAS&#39;</span> 
+    <span class="c1">#print(f&#39;writting {name_of_file} in {directory}&#39;)</span>
+    <span class="n">z_image</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">directory</span> <span class="o">/</span> <span class="n">name_of_file</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120001.fits
+N1/t_ALrd120002.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120003.fits
+N1/t_ALrd120004.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120005.fits
+N1/t_ALrd120006.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120007.fits
+N1/t_ALrd120008.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120009.fits
+N1/t_ALrd120010.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120011.fits
+N1/t_ALrd120012.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120013.fits
+N1/t_ALrd120014.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120015.fits
+N1/t_ALrd120016.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120017.fits
+N1/t_ALrd120018.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120019.fits
+N1/t_ALrd120020.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120021.fits
+N1/t_ALrd120022.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120023.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120024.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120025.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120026.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120027.fits
+N1/t_ALrd120028.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120029.fits
+N1/t_ALrd120030.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120031.fits
+N1/t_ALrd120032.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120033.fits
+N1/t_ALrd120034.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120035.fits
+N1/t_ALrd120036.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120037.fits
+N1/t_ALrd120038.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120039.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120040.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120041.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120042.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120043.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120044.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120045.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120046.fits
+N1/t_ALrd120047.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120048.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120049.fits
+N1/t_ALrd120050.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120051.fits
+N1/t_ALrd120052.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120053.fits
+N1/t_ALrd120054.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120055.fits
+N1/t_ALrd120056.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120057.fits
+N1/t_ALrd120058.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120059.fits
+N1/t_ALrd120060.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120061.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120062.fits
+N1/t_ALrd120064.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120065.fits
+N1/t_ALrd120066.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120067.fits
+N1/t_ALrd120068.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120069.fits
+N1/t_ALrd120070.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120071.fits
+N1/t_ALrd120072.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120073.fits
+N1/t_ALrd120074.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120075.fits
+N1/t_ALrd120076.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120077.fits
+N1/t_ALrd120078.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120079.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120080.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120081.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120082.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120083.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120084.fits
+N1/t_ALrd120085.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120086.fits
+N1/t_ALrd120087.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120088.fits
+N1/t_ALrd120089.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120090.fits
+N1/t_ALrd120091.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120092.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120093.fits
+N1/t_ALrd120094.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120095.fits
+N1/t_ALrd120096.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120097.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120098.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120099.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120100.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120101.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120102.fits
+N1/t_ALrd120103.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120104.fits
+N1/t_ALrd120105.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120106.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120107.fits
+N1/t_ALrd120108.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120109.fits
+N1/t_ALrd120110.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120111.fits
+N1/t_ALrd120112.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120113.fits
+N1/t_ALrd120114.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120115.fits
+N1/t_ALrd120116.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120117.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120118.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120119.fits
+N1/t_ALrd120120.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120121.fits
+N1/t_ALrd120122.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120123.fits
+N1/t_ALrd120124.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120125.fits
+N1/t_ALrd120126.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120127.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120128.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120129.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120130.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120131.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120132.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120133.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120134.fits
+N1/t_ALrd120135.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120136.fits
+N1/t_ALrd120137.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120138.fits
+N1/t_ALrd120139.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120140.fits
+N1/t_ALrd120141.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120142.fits
+N1/t_ALrd120143.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120144.fits
+N1/t_ALrd120145.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N1/t_ALrd120146.fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: RADECSYS= &#39;FK5 &#39; 
+the RADECSYS keyword is deprecated, use RADESYSa. [astropy.wcs.wcs]
+WARNING: FITSFixedWarning: &#39;obsfix&#39; made the change &#39;Set OBSGEO-L to   -17.885083 from OBSGEO-[XYZ].
+Set OBSGEO-B to    28.757278 from OBSGEO-[XYZ].
+Set OBSGEO-H to     2378.994 from OBSGEO-[XYZ]&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ccdproc_03_Master_BIAS.html" title="previous page"><span class="section-number">7.3. </span>ccdproc-03:   Master BIAS</a>
+    <a class='right-next' id="next-link" href="ccdproc_05_Master_FLAT.html" title="next page"><span class="section-number">7.5. </span>ccdproc-05:   Master FLAT</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

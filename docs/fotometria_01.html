@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1. Introducción a la Fotometría &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Instrumentos y métodos" href="fotometria_02.html" />
+    <link rel="prev" title="2. Fotometría" href="fotometria.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/fotometria_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-astronomica">
+   2.1.1. Fotometría astronómica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-fotometricos">
+   2.1.2. Sistemas fotométricos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-vega-ab-y-st">
+   2.1.3. Sistemas Vega, AB y ST
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduccion-a-la-fotometria">
+<h1><span class="section-number">2.1. </span>Introducción a la Fotometría<a class="headerlink" href="#introduccion-a-la-fotometria" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fotometria-astronomica">
+<h2><span class="section-number">2.1.1. </span>Fotometría astronómica<a class="headerlink" href="#fotometria-astronomica" title="Permalink to this headline">¶</a></h2>
+<p>La fotometría astronómica es una medida directa del flujo de energía recibido de los objetos celestes. Las medidas se realizan en bandas fotométricas que seleccionan el intervalo espectral. Es una técnica menos exigente que la espectroscopía en cuanto a tiempo de exposición porque se integra el flujo en un intervalo espectral. Las bandas fotométricas están caracterizadas por la combinación de la transmisión de los filtros y la respuesta espectral de los detectores (y por todos los elementos ópticos en el telescopio).</p>
+<p>Con la fotometría astronómica realizada mediante detectores de imagen se pueden obtener las magnitudes de todos los objetos del campo registrados de manera simultánea. Esto es muy útil si observaos un cúmulo de estrellas o un campo cosmológico lleno de galaxias. La combinación de observaciones en diferentes bandas fotomçetricas nos ayuda a determinar las propiedades de estos objetos celestes. Con los datos de magnitudes y colores podemos, por ejemplo, clasificar las estrellas usando un diagrama color-color. El análisis de las de curvas de luz (variación temporal de su magnitud) informa sobre la naturaleza de las estrellas variables y sobre parámetros de las binarias. La fotomería se emplea también para determinar distancias y tamaños.</p>
+<div class="figure align-default" id="spectra-color-fig">
+<a class="reference internal image-reference" href="../_images/foto_00_spectra-color.png"><img alt="../_images/foto_00_spectra-color.png" src="../_images/foto_00_spectra-color.png" style="height: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">(Izquierda) Bandas U, B, y V de Johnson (abajo) junto a espectros de estrellas de fiferentes tipos espectrales. (Derecha) Las estrellas de diferentes tipos espectrales aparecen en diferentes lugares del diagrama color-color  (U-B) versus (B-V).</span><a class="headerlink" href="#spectra-color-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Como ejemplo de cómo se buscan y encuentran objetos a alto redshift usando técnicas fotométricas se muestra el trabajo de Esther Hu y colaboradores (<a class="reference external" href="https://iopscience.iop.org/article/10.1086/312205">“An Extremely Luminous Galaxy at z = 5.74” Esther M. Hu, Richard G. McMahon, &amp; Lennox L. Cowie 1999, ApJ Letters, 522, L9)</a></p>
+<div class="figure align-default" id="images-hu-fig">
+<a class="reference internal image-reference" href="../_images/foto_05_Hu_images.png"><img alt="../_images/foto_05_Hu_images.png" src="../_images/foto_05_Hu_images.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Keck image of the field around a luminous galaxy at redshift 5.74 in the Constellation of Aquarius. Deep exposures at far red and infrared wavelengths were combined to make this picture. An image taken in a narrowband filter which captures light from the redshifted 1216 Å Hydrogen Lyman alpha line excited by star formation is responsible for the green halo around the faint, distant galaxy at the center, and shows that substantial star formation is taking place. (Derecha) Imágenes individuales en diferentes bandas fotométricas incluyendo la banda estrecha en 8185 Å (anchura 115 Å).</span><a class="headerlink" href="#images-hu-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="sed-hu-fig">
+<a class="reference internal image-reference" href="../_images/foto_04_Hu_SED.png"><img alt="../_images/foto_04_Hu_SED.png" src="../_images/foto_04_Hu_SED.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Distribución espectral de energía (SED) del candidato a galaxia a z=5.74 mostrando un exceso de emisión en el filtro estrecho sintonizado a Ly alpha a ese desplazamiento al rojo.</span><a class="headerlink" href="#sed-hu-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="spectrum-hu-fig">
+<a class="reference internal image-reference" href="../_images/foto_06_Hu_spectrum.png"><img alt="../_images/foto_06_Hu_spectrum.png" src="../_images/foto_06_Hu_spectrum.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Una vez tomado el espectro de la candidata (‘folow-up observations’) se comprueba que efectivamente tiene Ly alpha en emisión al z esperado. 1216 x (1+z) = 1216 x 6.8 = 8269 Å</span><a class="headerlink" href="#spectrum-hu-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference external" href="http://www.ifa.hawaii.edu/faculty/hu/redshift_5.7.html">Más información</a></p>
+</div>
+<div class="section" id="sistemas-fotometricos">
+<h2><span class="section-number">2.1.2. </span>Sistemas fotométricos<a class="headerlink" href="#sistemas-fotometricos" title="Permalink to this headline">¶</a></h2>
+<p>Una información completa sobre los sistemas fotométricos se puede encontrar en la revisión Bessel 2005ARA&amp;A..43..293B. El enlace al documento en <a class="reference external" href="http://www.mso.anu.edu.au/~bessell/araapaper.pdf">Standard Photometric Systems by Michael S Bessel </a></p>
+<p>Los sistemas fotométricos surgen de la necesidad de estudiar diferentes tipos de objetos celestes. Se caracterizan por un conjunto de bandas fotométricas. Las bandas fotométricas están definidas por la transmisión del filtro y la respuesta espectral de los detectores.</p>
+<p>Tal vez el más conocido es el sistema de Johnson-Cousins UBVRI que nos sirve como ejemplo de fotometría de banda ancha. Este sistema usa en su origen fotomultiplicadores que permite mediante diferentes combinaciones de filtros definir las bandas espectrales mencionadas. Se aprovechó la mejor tecnología de detectores del momento y filtros comerciales. Para defiir la banda V original, por ejemplo, Johnson(1955) usó en principio filtros Schott GG14 que ahora se llaman GG495 (corte azul de la banda) y la caída de respuesta espectral del fotocátofo S4 del fotomultiplicador 1P21. Véase, por ejemplo, <a class="reference external" href="http://adsabs.harvard.edu/full/1990PASP..102.1181B">‘UBVRI passbands’ by Bessell, M. S. 1990PASP..102.1181B</a></p>
+<p>Los sistemas fotométricos deben ser definidos con ayuda de observaciones de estrellas en esas bandas de forma que se establece una lista de magnitudes y colores estándar para un conjunto de estrellas que sirven de referencia. Los astrónomos que quieran medir objetos celestes en un sistema estándar deben usar la instrumentación adecuada y transformar sus observaciones a ese sistema estándar mediante observaciones de estrellas de la lista original o de estrellas bien calibradas en ese sistema (estrellas estándar). Las magnitudes observadas deben ser corregidas de extinción atmosférica (magnitudes fuera de la atmósfera). Para ello se necesitan observaciones de fotometría absoluta como se verá más adelante.</p>
+<p>De acuerdo al ancho de banda los sistemas fotométricos se clasifican
+Banda ancha    |    Δλ &lt; 100 nm     | (broad-band)
+Banda media    |  7 nm &lt; Δλ&lt; 40 nm  | (intermediate-band)
+Banda estrecha |    Δλ &lt; 7 nm       | (narrow-band)</p>
+<p>Existen versiones modernas de los sistemas fotométricos más antiguos que se han ido desarrollando según se disponía de detectores más sensibles y, en particular de detectores panorámicos como los CDs.</p>
+<p>Se pueden citar algunos ejemplos de sistemas fotométricos: Johnson-Cousins-Glass UBVRIJHKLM, Strömgen u v b y bn bw, Sloan u’ g’ r’ i’ z’. Los astrónomos aficionados suelen observar con filtros de colores que definen bandas RGB similares a las que producen los sistemas de cámaras de color que usamos en nuestra vida diaria.</p>
+<div class="figure align-default" id="girardi-ubvri-fig">
+<a class="reference internal image-reference" href="../_images/foto_10_UBVRI.gif"><img alt="../_images/foto_10_UBVRI.gif" src="../_images/foto_10_UBVRI.gif" style="width: 800px;" /></a>
+</div>
+<div class="figure align-default" id="girardi-sloan-fig">
+<a class="reference internal image-reference" href="../_images/foto_12_sloan.png"><img alt="../_images/foto_12_sloan.png" src="../_images/foto_12_sloan.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Representación de las bandas de diversos sistemas fotométricos junto al espectro del sol y de una estrella azul y otra roja. Fuente: Girardi, L. et al. “Theoretical isochrones in several photometric systems
+I. Johnson-Cousins-Glass, HST/WFPC2, HST/NICMOS, Washington, and ESO Imaging Survey filter sets” A&amp;A 391, 195-212 (2002) and Girardi, L. et al. “Theoretical isochrones in several photometric systems. II. The Sloan Digital Sky Survey ugriz system.” A&amp;A 422 (2004): 205-215.</span><a class="headerlink" href="#girardi-sloan-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="sistemas-vega-ab-y-st">
+<h2><span class="section-number">2.1.3. </span>Sistemas Vega, AB y ST<a class="headerlink" href="#sistemas-vega-ab-y-st" title="Permalink to this headline">¶</a></h2>
+<p>Una importante fuente de confusión, incluso dentro de la literatura publicada por
+astrómos profesionales, es la clara definición del sistema fotométrico utilizado. Esto incluye 3 ingredientes. El primero lo define la curva de sensibilidad espectral del filtro (en la gráfica se representan los tradicionales filtros de Johnson-Cousins UBVRI, usando las curvas actualizadas por Bessell &amp; Murphy 2012). El segundo es el parámetro físico a integrar dentro de cada filtro. Aquí hay varias opciones: i) energía (en unidades FLAM erg s-1 cm-2 Å-1, o FNU erg s-1 cm-2 Hz-1), o ii) fotones (en unidades PHOTLAM photon s-1 cm-2 Å-1, o PHOTNU photon s-1 cm-2 Hz-1).</p>
+<p>El tercer ingrediente es el espectro de referencia que determina el cero en la escala de magnitudes: sistema VEGA, sistema AB (Oke &amp; Gunn, 1983, referencia constante en densidad de flujo por unidad de frecuencia), o sistema ST (Koornneef et al., 1986, referencia constante en densidad de flujo por unidad de longitud de onda).</p>
+<div class="figure align-default" id="cardiel-vega-ab-st-fig">
+<a class="reference internal image-reference" href="../_images/foto_13_Vega_AB_ST.png"><img alt="../_images/foto_13_Vega_AB_ST.png" src="../_images/foto_13_Vega_AB_ST.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Representación de los tres espectros de referencia (en unidades PHOTLAM).</span><a class="headerlink" href="#cardiel-vega-ab-st-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>La magnitud en una cierta banda fotométrica S(λ) de un objeto celeste de disrtribución espectral de energía F(λ) se determina como,</p>
+<div class="math notranslate nohighlight">
+\[
+  m(\lambda) =  -2.5 log_{10} \int_0^\infty \frac{F(\lambda) S(\lambda) d\lambda }{F_o(\lambda) S(\lambda) d\lambda }
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(F_o(\lambda)\)</span> es la distribución espectral de energía de la fuente de referencia para fijar el punto cero de la fotometría. Por ejemplo para la banda V de Johnson-Cousins V band podemos usar el espectro de Vega (<span class="math notranslate nohighlight">\(\alpha\)</span> Lyrae) y fijar V(Vega) = 0 (como en su definición original, aunque luego resulta que V(Vega) = 0.03) o, la referencia absoluta (AB) de 3631 definido por Oke (1974) <span class="math notranslate nohighlight">\(F_o(\lambda)  = 3631 \times (c/\lambda^2) \times 10^{-26} W/m^2/m\)</span> donde   <span class="math notranslate nohighlight">\(𝑐 = 2.99792458 × 10^8 m s^{-1}\)</span> es la velocidad de la luz en el vacío, <span class="math notranslate nohighlight">\(\lambda\)</span> es la longitud de onda en m y Jy (jansky) es una unidad fuera del sistema internacional SI de irradiancia espectral Jy = <span class="math notranslate nohighlight">\(10^{-26}
+W m^{-2} Hz^{-1}\)</span>. Puede verse un análisis completo en <a class="reference external" href="https://eprints.ucm.es/60386/19/zamorano143postprint.pdf">Bará et al (2020)</a>.</p>
+<p>Los sistemas fotométricos usaban tradicionalmente a Vega como estrella de referencia y el problema es la dificultad de obtener una calibración absoluta precisa de esta estrella. Por eso actualmente se prefiere usar magnitudes AB.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fotometria.html" title="previous page"><span class="section-number">2. </span>Fotometría</a>
+    <a class='right-next' id="next-link" href="fotometria_02.html" title="next page"><span class="section-number">2.2. </span>Instrumentos y métodos</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

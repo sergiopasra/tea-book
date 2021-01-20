@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.3. Visualización e inspección de imágenes &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.4. Programación en Python y cuadernos de Jupyter" href="P1_Introduccion_04.html" />
+    <link rel="prev" title="4.2. Redución de observaciones astronómicas" href="P1_Introduccion_02.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P1_Introduccion_03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P1_Introduccion_03.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P1_Introduccion_03.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saoimageds9">
+   4.3.1. SAOimageDS9
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-uso-de-ds9">
+     4.3.1.1. Ejemplo de uso de DS9
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aladin">
+   4.3.2. ALADIN
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="visualizacion-e-inspeccion-de-imagenes">
+<h1><span class="section-number">4.3. </span>Visualización e inspección de imágenes<a class="headerlink" href="#visualizacion-e-inspeccion-de-imagenes" title="Permalink to this headline">¶</a></h1>
+<p>Existen visualizadores de las imágenes procedentes de observaciones astronómicas en formato FITS. Incluso pueden estar incluidos en programas de manejo de imágenes de uso general. Por supuesto los paquetes de reducción mencionados anteriormente disponen de sus comandos para visualización.</p>
+<div class="section" id="saoimageds9">
+<h2><span class="section-number">4.3.1. </span>SAOimageDS9<a class="headerlink" href="#saoimageds9" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://sites.google.com/cfa.harvard.edu/saoimageds9">SAOimageDS9</a>
+es uno de los programas favoritos que, por ejemplo, funciona dentro de IRAF como como su sistema de visualización. Pero una de las características más importantes de este software que permite cargar y ver varias imágenes FITS (y tablas binarias) a la vez es que funciona independientemente (stand-alone application) de otros paquetes de software y no necesita instalación o ficheros adicionales. Funciona con menús desde su GUI (graphical user interface) o por medio de comandos. SAOimageDS9 tiene su origen en SAOimage desarrollado por Mike Van Hilst en el Smithsonian Astrophysical Observatory, Center for Astrophysics, Harvard University en 1990. Unos años después Eric Mandel desarrolla SAOtng (SAOImage, The Next Generation) y a finales de los 1990s William Joye empezó a reescribir el software que se llama desde entonces SAOimageDS9 (Deep Space 9).</p>
+<p>El programa se descarga desde <a class="reference external" href="http://ds9.si.edu">http://ds9.si.edu</a> y existen versiones para Windows, Mac y Linux. Los manuales, guía y tutoriales se encuentran en la página de <a class="reference external" href="https://sites.google.com/cfa.harvard.edu/saoimageds9/documentation">documentación SAOimageDS9</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/ref/index.html">SAOImageDS9 Reference Manual</a></p></li>
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/user/index.html">SAOImageDS9 Users Manual</a></p></li>
+<li><p><a class="reference external" href="http://ds9.si.edu/doc/user/gui/index.html">Introduction to the ds9 Interface</a></p></li>
+<li><p><a class="reference external" href="http://www.jb.man.ac.uk/~gbendo/Sci/Pict/DS9guide.pdf">Introduction to Astronomy Images and the DS9 Image Viewer</a> tutorial de George J. Bendo</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=C8QBwrKbEtc">IPAC introduction to DS9, en cuatro videos</a> by <a class="reference external" href="https://www.ipac.caltech.edu/science/staff/luisa-rebull">Luisa Rebull</a> si tienes más tiempo y te gustan los tutoriales en video.</p></li>
+</ul>
+<p>La recomendación es ir aprendiendo poco a poco usando la herramienta y encontrando las funcionalidades a medida que las necesitamos. Se puede añadir a DS9 <a class="reference external" href="https://github.com/ericmandel/funtools">Funtools</a> que es una librería FITS y paquete con utilidades.</p>
+<div class="section" id="ejemplo-de-uso-de-ds9">
+<h3><span class="section-number">4.3.1.1. </span>Ejemplo de uso de DS9<a class="headerlink" href="#ejemplo-de-uso-de-ds9" title="Permalink to this headline">¶</a></h3>
+<p>Como una primera introducción podemos descargarnos imágenes FITS del par de galaxias NGC274-NGC275 en las bandas u, g y r de la exploración <a class="reference external" href="https://www.sdss.org/">SDSS</a> del <a class="reference external" href="https://dr12.sdss.org/fields">DR12 Science Archive Server (SAS)</a></p>
+<div class="figure align-default" id="ds9-1-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_1.png"><img alt="../_images/intro_03_ds9_1.png" src="../_images/intro_03_ds9_1.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Imagen del par de galaxias en interación e la página de descarga de SDSS
+<a class="reference external" href="https://dr12.sdss.org/fields/name?name=NGC274">https://dr12.sdss.org/fields/name?name=NGC274</a></span><a class="headerlink" href="#ds9-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Tras descargarlas tenemos las tres imágenes como ficheros FITS frame-u-008067-4-0054.fits, frame-g-008067-4-0054.fits, frame-r-008067-4-0054.fits. Empecemos mostrando la imagen en banda g. Para ello en DS9 usamos los menús ‘file’ + ‘open’ y selecionamos el directorio y fichero. Se mostrará en la ventana.</p>
+<div class="figure align-default" id="ds9-2-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_2.png"><img alt="../_images/intro_03_ds9_2.png" src="../_images/intro_03_ds9_2.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Tras cargar la primera imagen.</span><a class="headerlink" href="#ds9-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-3-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_3.png"><img alt="../_images/intro_03_ds9_3.png" src="../_images/intro_03_ds9_3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">No se ve la imagen completa sino un trozo. Arriba a la derecha vemos una miniatura y un cuadrado verde con al zona recortada que vemos en la ventana. El cuadro de más a la derecha muestra una ampliación del punto donde tenemos el cursor.</span><a class="headerlink" href="#ds9-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-4-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_4.png"><img alt="../_images/intro_03_ds9_4.png" src="../_images/intro_03_ds9_4.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Tras hacer zoom para imagen completa. Nótese que aparecen arriba a la izquierda el nombre del fichero y las coordenadas de imagen (píxeles) y celestes (WCS world coordinate system) ya que en este caso es una imagen completamente procesada incluyendo astrometría.</span><a class="headerlink" href="#ds9-4-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Las imágenes de las galaxias aparecen saturadas porque la escala empleada para mostrar la imagen se queda corta y hay valores en los píxeles de las galaxias por encima de 0.12 que es el límite superior elegido automáticamente (abajo a la derecha). Con el menú de escala y colocando nuestros límites a mano entre 0 y 5 unidades se obtiene una representación que permite ver las variaciones en la galaxia.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_5.png"><img alt="../_images/intro_03_ds9_5.png" src="../_images/intro_03_ds9_5.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Diálogo de límites para la escala de la representación gráfica que muestra un histograma de los valores de los píxeles de la imagen. Se pueden cambiar con el cursor o escribiendo los valores deseados.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-6-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_6.png"><img alt="../_images/intro_03_ds9_6.png" src="../_images/intro_03_ds9_6.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Tras hacer zoom y centrar las galaxias usando una tabla de color (‘lookup table’) de tipo arcoiris.</span><a class="headerlink" href="#ds9-6-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-7-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_7.png"><img alt="../_images/intro_03_ds9_7.png" src="../_images/intro_03_ds9_7.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Tras hacer zoom y centrar las galaxias usando una tabla de color (‘lookup table’) de tipo arcoiris.</span><a class="headerlink" href="#ds9-7-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos cargar otra imagen en otro canal o ‘frame’ usando el menú ‘frame’+’new’ y eligiendo el fichero.</p>
+<div class="figure align-default" id="ds9-8-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_8.png"><img alt="../_images/intro_03_ds9_8.png" src="../_images/intro_03_ds9_8.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">Nuevo fichero cargado en el canal (‘frame’) 2. De momento usa el mismo zoom que el canal 1 pero no está centrado en las galaxias.</span><a class="headerlink" href="#ds9-8-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="ds9-9-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_9.png"><img alt="../_images/intro_03_ds9_9.png" src="../_images/intro_03_ds9_9.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">Usando el menu de ‘frame’+’match’+’image’+’WCS’ centramos las dos imágenes en el mismo sitio. Se usa de referencia la imagen seleccionada. En este caso la primera.</span><a class="headerlink" href="#ds9-9-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos ver las dos imágenes porque estamos en modo tejar (‘tile’) pero podemos seleccionar para ver sólo una (‘single’) o incluso hacer parpadeo entre las cargadas. Cargemos la última imagen correspondiente a la banda u.</p>
+<div class="figure align-default" id="ds9-10-fig">
+<a class="reference internal image-reference" href="../_images/intro_03_ds9_10.png"><img alt="../_images/intro_03_ds9_10.png" src="../_images/intro_03_ds9_10.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.12 </span><span class="caption-text">Vemos las tres imágenes cargadas en 3 canales diferentes. Para que se vean así en columnas hay que elegirlo en el menu de ‘frame’+’farme parameters’+’tile’.</span><a class="headerlink" href="#ds9-10-fig" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>NED buscar y cargar cargar imagen</p></li>
+<li><p>Regiones y Fotometría sencilla</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="aladin">
+<h2><span class="section-number">4.3.2. </span>ALADIN<a class="headerlink" href="#aladin" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://aladin.u-strasbg.fr/">Aladin</a>, etc.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P1_Introduccion_02.html" title="previous page"><span class="section-number">4.2. </span>Redución de observaciones astronómicas</a>
+    <a class='right-next' id="next-link" href="P1_Introduccion_04.html" title="next page"><span class="section-number">4.4. </span>Programación en Python y cuadernos de Jupyter</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.1. Espectroscopía astronómica &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. Elección del espectrógrafo y configuración instrumental" href="espectroscopia_02.html" />
+    <link rel="prev" title="3. Espectroscopía" href="espectroscopia.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Programación en Python y cuadernos de Jupyter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.1. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.2. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.3. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.4. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.5. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.6. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.7. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/espectroscopia_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   3.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametros-de-un-espectrografo-y-su-impacto-en-las-observaciones">
+   3.1.2. Parámetros de un espectrógrafo y su impacto en las observaciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pureza-espectral">
+     3.1.2.1. pureza espectral
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resolucion-espectral">
+     3.1.2.2. resolución espectral
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dispersores">
+     3.1.2.3. Dispersores
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dispersion">
+       3.1.2.3.1. dispersión
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solapamiento-de-ordenes">
+       3.1.2.3.2. solapamiento de órdenes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="espectroscopia-astronomica">
+<h1><span class="section-number">3.1. </span>Espectroscopía astronómica<a class="headerlink" href="#espectroscopia-astronomica" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduccion">
+<h2><span class="section-number">3.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">¶</a></h2>
+<p>La información que se obtiene con la espectroscopía es mucho mayor que con la fotometría. Por ejemplo, por citar sólo el caso de las estrellas, permite clasificar directamente su tipo espectral de acuerdo a sus características espectrales. Además la medida del flujo y cocientes de sus líneas informa temperaturas y abundancias de elementos en la atmósfera, rotación, velocidad de desplazamiento respecto al observador etc.</p>
+<div class="figure align-default" id="tipos-espectrales-fig">
+<a class="reference internal image-reference" href="../_images/spec_01_tipos_espectrales.png"><img alt="../_images/spec_01_tipos_espectrales.png" src="../_images/spec_01_tipos_espectrales.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Espectros de estrellas en color verdadero (el que vería un humano). Nótese no sólo el cambio de intensidad de color en diferentes regiones dele spectro sino en las líneas de absorción. Gara Mora Carrillo (2000) UCM Trabajo Académicamente dirigido <a class="reference external" href="http://www.ucm.es/info/Astrof/users/jaz/TRABAJOS/COLOR/colorspectra.html">Espectros estelares en color real</a>.</span><a class="headerlink" href="#tipos-espectrales-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="vega-sun-fig">
+<a class="reference internal image-reference" href="../_images/spec_02_Vega_Sun.png"><img alt="../_images/spec_02_Vega_Sun.png" src="../_images/spec_02_Vega_Sun.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Comparación de los espectros del Sol y de Vega de muy diferentes tipos espectrales en la región de H<span class="math notranslate nohighlight">\(\beta\)</span> <a class="reference external" href="http://193.63.77.2:2805/~SJeffery/articles.popular/spectra/sim.html">Professor Simon Jeffery stellar spectra graphs</a>.</span><a class="headerlink" href="#vega-sun-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="parametros-de-un-espectrografo-y-su-impacto-en-las-observaciones">
+<h2><span class="section-number">3.1.2. </span>Parámetros de un espectrógrafo y su impacto en las observaciones<a class="headerlink" href="#parametros-de-un-espectrografo-y-su-impacto-en-las-observaciones" title="Permalink to this headline">¶</a></h2>
+<p>Recordemos que en un espectrómetro las líneas espectrales monocromáticas son las imagenes en el plano focal del espectrógrafo de la rendija. La combinación colimador-cámara (con el elemento dispersor en medio) proyecta la imagen de la rendija en el detector.</p>
+<div class="figure align-default" id="esquema-fig">
+<a class="reference internal image-reference" href="../_images/spec_03_esquema.png"><img alt="../_images/spec_03_esquema.png" src="../_images/spec_03_esquema.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Esquema de un espectrómetro adaptado a un telescopio de diámetro D (no a escala). La rendija se encuentra en el plano focal del telescopio (si está bien enfocado). El colimador se encuentra a una distancia igual a su focal <span class="math notranslate nohighlight">\(f_1\)</span>. Tras él se encuentra el elemento dispersor y luego la cámara que es el sistema óptico que produce el espectro en el plano focal (a distancia <span class="math notranslate nohighlight">\(f_2\)</span>).</span><a class="headerlink" href="#esquema-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>La rendija tiene dimensiones <span class="math notranslate nohighlight">\(w\)</span> anchura y <span class="math notranslate nohighlight">\(h\)</span> longitud y proyectada en el cielo subtiende ángulos <span class="math notranslate nohighlight">\(\phi = w/f\)</span> y <span class="math notranslate nohighlight">\(\phi' = h/f\)</span> donde <span class="math notranslate nohighlight">\(f\)</span> es la distancia focal del telescopio. Esa zona del cielo es la que entra en el sistema óptico y cuyo espectro se registra.  Análogamente, la rendija proyectada en el colimador <span class="math notranslate nohighlight">\(\theta = w/f_1\)</span> y <span class="math notranslate nohighlight">\(\theta' = h/f_1\)</span>. Finalmente la imagen monocromática de la rendija tiene un tamaño  <span class="math notranslate nohighlight">\(w' = w f_2/f_1\)</span> y <span class="math notranslate nohighlight">\(h' = h f_2/f_1\)</span>. Como se ve las relación entre la rendija y su imagen dependen del factor de amplificación <span class="math notranslate nohighlight">\(f_2/f_1\)</span>. Por ejemplo si la focal de la cámara es el doble que la del colimador la imagen de la rendija es de doble tamaño que la rendija.</p>
+<div class="section" id="pureza-espectral">
+<h3><span class="section-number">3.1.2.1. </span>pureza espectral<a class="headerlink" href="#pureza-espectral" title="Permalink to this headline">¶</a></h3>
+<p>La pureza espectral es un parámetro fundamental de los espectrómetros que mide la capacidad del instrumento da idea de la capacidad para resolver líneas de longitud de onda cercana y de observar detalles en las líneas. La pureza espectral es el perfil instrumental y se mide como la anchura de la imagen de la rendija iluminada con luz monocromática. En el criterio de Rayleight una línea está resuelta por el espectrómetro si su anchura es mayor que la pureza espectral <span class="math notranslate nohighlight">\(\Delta \lambda &gt; \delta \lambda\)</span></p>
+<div class="figure align-default" id="rayleigh-fig">
+<a class="reference internal image-reference" href="../_images/spec_04_Rayleigh.png"><img alt="../_images/spec_04_Rayleigh.png" src="../_images/spec_04_Rayleigh.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Criterio de Rayleigh: el espectrógrafo separa dos líneas cuando la diferencia de longitud de onda de los máximos sea mayor o igual a la pureza espectral <span class="math notranslate nohighlight">\(\Delta \lambda &gt; \delta \lambda\)</span>.</span><a class="headerlink" href="#rayleigh-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Algunas ecuaciones para determinar esta pureza espectral <span class="math notranslate nohighlight">\(\delta\lambda\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\delta\lambda = w' \frac{d\lambda}{dx} =  \frac{w'}{f_2} \frac{d\lambda}{d\beta} 
+\quad \quad \quad \delta\lambda = \frac{w}{f_1} \frac{d\lambda}{d\beta} =  \frac{f \phi }{f_1} \frac{d\lambda}{d\beta} =  \frac{D \phi }{d_1} \frac{d\lambda}{d\beta}
+\quad \quad \quad \delta\lambda =  \frac{D \phi }{d_1} \frac{1}{d\beta/d\lambda}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(d\lambda/d\beta\)</span> y <span class="math notranslate nohighlight">\(d\lambda/dx\)</span> son la dispersión angular (que depende del dispersor y del orden) y la dispersión lineal recíproca que se mide en Å/mm o nm/mm. Lo interesante de estas ecuaciones es que si queremos mejorar la resolución espectral (disminuyendo el valor de la pureza espectral) tenemos que disminuir la anchura de la rendija o usar una red más grande que permita un haz colimado mayor o usar una red más dispersiva.</p>
+<div class="figure align-default" id="anchura-fig">
+<a class="reference internal image-reference" href="../_images/spec_06_anchura.png"><img alt="../_images/spec_06_anchura.png" src="../_images/spec_06_anchura.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">La resolución espectral es directamente proporcional a la anchura de la rendija. Pero hay que llegar a un compromiso para que la rendija no sea tan estrecha que no permita la entrada de luz en el espectrógrafo.</span><a class="headerlink" href="#anchura-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="resolucion-espectral">
+<h3><span class="section-number">3.1.2.2. </span>resolución espectral<a class="headerlink" href="#resolucion-espectral" title="Permalink to this headline">¶</a></h3>
+<p>La resolución <span class="math notranslate nohighlight">\(R = \frac{\lambda} {\delta \lambda}\)</span> es el cociente entre la longitud de onda <span class="math notranslate nohighlight">\(\lambda\)</span> y la pureza espectral <span class="math notranslate nohighlight">\(\delta \lambda\)</span>. De acuerdo a este parámetro adimensional se habla de resolución baja (<span class="math notranslate nohighlight">\(\sim 10^3\)</span>), intermedia (<span class="math notranslate nohighlight">\(\sim 10^4\)</span>) o alta (<span class="math notranslate nohighlight">\(&gt; 5 \times 10^4\)</span>).</p>
+<div class="figure align-default" id="resolucion-fig">
+<a class="reference internal image-reference" href="../_images/spec_05_resolucion.png"><img alt="../_images/spec_05_resolucion.png" src="../_images/spec_05_resolucion.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.6 </span><span class="caption-text">REPETIR Ejemplo de espectro con un doblete observado con espectrómetros de resolucón R creciente de arriba abajo.</span><a class="headerlink" href="#resolucion-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="dispersores">
+<h3><span class="section-number">3.1.2.3. </span>Dispersores<a class="headerlink" href="#dispersores" title="Permalink to this headline">¶</a></h3>
+<p>Aunque se emplean prismas en algunos espectrómetros especiales, la mayoría de la veces se usa una red de difracción. La ecuación fundamental es,</p>
+<div class="math notranslate nohighlight">
+\[
+m \lambda = \sigma (sen \alpha + cos \beta)
+\]</div>
+<p>Sin entrar en los detalles de la óptica de redes recordemos que normalmente se tallan los surcos de forma especial para que el máximo de la luz no se vaya al orden m=0.</p>
+<div class="figure align-default" id="blaze-fig">
+<a class="reference internal image-reference" href="../_images/spec_07_blaze.png"><img alt="../_images/spec_07_blaze.png" src="../_images/spec_07_blaze.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Esquema de una red de difracción iluminada en un ángulo de incidencia <span class="math notranslate nohighlight">\(\alpha\)</span>.</span><a class="headerlink" href="#blaze-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>En el orden cero la dispersión es nula. Interesa que la luz vaya en preferencia a otros órdenes. La dirección en la que se difracta el máximo de radiación corresponde a la reflexión especular en las facetas.</p>
+<div class="figure align-default" id="blaze-2-fig">
+<a class="reference internal image-reference" href="../_images/spec_08_blaze-2.png"><img alt="../_images/spec_08_blaze-2.png" src="../_images/spec_08_blaze-2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8 </span><span class="caption-text">(Izda.) En incidencia normal (<span class="math notranslate nohighlight">\(\alpha = 0\)</span>, luz colimada impactando de cara en la red) la reflexión especular no está en el orden cero sino en otra dirección de acuerdo an ángilo de ‘blaze’.<br />
+(Dcha.) Para cualquier otro ángulo de incidencia <span class="math notranslate nohighlight">\(\alpha\)</span>, la dirección de salida <span class="math notranslate nohighlight">\(\beta\)</span> mostrada en la figura es la de mayor eficiencia (reflexión especular en las facetas).</span><a class="headerlink" href="#blaze-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>La máxima eficiencia de la red ocurre justo a la reflexión especular en las facetas. Para un cierto orden m, sucede en la longitud de onda que cumple la ecuación,</p>
+<div class="math notranslate nohighlight">
+\[
+m \lambda = \sigma (sen 2 \theta_b) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\beta - \theta_b =   \theta_b  - \alpha  \quad \quad \alpha + \beta = 2 \theta_b 
+\]</div>
+<div class="figure align-default" id="blaze-3-fig">
+<a class="reference internal image-reference" href="../_images/spec_09_blaze-3.png"><img alt="../_images/spec_09_blaze-3.png" src="../_images/spec_09_blaze-3.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Geometría de la reflexión especular en las facetas.</span><a class="headerlink" href="#blaze-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>La longitud de onda de blaze (la correspondiente al máximo para el orden 1 (m=1) y el máximo en otros ordenes se determina como,</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_b = 2 \sigma \; cos(\delta/2) \quad \quad \quad \lambda_m = \lambda_b / m
+\]</div>
+<div class="figure align-default" id="eficiencia-fig">
+<a class="reference internal image-reference" href="../_images/spec_10_eficiencia.png"><img alt="../_images/spec_10_eficiencia.png" src="../_images/spec_10_eficiencia.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10 </span><span class="caption-text">Las curvas de eficiencia en diferentes órdenes tienen su máximo en <span class="math notranslate nohighlight">\(\lambda_m\)</span> y son progresivamente más estrechas según aumenta el orden. En este gráfico sencillo han sido normalizadas.</span><a class="headerlink" href="#eficiencia-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Para el caso particular de la incidencia normal:</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha = 0 \quad \quad \beta = 2 \theta_b  \quad \quad \lambda_b = 2 \sigma \; sen \theta_b cos \theta_b \quad \quad \lambda_b = \sigma \; sen 2 \theta_b
+\]</div>
+<div class="section" id="dispersion">
+<h4><span class="section-number">3.1.2.3.1. </span>dispersión<a class="headerlink" href="#dispersion" title="Permalink to this headline">¶</a></h4>
+<p>La dispersión angular se determina (a partir de la ecuación fundamental de las redes)</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\beta}{d\lambda} = \frac{m}{\sigma cos\beta}
+\]</div>
+<p>donde vemos que es directamente proporcional al orden <span class="math notranslate nohighlight">\(m\)</span> e inversamente proporcional al paso de la red <span class="math notranslate nohighlight">\(\sigma\)</span>. La dispersión lineal y la dispersión lineal recíproca dependen además de la distancia focal de la cámara del espectrógrafo <span class="math notranslate nohighlight">\(f_2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{d\lambda} = f_2 \frac{d\beta}{d\lambda} \quad \quad \quad \frac{d\lambda}{dx} = f_2 \frac{\sigma cos\beta}{m f_2} 
+\]</div>
+<p>es decir que cámaras con focales mayores producen mayores dispersiones (directamente proporcional).</p>
+<div class="figure align-default" id="dispersion-fig">
+<a class="reference internal image-reference" href="../_images/spec_11_dispersion.png"><img alt="../_images/spec_11_dispersion.png" src="../_images/spec_11_dispersion.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Se muestra el tamaño relativo de los espectros del mismo objeto observados con un espectrógrafo en diferentes órdenes o usando redes de paso diferente o cambiando la cámara del espectrógrafo.</span><a class="headerlink" href="#dispersion-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>A la dispersión lineal recíproca <span class="math notranslate nohighlight">\(d\lambda/dx\)</span> se mide en unidades de Å/mm o nm/mm se la llama a veces dispersión lineal por abuso de lenguaje. Hay que prestar atención porque una dispersión lineal alta se traduce en una dispersión lineal recíproca baja. Veamos un ejemplo para comprobar cómo las relaciones de la dispersión con los parámetros del espectrómetro son lineales, bien directamente o inversamente proporcionales.</p>
+<p>En un espectrógrafo una red de 600 trazos/mm se consigue una dispersión de 48 Å/mm en el segundo orden. Determínese la dispersión en el primer y tercer órdenes para esa red y otras de 300 y 1200 tr/mm. Idem si se cambia a una cámara del doble de distancia focal.</p>
+<div class="figure align-default" id="ejemplo-fig">
+<a class="reference internal image-reference" href="../_images/spec_12_ejemplo.png"><img alt="../_images/spec_12_ejemplo.png" src="../_images/spec_12_ejemplo.png" style="width: 600px;" /></a>
+</div>
+<p>Se rellenan las tablas recordando la dependencia lineal de la dispersión con el orden, el paso de la red y la focal de la cámara. Por ejemplo, como la dispersión es directamente proporcional al orden la dispersión lineal recíproca en m=2 es de 48 Å/mm luego será de 96 Å/mm en m=1. La dispersión es inversamente  proporcional al paso de la red que podemos calcular con el inverso de la densidad de surcos (o líneas o trazos) de la red <span class="math notranslate nohighlight">\(\sigma_2 = 1/600 = 1.65\mu m \quad \quad \sigma_1 = 2 \sigma_2 \quad \quad \sigma_3 = \sigma_2 / 2\)</span>.<br />
+La dispersión es directamente proporcional a la focal de la cámara luego la dispersión lineal recíproca se hace la mitad al doblar la focal de la cámara <span class="math notranslate nohighlight">\(f_2\)</span>.</p>
+</div>
+<div class="section" id="solapamiento-de-ordenes">
+<h4><span class="section-number">3.1.2.3.2. </span>solapamiento de órdenes<a class="headerlink" href="#solapamiento-de-ordenes" title="Permalink to this headline">¶</a></h4>
+<p>Para un cierto ángulo de incidencia <span class="math notranslate nohighlight">\(\alpha\)</span>, en la dirección <span class="math notranslate nohighlight">\(\beta\)</span> se difractan fotones de longitud de onda diferente según el orden. Para <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> fijos, las longitudes de onda <span class="math notranslate nohighlight">\(\lambda\)</span> y <span class="math notranslate nohighlight">\(\lambda '\)</span> en órdenes sucesivos son,</p>
+<div class="math notranslate nohighlight">
+\[
+m \lambda = cte.  \quad \quad m \lambda ' = (m+1) \lambda 
+\]</div>
+<div class="figure align-default" id="solapamiento-fig">
+<a class="reference internal image-reference" href="../_images/spec_13_solapamiento.png"><img alt="../_images/spec_13_solapamiento.png" src="../_images/spec_13_solapamiento.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Dependiendo del orden <span class="math notranslate nohighlight">\(m\)</span> en una dirección <span class="math notranslate nohighlight">\(\beta\)</span> aparecen fotones de diferente longitud de onda. Los órdenes han sido desplazados para que se aprecie mejor el solapamiento. Se muestran algunos ejemplos de valores de longitud de onda de los fotones que salen en la misma dirección en sucesivos órdenes.</span><a class="headerlink" href="#solapamiento-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>El rango espectral libre se determina como <span class="math notranslate nohighlight">\(\lambda - \lambda ' = \lambda / m\)</span>. El efecto de solapamiento es cada vez mayor en órdenes altos por que el rango espectral libre (sin solapamiento) se hace menor. Para evitarlo se utilizan filtros cortadores. Por ejemplo si estamos observando en el orden <span class="math notranslate nohighlight">\(m=1\)</span> y no queremos que en la zona roja aparezcan fotones azules del orden <span class="math notranslate nohighlight">\(m=2\)</span> ponemos un filtro que corte por debajo de 360 nm (filtro de paso alto, long- pass filter) y tendremos un rango espectral libre entre 360 nm y 720nm.</p>
+<p>dispersión angular de los medios dispersores, dispersión lineal recíproca, resolución espectral. Eficiencia de las redes/grismas, solapamiento de órdenes. Espectroscopía sin rendija, con rendija única, multirendija, multiobjeto con fibras y rebanadores de imágenes</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="espectroscopia.html" title="previous page"><span class="section-number">3. </span>Espectroscopía</a>
+    <a class='right-next' id="next-link" href="espectroscopia_02.html" title="next page"><span class="section-number">3.2. </span>Elección del espectrógrafo y configuración instrumental</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

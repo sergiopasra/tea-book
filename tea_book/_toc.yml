@@ -29,20 +29,27 @@
         - file: docs/P2_Fotometria_CCD_02
         - file: docs/P2_Fotometria_CCD_03
         - file: docs/P2_Fotometria_CCD_04
+        - file: docs/P2_Fotometria_CCD_05
+        - file: docs/P2_Fotometria_CCD_06
+        - file: docs/P2_Fotometria_CCD_07
     - file: docs/P3_Espectroscopia_Rendija_Larga
     - file: notebooks/index-notebooks-ccdproc
       sections:
+        - file: notebooks/ccdproc_00_Downloading_the_Images.ipynb   
         - file: notebooks/ccdproc_01_ImageCollection.ipynb
         - file: notebooks/ccdproc_02_Trimming.ipynb
         - file: notebooks/ccdproc_03_Master_BIAS.ipynb
         - file: notebooks/ccdproc_04_Substract_BIAS.ipynb
         - file: notebooks/ccdproc_05_Master_FLAT.ipynb
         - file: notebooks/ccdproc_06_Flatfielding.ipynb
+        - file: notebooks/ccdproc_07_Combining.ipynb
+        - file: notebooks/ccdproc_08_Star_Photometry.ipynb
         - file: notebooks/fotometria_1.ipynb
     - file: notebooks/index-notebooks-examples
       sections:
-        - file: notebooks/example_01_Read_Display_FITS_v3.ipynb
-        - file: notebooks/example_02_Master_DARK_v3.ipynb
-        - file: notebooks/example_03_Master_Flat_v3.ipynb
-        - file: notebooks/example_04_combining_images_v1.ipynb
-
+        - file: notebooks/example_01_Read_Display_FITS.ipynb
+        - file: notebooks/example_02_Master_DARK.ipynb
+        - file: notebooks/example_03_Master_Flat.ipynb
+        - file: notebooks/example_04_combining_images.ipynb
+        - file: notebooks/example_05_register_images.ipynb
+        - file: notebooks/example_06_aperture_photometry.ipynb

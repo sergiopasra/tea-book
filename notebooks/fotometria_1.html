@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7.7. Ajuste Bouger y término de color &#8212; Técnicas Experimentales en Astrofísica</title>
+    <title>7.11. Ajuste Bouger y término de color &#8212; Técnicas Experimentales en Astrofísica</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -40,6 +40,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -57,7 +58,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. TEA Notebooks examples" href="index-notebooks-examples.html" />
-    <link rel="prev" title="7.6. ccdproc-06: Flatfielding" href="ccdproc_06_Flatfielding.html" />
+    <link rel="prev" title="7.9. ccdproc-08: Photometry of stars" href="ccdproc_08_Star_Photometry.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -173,7 +174,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../docs/P1_Introduccion_04.html">
-     4.4. Programación en Python y cuadernos de Jupyter
+     4.4. Python, cuadernos de Jupyter, astropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,7 +213,22 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../docs/P2_Fotometria_CCD_04.html">
-     5.4. Pasos finales
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_05.html">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_06.html">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../docs/P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
     </a>
    </li>
   </ul>
@@ -230,38 +246,58 @@
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_01_ImageCollection.html">
-     7.1. ccdproc-01:   Classify images
+     7.2. ccdproc-01:   Classify images
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_02_Trimming.html">
-     7.2. ccdproc-02:   Trimming
+     7.3. ccdproc-02:   Trimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_03_Master_BIAS.html">
-     7.3. ccdproc-03:   Master BIAS
+     7.4. ccdproc-03:   Master BIAS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_04_Substract_BIAS.html">
-     7.4. ccdproc-04:   BIAS correction
+     7.5. ccdproc-04:   BIAS correction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_05_Master_FLAT.html">
-     7.5. ccdproc-05:   Master FLAT
+     7.6. ccdproc-05:   Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ccdproc_06_Flatfielding.html">
-     7.6. ccdproc-06:   Flatfielding
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     7.7. Ajuste Bouger y término de color
+     7.11. Ajuste Bouger y término de color
     </a>
    </li>
   </ul>
@@ -274,23 +310,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="example_01_Read_Display_FITS_v3.html">
+    <a class="reference internal" href="example_01_Read_Display_FITS.html">
      8.1. Example 1:   Reading and displaying an image
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="example_02_Master_DARK_v3.html">
+    <a class="reference internal" href="example_02_Master_DARK.html">
      8.2. Example 2: Master DARK
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="example_03_Master_Flat_v3.html">
+    <a class="reference internal" href="example_03_Master_Flat.html">
      8.3. Example 3: Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="example_04_combining_images_v1.html">
+    <a class="reference internal" href="example_04_combining_images.html">
      8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
     </a>
    </li>
   </ul>
@@ -386,27 +432,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datos-observacionales">
-   7.7.1. Datos observacionales
+   7.11.1. Datos observacionales
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparando-la-grafica-para-ajustar-la-recta-de-bouguer">
-   7.7.2. Preparando la gráfica para ajustar la Recta de Bouguer
+   7.11.2. Preparando la gráfica para ajustar la Recta de Bouguer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ajuste-de-la-recta-de-bouguer">
-   7.7.3. Ajuste de la recta de Bouguer
+   7.11.3. Ajuste de la recta de Bouguer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#termino-de-color">
-   7.7.4. Término de color
+   7.11.4. Término de color
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ajuste-de-un-termino-de-color">
-   7.7.5. Ajuste de un término de color
+   7.11.5. Ajuste de un término de color
   </a>
  </li>
 </ul>
@@ -421,7 +467,7 @@
               <div>
                 
   <div class="section" id="ajuste-bouger-y-termino-de-color">
-<h1><span class="section-number">7.7. </span>Ajuste Bouger y término de color<a class="headerlink" href="#ajuste-bouger-y-termino-de-color" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7.11. </span>Ajuste Bouger y término de color<a class="headerlink" href="#ajuste-bouger-y-termino-de-color" title="Permalink to this headline">¶</a></h1>
 <pre>Máster en Astrofísica UCM  -- Técnicas Experimentales en Astrofísica
 Jaime Zamorano and Nicolás Cardiel
 
@@ -461,7 +507,7 @@ v1  2021/12/11  J. Zamorano almost ready for 2020/21
 </div>
 </div>
 <div class="section" id="datos-observacionales">
-<h2><span class="section-number">7.7.1. </span>Datos observacionales<a class="headerlink" href="#datos-observacionales" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.11.1. </span>Datos observacionales<a class="headerlink" href="#datos-observacionales" title="Permalink to this headline">¶</a></h2>
 <p>Son observaciones con el telescopio JKT (La Palma) pertenecientea a la tesis de Pablo Pérez González obtenidos en Julio de 1999. Usaremos sus ficheros que contienen las medidas de las estrellas estándar.</p>
 <p>Leemos el fichero csv (‘comma separated values’) correspondiente a la primera noche de observación como una tabla de astropy.</p>
 <p>Nota: El flujo f en la columna 2.5logf está en unidades de cuentas/s</p>
@@ -480,30 +526,6 @@ v1  2021/12/11  J. Zamorano almost ready for 2020/21
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IMA     star     t    secz 2.5logf   V     B-V   Errorm  V-R  
---- ----------- ---- ----- ------- ------ ------ ------ ------
-579     113-492 20.0 1.223   9.779 12.174  0.553  0.003  0.342
-579     113-493 20.0 1.223   9.978 11.767  0.786  0.003   0.43
-579     113-495 20.0 1.223   9.167 12.437  0.947  0.004  0.512
-583  PG2331+055 90.0 1.086    7.44 15.182 -0.066  0.005 -0.012
-583 PG2331+055A 90.0 1.086   8.813 13.051  0.741  0.003  0.419
-583 PG2331+055B 90.0 1.086   7.062 14.744  0.819  0.007  0.481
-586    111-1965 20.0 2.333   8.885 11.419   1.71  0.009  0.951
-586    111-1969 20.0 2.333   9.728 10.382  1.959  0.006  1.177
-587      MARK-A 60.0 1.931    9.04 13.258 -0.242  0.006 -0.115
-587     MARK-A1 60.0 1.931   5.714 15.911  0.609  0.049  0.367
-587     MARK-A2 60.0 1.931    6.96  14.54  0.666  0.021  0.379
-587     MARK-A3 60.0 1.931   6.441 14.818  0.938  0.028  0.587
-590  PG2336+004 20.0 1.134    6.83 15.899 -0.172  0.041 -0.061
-590 PG2336+004A 20.0 1.134  10.607 11.277  0.679  0.005  0.398
-590 PG2336+004B 20.0 1.134   9.599 12.431  0.507  0.009  0.314
-591     113-492 20.0 1.349   9.684 12.174  0.553  0.008  0.342
-591     113-493 20.0 1.349   9.886 11.767  0.786  0.008   0.43
-591     113-495 20.0 1.349   9.082 12.437  0.947  0.014  0.512
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,20 +534,10 @@ v1  2021/12/11  J. Zamorano almost ready for 2020/21
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> secz
------
-1.223
-1.223
-1.223
-1.086
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="preparando-la-grafica-para-ajustar-la-recta-de-bouguer">
-<h2><span class="section-number">7.7.2. </span>Preparando la gráfica para ajustar la Recta de Bouguer<a class="headerlink" href="#preparando-la-grafica-para-ajustar-la-recta-de-bouguer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.11.2. </span>Preparando la gráfica para ajustar la Recta de Bouguer<a class="headerlink" href="#preparando-la-grafica-para-ajustar-la-recta-de-bouguer" title="Permalink to this headline">¶</a></h2>
 <p>La ecuación simple de la fotometría</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -545,18 +557,6 @@ m_B + 2.5 log(F_B)  =  C - K_B X
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IMA     star     t    secz ... Errorm  V-R           B          B+2.5logF
---- ----------- ---- ----- ... ------ ------ ------------------ ---------
-579     113-492 20.0 1.223 ...  0.003  0.342             12.727    22.506
-579     113-493 20.0 1.223 ...  0.003   0.43 12.552999999999999    22.531
-579     113-495 20.0 1.223 ...  0.004  0.512 13.383999999999999    22.551
-583  PG2331+055 90.0 1.086 ...  0.005 -0.012             15.116    22.556
-583 PG2331+055A 90.0 1.086 ...  0.003  0.419             13.792    22.605
-583 PG2331+055B 90.0 1.086 ...  0.007  0.481 15.562999999999999    22.625
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,35 +573,17 @@ m_B + 2.5 log(F_B)  =  C - K_B X
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Gráfica para la noche 1&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans.
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_11_3.png" src="../_images/fotometria_1_11_3.png" />
-</div>
 </div>
 <p>Se aprecia que los puntos se alinean como era de esperar.
 Podemos ajustar una recta.</p>
 </div>
 <div class="section" id="ajuste-de-la-recta-de-bouguer">
-<h2><span class="section-number">7.7.3. </span>Ajuste de la recta de Bouguer<a class="headerlink" href="#ajuste-de-la-recta-de-bouguer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.11.3. </span>Ajuste de la recta de Bouguer<a class="headerlink" href="#ajuste-de-la-recta-de-bouguer" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">data1</span><span class="p">[</span><span class="s1">&#39;secz&#39;</span><span class="p">],</span><span class="n">data1</span><span class="p">[</span><span class="s1">&#39;B+2.5logF&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slope, intercept, r_value, p_value, std_err&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slope, intercept, r_value, p_value, std_err
--0.461  23.079 -0.978  0.000 0.025
 </pre></div>
 </div>
 </div>
@@ -612,11 +594,6 @@ Podemos ajustar una recta.</p>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">ynew</span> <span class="o">=</span> <span class="n">polyval</span><span class="p">([</span><span class="n">m_x1</span><span class="p">,</span><span class="n">b_x1</span><span class="p">],</span><span class="n">xx</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">m_x1</span><span class="p">,</span><span class="n">b_x1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.461  23.079
 </pre></div>
 </div>
 </div>
@@ -637,12 +614,6 @@ Podemos ajustar una recta.</p>
 <span class="n">ax0</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span><span class="s2">&quot;B + 2.5 log F = </span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2"> sec(z) &quot;</span><span class="o">%</span><span class="p">(</span><span class="n">b_x1</span><span class="p">,</span><span class="n">m_x1</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax0</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.05, 0.05, &#39;B + 2.5 log F = 23.079  -0.461 sec(z) &#39;)
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_17_1.png" src="../_images/fotometria_1_17_1.png" />
 </div>
 </div>
 <p>Hacemos la misma operación para otras noches de la misma campaña</p>
@@ -691,14 +662,6 @@ Podemos ajustar una recta.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Night 1 -0.461  23.079
-Night 2 -0.082  22.658
-Night 6 -0.258  22.906
-Night 7 -0.347  23.033
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,21 +688,12 @@ Night 7 -0.347  23.033
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.05, 0.05, &#39;Night 7   B + 2.5 log F = 23.033  -0.347 sec(z) &#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;sans-serif&#39;] not found. Falling back to DejaVu Sans.
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_22_2.png" src="../_images/fotometria_1_22_2.png" />
-</div>
 </div>
 <p>Esperamos cambios en el coeficiente de extinción pero no en la constante instrumental.
 Para nuestra sorpresa la constante instrumental varía de una noche a otra.</p>
 </div>
 <div class="section" id="termino-de-color">
-<h2><span class="section-number">7.7.4. </span>Término de color<a class="headerlink" href="#termino-de-color" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.11.4. </span>Término de color<a class="headerlink" href="#termino-de-color" title="Permalink to this headline">¶</a></h2>
 <p>Podemos pintar la gráfica de la noche 7 (por ejemplo) codificando el color de las estrellas para comprobar que los puntos de las estrellas más rojas (mayor índice de color B-V) se separan hacia arriba de la recta ajustada y viceversa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,16 +714,10 @@ Para nuestra sorpresa la constante instrumental varía de una noche a otra.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.05, 0.05, &#39;Night 7   B + 2.5 log F = 23.033  -0.347 sec(z) &#39;)
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_25_1.png" src="../_images/fotometria_1_25_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="ajuste-de-un-termino-de-color">
-<h2><span class="section-number">7.7.5. </span>Ajuste de un término de color<a class="headerlink" href="#ajuste-de-un-termino-de-color" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.11.5. </span>Ajuste de un término de color<a class="headerlink" href="#ajuste-de-un-termino-de-color" title="Permalink to this headline">¶</a></h2>
 <p>Intentamos ajustar un término de color en la forma</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -800,12 +748,6 @@ m_B + 2.5 log(F_B)  =  C - K_B X + K_{B-R} (B-R)
 <span class="n">ax0</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span><span class="s2">&quot;Night 7   B + 2.5 log F = </span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2"> sec(z) &quot;</span><span class="o">%</span><span class="p">(</span><span class="n">b_x7</span><span class="p">,</span><span class="n">m_x7</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax0</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.05, 0.05, &#39;Night 7   B + 2.5 log F = 23.033  -0.347 sec(z) &#39;)
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_28_1.png" src="../_images/fotometria_1_28_1.png" />
 </div>
 </div>
 <p>Definimos una función para realizar el ajuste</p>
@@ -842,11 +784,6 @@ m_B + 2.5 log(F_B)  =  C - K_B X + K_{B-R} (B-R)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22.87244796  0.28850385  0.06117848]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,12 +791,6 @@ m_B + 2.5 log(F_B)  =  C - K_B X + K_{B-R} (B-R)
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Night 7&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">  </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 <span class="n">termino</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">data7</span><span class="p">[</span><span class="s1">&#39;B-R&#39;</span><span class="p">])</span>
 <span class="n">ynew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">data7</span><span class="p">[</span><span class="s1">&#39;B+2.5logF&#39;</span><span class="p">],</span><span class="n">termino</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Night 7 23.033  -0.347
-Night 7 22.872  0.289 0.061
 </pre></div>
 </div>
 </div>
@@ -890,12 +821,6 @@ Night 7 22.872  0.289 0.061
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No handles with labels found to put in legend.
-</pre></div>
-</div>
-<img alt="../_images/fotometria_1_34_1.png" src="../_images/fotometria_1_34_1.png" />
-</div>
 </div>
 <p>La dispersión de los puntos azules (los corregidos de término de color) es mucho menor.</p>
 <div class="cell docutils container">
@@ -911,11 +836,6 @@ Night 7 22.872  0.289 0.061
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22.75426324  0.19730458  0.06112937]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,11 +847,6 @@ Night 7 22.872  0.289 0.061
 <span class="n">p0</span> <span class="o">=</span> <span class="mf">22.</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.01</span>
 <span class="n">popt_N2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">mifuncion</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">br</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="n">p0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">popt_N2</span><span class="p">)</span>     <span class="c1"># Cb Kb Kbr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22.77016872  0.2044487   0.05577854]
 </pre></div>
 </div>
 </div>
@@ -950,15 +865,6 @@ Night 7 22.872  0.289 0.061
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Night 2&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">popt_N2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">popt_N2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">popt_N2</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>     <span class="c1"># Cb Kb Kbr</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Night 6&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">popt_N6</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">popt_N6</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">popt_N6</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>     <span class="c1"># Cb Kb Kbr</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Night 7&#39;</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2"> </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">popt_N7</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>     <span class="c1"># Cb Kb Kbr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Night   C_B    K_B   K_{B-R}
-Night 1 23.096 0.506 0.045
-Night 2 22.770 0.204 0.056
-Night 6 22.754 0.197 0.061
-Night 7 22.872 0.289 0.061
 </pre></div>
 </div>
 </div>
@@ -994,7 +900,7 @@ Night 7 22.872 0.289 0.061
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="ccdproc_06_Flatfielding.html" title="previous page"><span class="section-number">7.6. </span>ccdproc-06:   Flatfielding</a>
+    <a class='left-prev' id="prev-link" href="ccdproc_08_Star_Photometry.html" title="previous page"><span class="section-number">7.9. </span>ccdproc-08: Photometry of stars</a>
     <a class='right-next' id="next-link" href="index-notebooks-examples.html" title="next page"><span class="section-number">8. </span>TEA Notebooks examples</a>
 
     </div>

@@ -40,6 +40,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -173,7 +174,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P1_Introduccion_04.html">
-     4.4. Programación en Python y cuadernos de Jupyter
+     4.4. Python, cuadernos de Jupyter, astropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,7 +213,22 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P2_Fotometria_CCD_04.html">
-     5.4. Pasos finales
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_05.html">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_06.html">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
     </a>
    </li>
   </ul>
@@ -230,38 +246,58 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
-     7.1. ccdproc-01:   Classify images
+     7.2. ccdproc-01:   Classify images
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
-     7.2. ccdproc-02:   Trimming
+     7.3. ccdproc-02:   Trimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
-     7.3. ccdproc-03:   Master BIAS
+     7.4. ccdproc-03:   Master BIAS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
-     7.4. ccdproc-04:   BIAS correction
+     7.5. ccdproc-04:   BIAS correction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
-     7.5. ccdproc-05:   Master FLAT
+     7.6. ccdproc-05:   Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
-     7.6. ccdproc-06:   Flatfielding
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/fotometria_1.html">
-     7.7. Ajuste Bouger y término de color
+     7.11. Ajuste Bouger y término de color
     </a>
    </li>
   </ul>
@@ -274,23 +310,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS.html">
      8.1. Example 1:   Reading and displaying an image
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK.html">
      8.2. Example 2: Master DARK
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat.html">
      8.3. Example 3: Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+    <a class="reference internal" href="../notebooks/example_04_combining_images.html">
      8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
     </a>
    </li>
   </ul>
@@ -401,7 +447,7 @@ Instructions for how to build them from source can be found in the Jupyter
 Book documentation.</p>
 </div>
 <div class="figure align-default">
-<a class="reference internal image-reference" href="../_images/Alumnos_3.5_CalarAlto_3D.png"><img alt="../_images/Alumnos_3.5_CalarAlto_3D.png" src="../_images/Alumnos_3.5_CalarAlto_3D.png" style="width: 750.0px; height: 387.5px;" /></a>
+<a class="reference internal image-reference" href="_static/lecture_specific/index/alumnos_3.5_CalarAlto_3D.png"><img alt="_static/lecture_specific/index/alumnos_3.5_CalarAlto_3D.png" src="_static/lecture_specific/index/alumnos_3.5_CalarAlto_3D.png" /></a>
 </div>
 <p>These lectures are being prepared for the students of ‘Técnicas Experimentales en Astrofísica’ of <a class="reference external" href="https://www.ucm.es/masterastrofisica">Máster en Astrofísica</a> of <a class="reference external" href="https://www.ucm.es/">Universidad Complutense de Madrid</a>. Enjoy the picture at <a class="reference external" href="https://theta360.com/s/dgZ9fWseSCpcj3SVnQW5VDVE8">Calar Alto 3.5m master UCM 2017</a></p>
 <div class="section" id="objetivos">
@@ -449,8 +495,7 @@ Programa de prácticas
 - Preparación del proyecto científico y observacional
 - Realización de observaciones en el Observatorio de Calar Alto
 - Reducción de observaciones y análisis de datos
-- Presentación de resultados
-</div>
+- Presentación de resultados</div>
 </div>
 
     <script type="text/x-thebe-config">

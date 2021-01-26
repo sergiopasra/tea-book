@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.4. Programación en Python y cuadernos de Jupyter &#8212; Técnicas Experimentales en Astrofísica</title>
+    <title>4.4. Python, cuadernos de Jupyter, astropy &#8212; Técnicas Experimentales en Astrofísica</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -40,6 +40,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -173,7 +174,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Programación en Python y cuadernos de Jupyter
+     4.4. Python, cuadernos de Jupyter, astropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,7 +213,22 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P2_Fotometria_CCD_04.html">
-     5.4. Pasos finales
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_05.html">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_06.html">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
     </a>
    </li>
   </ul>
@@ -230,38 +246,58 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
-     7.1. ccdproc-01:   Classify images
+     7.2. ccdproc-01:   Classify images
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
-     7.2. ccdproc-02:   Trimming
+     7.3. ccdproc-02:   Trimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
-     7.3. ccdproc-03:   Master BIAS
+     7.4. ccdproc-03:   Master BIAS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
-     7.4. ccdproc-04:   BIAS correction
+     7.5. ccdproc-04:   BIAS correction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
-     7.5. ccdproc-05:   Master FLAT
+     7.6. ccdproc-05:   Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
-     7.6. ccdproc-06:   Flatfielding
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/fotometria_1.html">
-     7.7. Ajuste Bouger y término de color
+     7.11. Ajuste Bouger y término de color
     </a>
    </li>
   </ul>
@@ -274,23 +310,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS.html">
      8.1. Example 1:   Reading and displaying an image
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK.html">
      8.2. Example 2: Master DARK
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat.html">
      8.3. Example 3: Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+    <a class="reference internal" href="../notebooks/example_04_combining_images.html">
      8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
     </a>
    </li>
   </ul>
@@ -388,82 +434,28 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   4.4.1. Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cuadernos-de-jupyter">
+   4.4.2. Cuadernos de Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#astropy">
+   4.4.3. astropy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones">
-   4.4.1. (Importancia de la utilización de un sistema de control de versiones)
+   4.4.4. (Importancia de la utilización de un sistema de control de versiones)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#acceso-a-catalogos-on-line-desde-python">
-   4.4.2. (Acceso a catálogos on line desde Python)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#paquetes-de-astropy">
-   4.4.3. Paquetes de Astropy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cuaderno-de-observaciones">
-   4.4.4. Cuaderno de observaciones
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calibracion-ccd">
-   4.4.5. Calibración CCD
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imagenes-ccd">
-     4.4.5.1. Imágenes CCD
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-llegada-de-fotones-a-un-detector">
-     4.4.5.2. (La llegada de fotones a un detector)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#imagenes-de-calibracion">
-     4.4.5.3. Imágenes de calibración
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#bias">
-       4.4.5.3.1. BIAS
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#flat-fields">
-       4.4.5.3.2. FLAT FIELDs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#darks">
-       4.4.5.3.3. DARKs
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pasos-de-la-calibracion">
-     4.4.5.4. Pasos de la calibración
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-imagenes-ccd">
-   4.4.6. Ejemplo de reducción de imágenes CCD
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejemplo-de-reduccion-de-espectros-ccd">
-   4.4.7. Ejemplo de reducción de espectros CCD
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estrategias-para-la-estimacion-de-incertidumbres">
-   4.4.8. Estrategias para la estimación de incertidumbres
+   4.4.5. (Acceso a catálogos on line desde Python)
   </a>
  </li>
 </ul>
@@ -477,143 +469,49 @@
         
               <div>
                 
-  <div class="section" id="programacion-en-python-y-cuadernos-de-jupyter">
-<h1><span class="section-number">4.4. </span>Programación en Python y cuadernos de Jupyter<a class="headerlink" href="#programacion-en-python-y-cuadernos-de-jupyter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="python-cuadernos-de-jupyter-astropy">
+<h1><span class="section-number">4.4. </span>Python, cuadernos de Jupyter, astropy<a class="headerlink" href="#python-cuadernos-de-jupyter-astropy" title="Permalink to this headline">¶</a></h1>
 <p>Ventajas e inconvenientes frente a los paquetes tradicionales.</p>
+<div class="section" id="python">
+<h2><span class="section-number">4.4.1. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="cuadernos-de-jupyter">
+<h2><span class="section-number">4.4.2. </span>Cuadernos de Jupyter<a class="headerlink" href="#cuadernos-de-jupyter" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="astropy">
+<h2><span class="section-number">4.4.3. </span>astropy<a class="headerlink" href="#astropy" title="Permalink to this headline">¶</a></h2>
+<p>Aunque podríamos hacer toda la reducción de observaciones usando sólo [<code class="docutils literal notranslate"><span class="pre">python</span></code>] es conveniente hacerlo usando los paquetes que pone a nuestra disposición <a class="reference external" href="https://docs.astropy.org/en/stable/index.html"><code class="docutils literal notranslate"><span class="pre">astropy</span></code></a> ya que fure desarrollado precisamente para ayudar a las tareas de la comunidad de astrónomos. Además incorpora otros paquetes afiliados desarrollados por investigadores que han resuleto problemas de reducción que no estaban originalmente en el núcleo de <code class="docutils literal notranslate"><span class="pre">astropy</span></code>.</p>
+<p><a class="reference external" href="https://www.aanda.org/articles/aa/full_html/2013/10/aa22068-13/aa22068-13.html">Astropy: A community Python package for astronomy</a></p>
+<ul class="simple">
+<li><p>Instalar <code class="docutils literal notranslate"><span class="pre">astropy</span></code> <a class="reference external" href="https://docs.astropy.org/en/stable/install.html">https://docs.astropy.org/en/stable/install.html</a></p></li>
+</ul>
+<p>Resumiendo (es mejor consultar la página de instrucciones enlazada), si tienes una instalación de Linux realizada con <code class="docutils literal notranslate"><span class="pre">conda</span></code></p>
+<pre>
+conda install astropy
+</pre>
+<p>y después para actualizar a la última versión</p>
+<pre>
+conda update astropy
+</pre>
+<p>También puedes usar <a class="reference external" href="https://pypi.org/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a> si estás usando este instalador de paquetes.</p>
+<pre>
+pip install astropy
+</pre>
+<p>o si se quiere uno asegurar de que se cargan todas las dependencias</p>
+<pre>
+pip install astropy[all]
+</pre>
+<p>Segun avancemos en las clases surgirán paquetes nuevos que se usan. Se enlaza en cada caso las instrucciones de instalación aunque es fácil encontrarlas en las páginas de los paquetes.</p>
+</div>
 <div class="section" id="importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones">
-<h2><span class="section-number">4.4.1. </span>(Importancia de la utilización de un sistema de control de versiones)<a class="headerlink" href="#importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones" title="Permalink to this headline">¶</a></h2>
-<p>Introducción a [Git]https://git-scm.com/)</p>
+<h2><span class="section-number">4.4.4. </span>(Importancia de la utilización de un sistema de control de versiones)<a class="headerlink" href="#importancia-de-la-utilizacion-de-un-sistema-de-control-de-versiones" title="Permalink to this headline">¶</a></h2>
+<p>Introducción a <a class="reference external" href="https://git-scm.com/">Git</a></p>
 </div>
 <div class="section" id="acceso-a-catalogos-on-line-desde-python">
-<h2><span class="section-number">4.4.2. </span>(Acceso a catálogos on line desde Python)<a class="headerlink" href="#acceso-a-catalogos-on-line-desde-python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.4.5. </span>(Acceso a catálogos on line desde Python)<a class="headerlink" href="#acceso-a-catalogos-on-line-desde-python" title="Permalink to this headline">¶</a></h2>
 <p>Realización de queries a <a class="reference external" href="https://vizier.u-strasbg.fr/viz-bin/VizieR">Vizier</a>
 y <a class="reference external" href="https://aladin.u-strasbg.fr/">Aladin</a>.
 Utilización del paquete <a class="reference external" href="https://pypi.org/project/pyvo/">PyVO</a> para acceder a datos astronómicos en archivos que siguen los estándares definidos por el IVOA (International Virtual Observatory Alliance).</p>
-</div>
-<div class="section" id="paquetes-de-astropy">
-<h2><span class="section-number">4.4.3. </span>Paquetes de Astropy<a class="headerlink" href="#paquetes-de-astropy" title="Permalink to this headline">¶</a></h2>
-<p>Aquí la información sobre cómo cargar los paquetes.</p>
-</div>
-<div class="section" id="cuaderno-de-observaciones">
-<h2><span class="section-number">4.4.4. </span>Cuaderno de observaciones<a class="headerlink" href="#cuaderno-de-observaciones" title="Permalink to this headline">¶</a></h2>
-<p>El acceso a las grandes instalaciones se realiza mediante llamada de propuestas que posteriormente son evaluadas por un panel. Los diferentes proyectos se ordenan según su calificación y se asigna tiempo de observación a las propuestas mejor valoradas hasta que se acaba el tiempo. Esto ocurre con los telescopios profesionales en los que dependiendo de las necesidades de los grupos solicitantes aparecen factores de sobrepetición.<br />
-Para acoplar los proyectos con tiempo asignado se recorta a veces la cantidad de tiempo solicitado. El resultado es que si se consigue acceso a un telescopio se dispone de un tiempo corto para llevar a cabo el proyecto. Por eso es muy importante planificar bien las observaciones para llevarlas acabo de forma eficiente, sin pérdidas de tiempo. A la hora de observar se sigue esta agenda previa que deberá ser modificada o no de acuerdo a las condiciones meteorológicas y/o a los resultados que se vayan obteniendo.<br />
-Para la observación en sí misma lo ideal es que haya, al menos, dos personas observando. La de mayor experiencia puede llevar el peso de la observación al principio mientras la otra, por ejemplo un estudiante de doctorado, va cogiendo confianza. Lo normal es que la doctoranda acabe liderando la observación.<br />
-Antiguamente era usual llevar un cuaderno de observaciones (‘logbook’) donde se anotaban cada una de las instrucciones que se recibían de los astrónomos de apoyo, los parámetros de los ajustes de los instrumentos como la configuración instrumental y cada una de las exposiciones. También se anotan las observaciones para encontrar el mejor foco, las incidencias o fallos en las observaciones como por ejemplo saturación de estrellas estándar que ayudan a decidir tiempos de exposición del mismo objeto en la siguiente noche, el número de cuentas en los Flat Field, condiciones atmosféricas y seeing, por ejemplo. Parte de esta información aparece en las cabeceras FITS de los ficheros como el tiempo de exposición o la hora de la observación, pero muchos otros no. Los cuadernos de observación ayudan a la hora de la reducción cuando, por ejemplo, se ha nombrado mal el objeto observado</p>
-<div class="figure align-default" id="logbook-1-fig">
-<a class="reference internal image-reference" href="../_images/intro_04_logbook_1.png"><img alt="../_images/intro_04_logbook_1.png" src="../_images/intro_04_logbook_1.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.13 </span><span class="caption-text">Del cuaderno de observaciones de NOT 2008 que se emplea en la práctica de reducción de observaciones de imagen. El cuaderno completo se encuentra en el campus virtual. Se ha escrito en cada línea una observación indicando el número de orden (seguramente las últimas cifras del fichero), el objeto, el tiempo de exposición, el filtro, la hora (en TU) y en algún caso la sec(z) o masa de aire. También se leen algunos comentarios.</span><a class="headerlink" href="#logbook-1-fig" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="logbook-2-fig">
-<a class="reference internal image-reference" href="../_images/intro_04_logbook_2.png"><img alt="../_images/intro_04_logbook_2.png" src="../_images/intro_04_logbook_2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Del cuaderno de observaciones de la campaña del INT de mayo de 1997 que se emplea en la práctica de reducción de espectroscopía de rendija larga. El cuaderno completo se encuentra en el campus virtual. En este caso se anota también el ángulo de posición (PA). En la parte baja de esta hoja se pegó una impresión de la imagen espectroscópica indicando la orientación de la rendija.</span><a class="headerlink" href="#logbook-2-fig" title="Permalink to this image">¶</a></p>
-</div>
-<p>Estos métodos de cuaderno de observaciones de la ‘vieja escuela’ están dando paso a la edición de un fichero de anotaciones en un ordenador. No es lo mismo, desde luego.</p>
-</div>
-<div class="section" id="calibracion-ccd">
-<h2><span class="section-number">4.4.5. </span>Calibración CCD<a class="headerlink" href="#calibracion-ccd" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="imagenes-ccd">
-<h3><span class="section-number">4.4.5.1. </span>Imágenes CCD<a class="headerlink" href="#imagenes-ccd" title="Permalink to this headline">¶</a></h3>
-<p>La observación con un detector de imagen como un CCD da lugar a un fichero que almacena un número (cuentas) recibidas en cada pixel. Por lo tanto la imagen resultante es una matriz de datos. Las cuentas en cada pixel se corresponden a la llegada de fotones de forma que la imagen calibrada puede usarse para medir en diferentes partes de la imagen y extraer información científica.<br />
-Ya sabemos que los fotones producen en el substrato del chip pares electrón-hueco y que los electrones se almacenan en el pozo de potencial creado bajo los electrodos de cada pixel. En la lectura ordenada del CCD estos electrones se cuentan con un conversor analógico-digital que los transforma en un número de cuentas o ADUs (analog-to-digital units’). La relación entre electrones y cuentas es la ganancia del detector. Para evitar efectuar esta conversión en las cuentas de píxeles que recibieron poca señal se suma una señal de pedestal o BIAS y así ya no estamos en valores cercanos a cero en sitios oscuros. Estos detectores se refrigeran para reducir la corriente de oscuridad que se añade a nuestra señal.</p>
-<div class="figure align-default" id="ccd-1-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_1.png"><img alt="../_images/intro_05_CCD_1.png" src="../_images/intro_05_CCD_1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.15 </span><span class="caption-text">La medida en cada pixel del CCD está relacionada con la cantidad de fotones que llegaron a cada pixel a través de esta expresión.</span><a class="headerlink" href="#ccd-1-fig" title="Permalink to this image">¶</a></p>
-</div>
-<p>Para llegar a la imagen reducida (<span class="math notranslate nohighlight">\(I_{i,j}\)</span>) desde la matriz de nuestra observación (<span class="math notranslate nohighlight">\(X_{i,j}\)</span>) debemos conocer el valor del BIAS que se añadió a la imagen y también la corriente de oscuridad (<span class="math notranslate nohighlight">\(A_{i,j}\)</span>). Este ruido es muy pequeño en los detectores modernos si están convenientemente refrigerados. Es señal que se va acumulanto con el tiempo así que es mayor para observaciones largas. Una característica importante de los CCD es que su respuesta depende la posición del pixel en el chip. La variación de la respuesta espacial que aquí indicamos con (<span class="math notranslate nohighlight">\(B_{i,j}\)</span>) se determina también con imágenes de calibración.</p>
-</div>
-<div class="section" id="la-llegada-de-fotones-a-un-detector">
-<h3><span class="section-number">4.4.5.2. </span>(La llegada de fotones a un detector)<a class="headerlink" href="#la-llegada-de-fotones-a-un-detector" title="Permalink to this headline">¶</a></h3>
-<p>Utilizando un array de pequeñas dimensiones, se simula la llegada poissoniana de fotones a un detector y la posterior conversión analógica-digital. Esta simulación permite ilustrar conceptos básicos de relación señal/ruido y propagación de incertidumbres.<br />
-Pendiente de hacer pero se puede consultar <a class="reference external" href="https://mwcraig.github.io/ccd-as-book/01-00-Understanding-an-astronomical-CCD-image.html">CCD data reduction guide</a> written by Matt Craig and Lauren Chambers. Editing was done by Lauren Glattly.</p>
-</div>
-<div class="section" id="imagenes-de-calibracion">
-<h3><span class="section-number">4.4.5.3. </span>Imágenes de calibración<a class="headerlink" href="#imagenes-de-calibracion" title="Permalink to this headline">¶</a></h3>
-<p>Para calibrar las observaciones de ciencia se deben tomar imágenes auxiliares que sirven de calibración. Estas imágenes de calibración son los BIAS, DARKS y los FLATS. Es importante notar que las imágenes de calibración se toman en las mismas condiciones de temperatura ya que el ruido electrónico y la sensibilidad del CCD varían con la temperatura. Por eso se utilizan criostatos.</p>
-<div class="section" id="bias">
-<h4><span class="section-number">4.4.5.3.1. </span>BIAS<a class="headerlink" href="#bias" title="Permalink to this headline">¶</a></h4>
-<p>Se obtienen las imágenes de BIAS con exposiciones de tiempo de exposición nulo (0s) con el obturador cerrado. Por eso se llaman también  DARK 0. Representan el punto cero de la señal de un CCD que es un valor que decidieron los ingenieros que montaron el sistema. El BIAS puede contener algo de estructura, es decir que no es completamente plano. Como cualquier imagen CCD presenta ruido de lectura y electrónico. aunque el tiempo de exposición es nulo el tiempo de lectura no lo es. Durante ese tiempo caen rayos cósmicos que dejan su marca en forma de píxeles con señal alta. Se realizan series de BIAS para combinarlos ya que el BIAS final debe estar libre de rayos cósmicos. La combinación (‘average’ + ‘sigma clipping’) reduce el ruido un factor <span class="math notranslate nohighlight">\(\sqrt(N)\)</span>. En algunos casos puede ser necesario usar el ‘overscan’ que es una lectura de columnas del CCD que no existen o columnas tapadas del chip. La región de overscan está presente en todas las imágenes incluidas las de ciencia.</p>
-</div>
-<div class="section" id="flat-fields">
-<h4><span class="section-number">4.4.5.3.2. </span>FLAT FIELDs<a class="headerlink" href="#flat-fields" title="Permalink to this headline">¶</a></h4>
-<p>Los ‘Flat Fields’ que podríamos traducir como imágenes de campo plano, se obtienen iluminando el CCD uniformemente.
-Son necesarios para determinar la variación espacial de sensibilidad. Esta variación depende de la longitud de onda por lo que debe determinarse para cada filtro empleado en las observaciones. Pero además las motas de polvo en el chip, la ventana o los filtros nos obligan a tomar flat fields en la misma noche de nuestra observación. Si una de estas motas se mueve de sitio el flat field de antes ya no vale ya que no corregirá la zona del chip donde se ha parado la mota de polvo y sobre corregirá la zona donde estaba antes.</p>
-<p>Se eligen los tiempos de exposición para que el número de cuentas esté aproximadamente a la mitad del nivel de saturación. También se realizan observaciuones de series de Flats para combinarlos en un ‘master Flat’.</p>
-<ul class="simple">
-<li><p>Flats de cúpula (‘dome flat’)<br />
-Se obtienen iluminando con lámparas el interior de la cúpula.
-Se pueden realizar en cualquier momento (día o noche).</p></li>
-<li><p>Flats de cielo (‘sky flat’)<br />
-Se apunta al cielo libre de objetos (‘blank field’) o a una nube.
-Se realizan en los crepúsculos  (anochecer o amanecer) (‘twilight’).
-Pueden obtenerse combinando muchas imágenes de ciencia si los objetos no llenan el campo de visión.</p></li>
-</ul>
-<p>Recordemos que los Flat Fields dependen del chip, de su temperatura, del filtro utilizado, de la posición de las motas de polvo. Por lo tanto se toman</p>
-<p>(a) en las mismas condiciones de temperatura del criostato porque la sensibilidad del CCD varía con la temperatura.<br />
-(b) para cada filtro empleado ya que la respuesta del CCD varía con la longitud de onda.</p>
-<p>Por supuesto estas condiciones se deben mantener a lo largo de la observación de los objetos problema.</p>
-</div>
-<div class="section" id="darks">
-<h4><span class="section-number">4.4.5.3.3. </span>DARKs<a class="headerlink" href="#darks" title="Permalink to this headline">¶</a></h4>
-<p>En los CCDs profesionales de la actualidad la corriente de oscuridad es inapreciable. Se comprueba tomando exposiciones largas con el obturador cerrado. Si existe corriente de oscuridad se deben tomar imágenes DARK del mismo tiempo de exposición que las de ciencia.
-Se obtienen series de DARKs para combinarlos en un ‘master Dark’.</p>
-</div>
-</div>
-<div class="section" id="pasos-de-la-calibracion">
-<h3><span class="section-number">4.4.5.4. </span>Pasos de la calibración<a class="headerlink" href="#pasos-de-la-calibracion" title="Permalink to this headline">¶</a></h3>
-<p>Para cada noche de observación se visualizan y analizan las imágenes disponibles. Esto sirve para no procesar la imágenes ‘a ciegas’ y que se nos cuele un fichero mal grabado, por ejemplo. Tras este paso se retiran las imágenes que no sirven. Si es necesario se recorta de las imágenes la región de interés. Por razones obvias, es importante aplicar este recorte a todas las imágenes.</p>
-<div class="figure align-default" id="ccd-2-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_2.png"><img alt="../_images/intro_05_CCD_2.png" src="../_images/intro_05_CCD_2.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Ejemplo de imagen original y recortada para retirar la zona sin señal válida.</span><a class="headerlink" href="#ccd-2-fig" title="Permalink to this image">¶</a></p>
-</div>
-<ul class="simple">
-<li><p>Corrección de nivel cero<br />
-Se combinan los BIAS para crear un BIAS maestro  (ZERO)<br />
-Se resta la imagen ZERO a todas las imágenes</p></li>
-<li><p>Corrección de FLAT<br />
-Se combinan los FLATS de cada filtro<br />
-Se normaliza dividiendo por el número medio de cuentas para crear el FLAT maestro<br />
-Se dividen las imágenes de ciencia por el FLAT maestro</p></li>
-</ul>
-<div class="figure align-default" id="ccd-3-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_3.png"><img alt="../_images/intro_05_CCD_3.png" src="../_images/intro_05_CCD_3.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Ejemplo de flat fileds de cielo individuales y Flat Field maestro (abajo a la derecha). La combinación ha retirado las estrellas que aparecieron en las tomas de crepúsculo.</span><a class="headerlink" href="#ccd-3-fig" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="ccd-4-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_4.png"><img alt="../_images/intro_05_CCD_4.png" src="../_images/intro_05_CCD_4.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Ejemplo de imagen original y dividida por el Flat Field maestro.</span><a class="headerlink" href="#ccd-4-fig" title="Permalink to this image">¶</a></p>
-</div>
-<ul class="simple">
-<li><p>Combinación de imágenes individuales<br />
-Si se ha observado el mismo campos en varias exposiciones, éstas se combinan para crear una imagen única. En el proceso hay que registrar (hacer que coincidan) las imágenes si el telescopio se desplazó entre las tomas individuales. La combinación de imágenes ayuda a retirar rayos cósmicos cuya posición de caida en el chip es aleatoria.</p></li>
-</ul>
-<div class="figure align-default" id="ccd-5-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_5.png"><img alt="../_images/intro_05_CCD_5.png" src="../_images/intro_05_CCD_5.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Misma región del chip de tres observaciones consecutivas del mismo campo con la misma estrella marcada en cada exposición.</span><a class="headerlink" href="#ccd-5-fig" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="ccd-7-fig">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_8.png"><img alt="../_images/intro_05_CCD_8.png" src="../_images/intro_05_CCD_8.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.20 </span><span class="caption-text">Identificación de estrellas usadas en la alineación de la imágenes.</span><a class="headerlink" href="#ccd-7-fig" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/intro_05_CCD_7.png"><img alt="../_images/intro_05_CCD_7.png" src="../_images/intro_05_CCD_7.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.21 </span><span class="caption-text">Las tres imágenes alineadas a la misma referencia. Se han utilizado los mismos cortes para que se note cómo ha variado el brillo de cielo entre las tomas.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>Estos pasos se siguen en las prácticas.</p>
-<p>Bias, dark, flat fields de baja y alta frecuencia, arcos para calibración en longitud de onda. Se explican sus características y utilización. Definición de región útil del detector y regiones de under/overscan. Utilización de binning durante las observaciones para incrementar la relación señal/ruido y/o reducir el tiempo de lectura.</p>
-</div>
-</div>
-<div class="section" id="ejemplo-de-reduccion-de-imagenes-ccd">
-<h2><span class="section-number">4.4.6. </span>Ejemplo de reducción de imágenes CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-imagenes-ccd" title="Permalink to this headline">¶</a></h2>
-<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 2, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos), la combinación de imágenes individuales y la calibración astrométrica.</p>
-</div>
-<div class="section" id="ejemplo-de-reduccion-de-espectros-ccd">
-<h2><span class="section-number">4.4.7. </span>Ejemplo de reducción de espectros CCD<a class="headerlink" href="#ejemplo-de-reduccion-de-espectros-ccd" title="Permalink to this headline">¶</a></h2>
-<p>Utilizando un subconjunto de las imágenes disponibles para la Práctica 3, se ilustrará la aplicación de calibraciones básicas (corrección de cero, corrección de flat field, corrección de rayos cósmicos, calibración en longitud de onda, corrección de iluminación) y la combinación de imágenes individuales.</p>
-</div>
-<div class="section" id="estrategias-para-la-estimacion-de-incertidumbres">
-<h2><span class="section-number">4.4.8. </span>Estrategias para la estimación de incertidumbres<a class="headerlink" href="#estrategias-para-la-estimacion-de-incertidumbres" title="Permalink to this headline">¶</a></h2>
-<p>Propagación analítica frente a la utilización de técnicas de bootstrapping y Monte Carlo.</p>
 </div>
 </div>
 

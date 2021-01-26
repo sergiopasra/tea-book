@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.5. Alineamiento de imágenes &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.6. Fotometría de las estrellas estándar" href="P2_Fotometria_CCD_06.html" />
+    <link rel="prev" title="5.4. Combinación de imágenes" href="P2_Fotometria_CCD_04.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Python, cuadernos de Jupyter, astropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_06.html">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.2. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.3. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.4. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.5. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.6. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.11. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P2_Fotometria_CCD_05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P2_Fotometria_CCD_05.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P2_Fotometria_CCD_05.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="alineamiento-de-imagenes">
+<h1><span class="section-number">5.5. </span>Alineamiento de imágenes<a class="headerlink" href="#alineamiento-de-imagenes" title="Permalink to this headline">¶</a></h1>
+<p>Cuando no se dispone de astrometría en las imágenes necesitamos realizarla antes de comparar dos imágenes en diferentes bandas fotométricas de nuestras propias observaciones o descargadas de archivo.
+Se puede realizar con <a class="reference external" href="https://astroalign.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">astroalign</span></code></a> que precisamente ha sido desarrollado para resolver este problema.</p>
+<pre>
+Astroalign: A Python module for astronomical image registration. 
+Beroiz, M., Cabral, J. B., and Sanchez, B. 
+Astronomy and Computing, Volume 32, July 2020, 100384.
+</pre>
+<p>El proceso de alinear (o registrar que es la palabra que se usa en fotografía) se suele realizar buscando imágenes de estrellas en el campo e identificando las mismas estrellas en las dos imágenes a alinear. Se busca entonces la transformación de una de las imágenes que dejaría a las estrellas en la misma posición que la imagen que tomamos como referencia. Finalmente se aplica la transformación que implica rotación y cambio de escala en el caso general.</p>
+<p>En el cuaderno de jupyter “example_05_register_images” se muestra un ejemplo donde se pretende alinear dos imágenes de una galaxia (M51) obtenidas en banda ancha B en diferentes épocas con el objetivo final de combinarlas para aumentar la relación señal/ruido.</p>
+<div class="figure align-default" id="aligning-1-fig">
+<a class="reference internal image-reference" href="../_images/p2_07_aligning_1.png"><img alt="../_images/p2_07_aligning_1.png" src="../_images/p2_07_aligning_1.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.35 </span><span class="caption-text">Las dos imágenes de M51 a registrar. La de la derecha se tomará como referencia.</span><a class="headerlink" href="#aligning-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>En la figura se observa la imagen tomada en 2019 a la izquierda y la de 2016 a la derecha. Se aprecia que hay un giro entre ambas aunque no se espera cambio de escala al estar tomadas con el mismo instrumento y chip CCD.</p>
+<p>Leemos los ficheros de las imágenes,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Files of observations used in this example </span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;FITS_files/&#39;</span>
+<span class="n">file_reference_image</span> <span class="o">=</span> <span class="n">directory</span><span class="o">+</span><span class="s1">&#39;afztUCM0070.fits&#39;</span>    <span class="c1">#2016-04-28</span>
+<span class="n">file_original_image</span>  <span class="o">=</span> <span class="n">directory</span><span class="o">+</span><span class="s1">&#39;fztucmP_0044.fits&#39;</span>   <span class="c1">#2019-04-11</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDUList_object</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_reference_image</span><span class="p">)</span>
+<span class="n">reference_header</span>  <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+<span class="n">reference_image</span>   <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reference image&#39;</span><span class="p">,</span><span class="n">reference_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">reference_header</span><span class="p">[</span><span class="s1">&#39;INSFLNAM&#39;</span><span class="p">],</span>
+      <span class="n">reference_header</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">],</span><span class="s1">&#39;    BITPIX:&#39;</span><span class="p">,</span><span class="n">reference_header</span><span class="p">[</span><span class="s1">&#39;BITPIX&#39;</span><span class="p">])</span>
+<span class="n">HDUList_object</span>  <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_original_image</span><span class="p">)</span>
+<span class="n">original_header</span> <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+<span class="n">original_image</span>  <span class="o">=</span> <span class="n">HDUList_object</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;image to align &#39;</span><span class="p">,</span><span class="n">original_header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span> <span class="n">original_header</span><span class="p">[</span><span class="s1">&#39;INSFLNAM&#39;</span><span class="p">],</span>
+      <span class="n">original_header</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">],</span><span class="s1">&#39;  BITPIX:&#39;</span><span class="p">,</span><span class="n">original_header</span><span class="p">[</span><span class="s1">&#39;BITPIX&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usaremos <code class="docutils literal notranslate"><span class="pre">astroalign</span></code> que debe cargarse siguiendo las instrucciones en <a class="reference external" href="https://cleanest.readthedocs.io/en/latest/installation.html">https://cleanest.readthedocs.io/en/latest/installation.html </a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astroalign</span> <span class="k">as</span> <span class="nn">aa</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Transformamos la imagen con esta utilidad</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># To transform the image (align &amp; rotate) using the reference image </span>
+<span class="n">registered_image</span><span class="p">,</span> <span class="n">footprint</span> <span class="o">=</span> <span class="n">aa</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="aligning-2-fig">
+<a class="reference internal image-reference" href="../_images/p2_07_aligning_2.png"><img alt="../_images/p2_07_aligning_2.png" src="../_images/p2_07_aligning_2.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.36 </span><span class="caption-text">La imagen transformada coincide perfectamente con la que tomamos de referencia.</span><a class="headerlink" href="#aligning-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos ver qué transformación se ha realizado,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="n">pos_img</span><span class="p">,</span> <span class="n">pos_img_rot</span><span class="p">)</span> <span class="o">=</span> <span class="n">aa</span><span class="o">.</span><span class="n">find_transform</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rotation: </span><span class="si">{:.2f}</span><span class="s2"> degrees&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">rotation</span> <span class="o">*</span> <span class="mf">180.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Scale factor: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">scale</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Translation: (x, y) = (</span><span class="si">{:.2f}</span><span class="s2">, </span><span class="si">{:.2f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="o">.</span><span class="n">translation</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tranformation matrix:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">params</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Point correspondence:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pos_img</span><span class="p">,</span> <span class="n">pos_img_rot</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(</span><span class="si">{:.2f}</span><span class="s2">, </span><span class="si">{:.2f}</span><span class="s2">) in source --&gt; (</span><span class="si">{:.2f}</span><span class="s2">, </span><span class="si">{:.2f}</span><span class="s2">) in target&quot;</span>
+          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+Rotation: 17.88 degrees
+Scale factor: 1.00
+Translation: (x, y) = (45.33, -284.58)
+Tranformation matrix:
+[[   0.95318451   -0.30753652   45.33333586]
+ [   0.30753652    0.95318451 -284.58026185]
+ [   0.            0.            1.        ]]
+
+Point correspondence:
+(222.70, 577.92) in source --> (79.88, 335.14) in target
+(666.64, 758.36) in source --> (447.69, 642.81) in target
+(315.09, 719.98) in source --> (124.39, 498.49) in target
+(764.40, 687.24) in source --> (562.19, 606.04) in target
+(400.82, 177.33) in source --> (373.03, 8.08) in target
+
+(115.49, 401.06) in source --> (31.76, 133.68) in target
+(655.55, 434.77) in source --> (537.20, 332.10) in target
+(362.49, 607.05) in source --> (204.21, 405.34) in target
+(400.54, 741.97) in source --> (199.16, 545.82) in target
+</pre>
+<p>Como esperábamos el factor de escala es la unidad porque proceden de la misma configuración instrumental. En la transformación ha tenido que rotar un ángulo de 18 grados aproximadamente. Se muestra en el listado la matriz de transformación aplicada. Finalmente se listan las fuentes empleadas para realizar el ajuste.</p>
+<p>Podemos mostrar algunas de las estrellas identificadas (véanse los detalles en el cuaderno de jupyter)</p>
+<div class="figure align-default" id="aligning-3-fig">
+<a class="reference internal image-reference" href="../_images/p2_07_aligning_3.png"><img alt="../_images/p2_07_aligning_3.png" src="../_images/p2_07_aligning_3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.37 </span><span class="caption-text">Las estrellas usadas etiquetadas en colores para que sea fácil encontrarlas en cada una de las imagenes.</span><a class="headerlink" href="#aligning-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Y guardamos el resultado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A new FITS file to contain the registered image is created </span>
+<span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">(</span><span class="n">registered_image</span><span class="p">)</span>
+<span class="n">hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">HDUList</span><span class="p">([</span><span class="n">hdu</span><span class="p">])</span>
+<span class="n">hdul</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="s1">&#39;afztucmP_0044.fits&#39;</span><span class="p">)</span> <span class="c1"># A warning raises when the file already exits</span>
+
+<span class="c1"># We use the original image header </span>
+<span class="n">update</span><span class="p">(</span><span class="s1">&#39;afztucmP_0044.fits&#39;</span><span class="p">,</span> <span class="n">registered_image</span><span class="p">,</span> <span class="n">original_header</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P2_Fotometria_CCD_04.html" title="previous page"><span class="section-number">5.4. </span>Combinación de imágenes</a>
+    <a class='right-next' id="next-link" href="P2_Fotometria_CCD_06.html" title="next page"><span class="section-number">5.6. </span>Fotometría de las estrellas estándar</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

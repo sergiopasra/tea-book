@@ -95,3 +95,5 @@ SSH (secure shell) es un protocolo encriptado que permite conexiones y transfere
 
 Ejemplos de uso de ssh y scp. 
 
+http://nartex.hst.ucm.es/~ncl/AE2019/instrucciones_practica1a.html
+

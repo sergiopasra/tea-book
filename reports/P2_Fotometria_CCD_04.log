@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib64/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/spr/Documentos/Docencia/teabook/teabook/lib64/python3.9/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sky_mean , std = [] , []
+fig, axarr = plt.subplots(ncols=3, nrows=1, figsize=(12, 12))
+for n in range(3):
+    ax = axarr[n]
+    ax.imshow(image[n].data, cmap='gray', origin='lower',vmin=1000, vmax=5000,norm=LogNorm())
+    ax.text(200,200,n,fontsize=15,color="w")
+    ax.set_xlabel('X axis')
+    mean_n,std_n = draw_rectangle(ax, image[n].data, 100, 500, 1500, 1900, color='w',text=True)
+    print(n,int(mean_n),int(std_n))
+    sky_mean.append(mean_n)
+    std.append(std_n)
+    ax.grid()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-1-eb7406696a78>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0msky_mean[0m [0;34m,[0m [0mstd[0m [0;34m=[0m [0;34m[[0m[0;34m][0m [0;34m,[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mfig[0m[0;34m,[0m [0maxarr[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0msubplots[0m[0;34m([0m[0mncols[0m[0;34m=[0m[0;36m3[0m[0;34m,[0m [0mnrows[0m[0;34m=[0m[0;36m1[0m[0;34m,[0m [0mfigsize[0m[0;34m=[0m[0;34m([0m[0;36m12[0m[0;34m,[0m [0;36m12[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0;32mfor[0m [0mn[0m [0;32min[0m [0mrange[0m[0;34m([0m[0;36m3[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m     [0max[0m [0;34m=[0m [0maxarr[0m[0;34m[[0m[0mn[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m     [0max[0m[0;34m.[0m[0mimshow[0m[0;34m([0m[0mimage[0m[0;34m[[0m[0mn[0m[0;34m][0m[0;34m.[0m[0mdata[0m[0;34m,[0m [0mcmap[0m[0;34m=[0m[0;34m'gray'[0m[0;34m,[0m [0morigin[0m[0;34m=[0m[0;34m'lower'[0m[0;34m,[0m[0mvmin[0m[0;34m=[0m[0;36m1000[0m[0;34m,[0m [0mvmax[0m[0;34m=[0m[0;36m5000[0m[0;34m,[0m[0mnorm[0m[0;34m=[0m[0mLogNorm[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'plt' is not defined
+NameError: name 'plt' is not defined
+

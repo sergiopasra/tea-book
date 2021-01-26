@@ -40,6 +40,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -173,7 +174,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P1_Introduccion_04.html">
-     4.4. Programación en Python y cuadernos de Jupyter
+     4.4. Python, cuadernos de Jupyter, astropy
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,7 +213,22 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P2_Fotometria_CCD_04.html">
-     5.4. Pasos finales
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_05.html">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_06.html">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
     </a>
    </li>
   </ul>
@@ -230,38 +246,58 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
-     7.1. ccdproc-01:   Classify images
+     7.2. ccdproc-01:   Classify images
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
-     7.2. ccdproc-02:   Trimming
+     7.3. ccdproc-02:   Trimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
-     7.3. ccdproc-03:   Master BIAS
+     7.4. ccdproc-03:   Master BIAS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
-     7.4. ccdproc-04:   BIAS correction
+     7.5. ccdproc-04:   BIAS correction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
-     7.5. ccdproc-05:   Master FLAT
+     7.6. ccdproc-05:   Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
-     7.6. ccdproc-06:   Flatfielding
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../notebooks/fotometria_1.html">
-     7.7. Ajuste Bouger y término de color
+     7.11. Ajuste Bouger y término de color
     </a>
    </li>
   </ul>
@@ -274,23 +310,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS_v3.html">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS.html">
      8.1. Example 1:   Reading and displaying an image
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_02_Master_DARK_v3.html">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK.html">
      8.2. Example 2: Master DARK
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_03_Master_Flat_v3.html">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat.html">
      8.3. Example 3: Master FLAT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/example_04_combining_images_v1.html">
+    <a class="reference internal" href="../notebooks/example_04_combining_images.html">
      8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
     </a>
    </li>
   </ul>
@@ -460,9 +506,61 @@
 Ya sabemos que los fotones producen en el substrato del chip pares electrón-hueco y que los electrones se almacenan en el pozo de potencial creado bajo los electrodos de cada pixel. En la lectura ordenada del CCD estos electrones se cuentan con un conversor analógico-digital que los transforma en un número de cuentas o ADUs (analog-to-digital units’). La relación entre electrones y cuentas es la ganancia del detector. Para evitar efectuar esta conversión en las cuentas de píxeles que recibieron poca señal se suma una señal de pedestal o BIAS y así ya no estamos en valores cercanos a cero en sitios oscuros. Estos detectores se refrigeran para reducir la corriente de oscuridad que se añade a nuestra señal.</p>
 <div class="figure align-default" id="ccd-1-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_1.png"><img alt="../_images/intro_05_CCD_1.png" src="../_images/intro_05_CCD_1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">La medida en cada pixel del CCD está relacionada con la cantidad de fotones que llegaron a cada pixel a través de esta expresión.</span><a class="headerlink" href="#ccd-1-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15 </span><span class="caption-text">La medida en cada pixel del CCD está relacionada con la cantidad de fotones que llegaron a cada pixel a través de esta expresión.</span><a class="headerlink" href="#ccd-1-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>Para llegar a la imagen reducida (<span class="math notranslate nohighlight">\(I_{i,j}\)</span>) desde la matriz de nuestra observación (<span class="math notranslate nohighlight">\(X_{i,j}\)</span>) debemos conocer el valor del BIAS que se añadió a la imagen y también la corriente de oscuridad (<span class="math notranslate nohighlight">\(A_{i,j}\)</span>). Este ruido es muy pequeño en los detectores modernos si están convenientemente refrigerados. Es señal que se va acumulanto con el tiempo así que es mayor para observaciones largas. Una característica importante de los CCD es que su respuesta depende la posición del pixel en el chip. La variación de la respuesta espacial que aquí indicamos con (<span class="math notranslate nohighlight">\(B_{i,j}\)</span>) se determina también con imágenes de calibración.</p>
+<p>El número de cuentas X(i,j) obtenidas en el pixel (i,j) de una
+cámara CCD se puede expresar de la siguiente forma:</p>
+<div class="math notranslate nohighlight">
+\[X(i,j) = BIAS + B(i,j) \times I(i,j) + A(i,j)  +  (términos\_ no\_ lineales)\]</div>
+<p>donde I(i,j) es el flujo de luz incidente sobre ese pixel. Esta
+ecuación no tiene en cuenta las ineficiencias en la transferencia
+de carga y otros efectos que se sabe tienen lugar en estos
+detectores.</p>
+<p>La eficiencia cuántica y la eficiencia en la transferencia de
+carga están incluidos en el término multiplicativo. La
+corriente de oscuridad y las “columnas frías” contribuyen al
+término aditivo A(i,j). La respuesta de los detectores CCD es
+esencialmente lineal, por lo que pueden despreciarse los términos
+no lineales. El BIAS se añade a la señal electrónica de
+salida del detector para evitar el digitalizar valores próximos a
+cero.</p>
+<p>El objetivo del primer paso de la calibración de las imágenes
+CCD es determinar la intensidad relativa I(i,j). El segundo paso
+consiste en obtener, por comparación con las medidas realizadas
+para objetos de brillo conocido, una imagen calibrada en flujo
+absoluto.</p>
+<p>Para realizar este proceso de conversión a intensidades relativas,
+además de la imagen del objeto de estudio obtenida a través
+del filtro que nos interese (SCIE_FRM), necesitamos dos imágenes
+más: una imagen obtenida iluminando el CCD con una fuente emisora
+uniforme, conocida como Flat-Field (FLAT_FRM), que nos permitirá
+determinar el término B(i,j) es decir, cuáles son las
+variaciones de la sensibilidad a lo largo del detector; y una imagen
+obtenida en ausencia de toda señal externa, conocida como Dark
+(DARK_FRM).</p>
+<p>A partir de la primera ecuación se obtiene:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+FLAT\_FRM(i,j) &amp; = &amp; BIAS + DARK\_FRM(i,j) + B(i,j) \; ICONS \\ 	
+SCIE\_FRM(i,j) &amp; = &amp; BIAS + DARK\_FRM(i,j) + B(i,j) \; INT\_FRM(i,j) \\
+DARK\_FRM(i,j) &amp; = &amp; BIAS + DARK\_FRM(i,j)
+\end{eqnarray*}\]</div>
+<p>La imagen Dark (DARK_FRM) contiene la señal de dark que se va acumulando con el tiempo y la de BIAS ya que ésta aparece en todas las observaciones. Combinando estas ecuaciones se obtiene:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+INT\_FRM(i,j) &amp; = &amp; \frac{SCIE\_FRM(i,j) - DARK\_FRM(i,j)}
+{FLAT\_FRM(i.j) - DARK\_FRM(i,j)} \;\; ICONS
+\end{eqnarray*}\]</div>
+<p>\noindent
+El valor ICONS puede ser cualquier n’{u}mero. Para que los valores de
+INT_FRM sean similares a los de SCIE_FRM, se suele normalizar de
+modo que</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+ICONS &amp; = &amp; FLAT\_FRM - DARK\_FRM 
+\end{eqnarray*}\]</div>
+<p>Por eso debemos restar el DARK a todas las imágenes (incluido el FLAT) para quedarnos con los términos lineales. Buscamos una imagen reducida INT_FRAME(i,j) donde los valores de cuentas de cada pixels sean proporcionales a la cantidad de fotones recibida.</p>
 </div>
 <div class="section" id="la-llegada-de-fotones-a-un-detector">
 <h2><span class="section-number">4.6.2. </span>(La llegada de fotones a un detector)<a class="headerlink" href="#la-llegada-de-fotones-a-un-detector" title="Permalink to this headline">¶</a></h2>
@@ -506,7 +604,7 @@ Se obtienen series de DARKs para combinarlos en un ‘master Dark’.</p>
 <p>Para cada noche de observación se visualizan y analizan las imágenes disponibles. Esto sirve para no procesar la imágenes ‘a ciegas’ y que se nos cuele un fichero mal grabado, por ejemplo. Tras este paso se retiran las imágenes que no sirven. Si es necesario se recorta de las imágenes la región de interés. Por razones obvias, es importante aplicar este recorte a todas las imágenes.</p>
 <div class="figure align-default" id="ccd-2-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_2.png"><img alt="../_images/intro_05_CCD_2.png" src="../_images/intro_05_CCD_2.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.25 </span><span class="caption-text">Ejemplo de imagen original y recortada para retirar la zona sin señal válida.</span><a class="headerlink" href="#ccd-2-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Ejemplo de imagen original y recortada para retirar la zona sin señal válida.</span><a class="headerlink" href="#ccd-2-fig" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Corrección de nivel cero<br />
@@ -519,11 +617,11 @@ Se dividen las imágenes de ciencia por el FLAT maestro</p></li>
 </ul>
 <div class="figure align-default" id="ccd-3-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_3.png"><img alt="../_images/intro_05_CCD_3.png" src="../_images/intro_05_CCD_3.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.26 </span><span class="caption-text">Ejemplo de flat fileds de cielo individuales y Flat Field maestro (abajo a la derecha). La combinación ha retirado las estrellas que aparecieron en las tomas de crepúsculo.</span><a class="headerlink" href="#ccd-3-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Ejemplo de flat fileds de cielo individuales y Flat Field maestro (abajo a la derecha). La combinación ha retirado las estrellas que aparecieron en las tomas de crepúsculo.</span><a class="headerlink" href="#ccd-3-fig" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="ccd-4-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_4.png"><img alt="../_images/intro_05_CCD_4.png" src="../_images/intro_05_CCD_4.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.27 </span><span class="caption-text">Ejemplo de imagen original y dividida por el Flat Field maestro.</span><a class="headerlink" href="#ccd-4-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Ejemplo de imagen original y dividida por el Flat Field maestro.</span><a class="headerlink" href="#ccd-4-fig" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Combinación de imágenes individuales<br />
@@ -531,15 +629,15 @@ Si se ha observado el mismo campos en varias exposiciones, éstas se combinan pa
 </ul>
 <div class="figure align-default" id="ccd-5-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_5.png"><img alt="../_images/intro_05_CCD_5.png" src="../_images/intro_05_CCD_5.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.28 </span><span class="caption-text">Misma región del chip de tres observaciones consecutivas del mismo campo con la misma estrella marcada en cada exposición.</span><a class="headerlink" href="#ccd-5-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Misma región del chip de tres observaciones consecutivas del mismo campo con la misma estrella marcada en cada exposición.</span><a class="headerlink" href="#ccd-5-fig" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="ccd-7-fig">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_8.png"><img alt="../_images/intro_05_CCD_8.png" src="../_images/intro_05_CCD_8.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.29 </span><span class="caption-text">Identificación de estrellas usadas en la alineación de la imágenes.</span><a class="headerlink" href="#ccd-7-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.20 </span><span class="caption-text">Identificación de estrellas usadas en la alineación de la imágenes.</span><a class="headerlink" href="#ccd-7-fig" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/intro_05_CCD_7.png"><img alt="../_images/intro_05_CCD_7.png" src="../_images/intro_05_CCD_7.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.30 </span><span class="caption-text">Las tres imágenes alineadas a la misma referencia. Se han utilizado los mismos cortes para que se note cómo ha variado el brillo de cielo entre las tomas.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.21 </span><span class="caption-text">Las tres imágenes alineadas a la misma referencia. Se han utilizado los mismos cortes para que se note cómo ha variado el brillo de cielo entre las tomas.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Estos pasos se siguen en las prácticas.</p>
 <p>Bias, dark, flat fields de baja y alta frecuencia, arcos para calibración en longitud de onda. Se explican sus características y utilización. Definición de región útil del detector y regiones de under/overscan. Utilización de binning durante las observaciones para incrementar la relación señal/ruido y/o reducir el tiempo de lectura.</p>

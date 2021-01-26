@@ -1,0 +1,1006 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.6. Fotometría de las estrellas estándar &#8212; Técnicas Experimentales en Astrofísica</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.7. Pasos finales" href="P2_Fotometria_CCD_07.html" />
+    <link rel="prev" title="5.5. Alineamiento de imágenes" href="P2_Fotometria_CCD_05.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ucm_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Técnicas Experimentales en Astrofísica</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Técnicas Experimentales en Astrofísica
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="fotometria.html">
+   2. Fotometría
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_01.html">
+     2.1. Introducción a la Fotometría
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_02.html">
+     2.2. Instrumentos y métodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_03.html">
+     2.3. Fotometría absoluta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_04.html">
+     2.4. Fotometría diferencial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_05.html">
+     2.5. Fotometría de objetos extensos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fotometria_06.html">
+     2.6. Fotometría sintética
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="espectroscopia.html">
+   3. Espectroscopía
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_01.html">
+     3.1. Espectroscopía astronómica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="espectroscopia_02.html">
+     3.2. Elección del espectrógrafo y configuración instrumental
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="P1_Introduccion_00.html">
+   4. Práctica 1 Procesado de observaciones astronómicas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_01.html">
+     4.1. Introducción
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_02.html">
+     4.2. Redución de observaciones astronómicas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_03.html">
+     4.3. Visualización e inspección de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_04.html">
+     4.4. Python, cuadernos de Jupyter, astropy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_05.html">
+     4.5. Cuaderno de observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P1_Introduccion_06.html">
+     4.6. Calibración CCD
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="P2_Fotometria_CCD_00.html">
+   5. Práctica 2     Fotometría CCD
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_01.html">
+     5.1. Primeros pasos en la reducción de las observaciones
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_02.html">
+     5.2. Correción de BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_03.html">
+     5.3. Correción de Flat Field
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_04.html">
+     5.4. Combinación de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_05.html">
+     5.5. Alineamiento de imágenes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.6. Fotometría de las estrellas estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P2_Fotometria_CCD_07.html">
+     5.7. Pasos finales
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P3_Espectroscopia_Rendija_Larga.html">
+   6. P3 Espectroscopía de Rendija Larga
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-ccdproc.html">
+   7. TEA Notebooks ccdproc
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_00_Downloading_the_Images.html">
+     7.1. ccdproc-00:   Download images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_01_ImageCollection.html">
+     7.2. ccdproc-01:   Classify images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_02_Trimming.html">
+     7.3. ccdproc-02:   Trimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_03_Master_BIAS.html">
+     7.4. ccdproc-03:   Master BIAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_04_Substract_BIAS.html">
+     7.5. ccdproc-04:   BIAS correction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_05_Master_FLAT.html">
+     7.6. ccdproc-05:   Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_06_Flatfielding.html">
+     7.7. ccdproc-06:   Flatfielding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_07_Combining.html">
+     7.8. ccdproc-07: Combining single observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html">
+     7.9. ccdproc-08: Photometry of stars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/ccdproc_08_Star_Photometry.html#local-background-subtraction">
+     7.10. Local Background Subtraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/fotometria_1.html">
+     7.11. Ajuste Bouger y término de color
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notebooks/index-notebooks-examples.html">
+   8. TEA Notebooks examples
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_01_Read_Display_FITS.html">
+     8.1. Example 1:   Reading and displaying an image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_02_Master_DARK.html">
+     8.2. Example 2: Master DARK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_03_Master_Flat.html">
+     8.3. Example 3: Master FLAT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_04_combining_images.html">
+     8.4. Example 4: Combining several images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_05_register_images.html">
+     8.5. Example 5: Registering images with AstroAlign
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/example_06_aperture_photometry.html">
+     8.6. Example 6: Aperture photometry with Photutils
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/docs/P2_Fotometria_CCD_06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/P2_Fotometria_CCD_06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/P2_Fotometria_CCD_06.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-con-photutils">
+   5.6.1. Fotometría con Photutils
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#localizando-las-posiciones-de-las-estrellas">
+     5.6.1.1. Localizando las posiciones de las estrellas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#midiendo-en-las-aperturas">
+       5.6.1.1.1. Midiendo en las aperturas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimacion-del-fondo-de-cielo">
+     5.6.1.2. Estimación del fondo de cielo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usando-multiples-aperturas">
+     5.6.1.3. Usando múltiples aperturas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-background-subtraction">
+     5.6.1.4. Local Background Subtraction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fotometria-con-ds9">
+   5.6.2. Fotometría con DS9
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fotometria-de-las-estrellas-estandar">
+<h1><span class="section-number">5.6. </span>Fotometría de las estrellas estándar<a class="headerlink" href="#fotometria-de-las-estrellas-estandar" title="Permalink to this headline">¶</a></h1>
+<p>La observación de estrellas estándar tiene como objetivo tener referencias en flujo que nos permitan pasar de cuentas/s a flujo. El primer paso de la calibración es medir precisamente cuanta señal (cuentas/s) tenemos en las imágenes de las estrellas. Para ello usamos las imágenes calibradas con la reducción de los pasos anteriores.</p>
+<div class="section" id="fotometria-con-photutils">
+<h2><span class="section-number">5.6.1. </span>Fotometría con Photutils<a class="headerlink" href="#fotometria-con-photutils" title="Permalink to this headline">¶</a></h2>
+<p>Hagamos un ejemplo con las tres primeras observaciones de la serie de la primera noche de observación (NOT_2008). Mirando el cuaderno de observaciones vemos que son imágenes de HZ44 en banda R y en una banda estrecha.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span><span class="o">=</span><span class="s1">&#39;NOT_2008_N1/&#39;</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;120077&#39;</span><span class="p">,</span><span class="s1">&#39;120078&#39;</span><span class="p">,</span><span class="s1">&#39;120079&#39;</span><span class="p">]</span>       <span class="c1"># fzt_ALrd+files[i]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)):</span>
+    <span class="n">image</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">directory</span><span class="o">+</span><span class="s1">&#39;fzt_ALrd&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;.fits&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILENAME&#39;</span><span class="p">],</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">],</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+fzt_ALrd120077.fits HZ44 R 5.0
+fzt_ALrd120078.fits HZ44 R 5.0
+fzt_ALrd120079.fits HZ44 #79 50.0
+</pre>
+<div class="figure align-default" id="star-phot-1-fig">
+<a class="reference internal image-reference" href="../_images/p2_08_star_phot_1.png"><img alt="../_images/p2_08_star_phot_1.png" src="../_images/p2_08_star_phot_1.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.38 </span><span class="caption-text">Las tres primeras observaciones de estrellas estándar.</span><a class="headerlink" href="#star-phot-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Podemos buscar HZ44 en <a class="reference external" href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=HZ44">SIMBAD</a> que nos ofrece una pantalla de <a class="reference external" href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=HZ44">ALADIN</a> cuyo campo de visión (muy estrecho al principio) puede ser ampliado. Reconocemos fácilmente el campo y de esa forma comprobamos que nuestra estrella estándar es precisamente la del centro de nuestra imagen.</p>
+<div class="figure align-default" id="star-phot-2-fig">
+<a class="reference internal image-reference" href="../_images/p2_08_star_phot_2.png"><img alt="../_images/p2_08_star_phot_2.png" src="../_images/p2_08_star_phot_2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.39 </span><span class="caption-text">El campo centrado en HZ44 buscado en SIMBAD y mostrado con ALADIN.</span><a class="headerlink" href="#star-phot-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Este comprobación es necesaria ya que aunque apuntemos el telescopio a la estrella estandar con las coordenadas de catálogo, alguna estrella tiene un movimiento propio grande y su imagen no aparece en el centro.</p>
+<p>Es interesante apreciar que necesitamos exposiciones más largas en el filtro estrecho ya que la banda de paso es menor.</p>
+<div class="section" id="localizando-las-posiciones-de-las-estrellas">
+<h3><span class="section-number">5.6.1.1. </span>Localizando las posiciones de las estrellas<a class="headerlink" href="#localizando-las-posiciones-de-las-estrellas" title="Permalink to this headline">¶</a></h3>
+<p>Podemos buscar las coordenadas de la estrella usando <code class="docutils literal notranslate"><span class="pre">find_peaks()</span></code> una función de <code class="docutils literal notranslate"><span class="pre">Photutils</span></code> para encontrar máximos locales en una imagen. Hay que definir un nivel de umbral y la función devuelve la posición de las imágenes con píxeles con valores por encima de ese valor. La función es inteligente para encontrar fuentes separadas y no listar varias posiciones para el mismo objeto.</p>
+<p>Tomemos la primera imagen como ejemplo y usemos la función con un umbral muy alto porque sólo queremos detectar las estrellas muy brillantes del campo. Lo hemos construido con la mediana + 500 veces la desviación estándar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ximage</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">sigma_clipped_stats</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">median</span> <span class="o">+</span> <span class="p">(</span><span class="mf">500.</span> <span class="o">*</span> <span class="n">std</span><span class="p">)</span>
+<span class="n">tbl</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">box_size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;peak_value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tbl</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>  <span class="c1"># print only the first 10 peaks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+x_peak y_peak peak_value
+------ ------ ----------
+   378    434  5473.2654
+  1022    964  10068.373
+  1462   1112  18964.459
+  1797   1282  4085.3169
+</pre>
+<p>De las cuatro fuentes detectadas la nuestra HZ44 es la que está más en el centro de la imagen, es decir la segunda.</p>
+<p>Mostramos otra vez la imagen y las aperturas sobre ella. Estas aperturas se han fabricado en las posiciones de los máximos encontrados por <code class="docutils literal notranslate"><span class="pre">find_peaks</span></code> y con un radio de 30 píxeles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1200</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;x_peak&#39;</span><span class="p">],</span> <span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;y_peak&#39;</span><span class="p">]))</span>
+<span class="n">apertures</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span> <span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">apertures</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="star-phot-3-fig">
+<a class="reference internal image-reference" href="../_images/p2_08_star_phot_3.png"><img alt="../_images/p2_08_star_phot_3.png" src="../_images/p2_08_star_phot_3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.40 </span><span class="caption-text">Las aperturas de 30 píxeles de radio centradas en las posiciones encontradas por <code class="docutils literal notranslate"><span class="pre">find_peaks</span></code>.</span><a class="headerlink" href="#star-phot-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="midiendo-en-las-aperturas">
+<h4><span class="section-number">5.6.1.1.1. </span>Midiendo en las aperturas<a class="headerlink" href="#midiendo-en-las-aperturas" title="Permalink to this headline">¶</a></h4>
+<p>Podemos realizar ya la medida de flujo (en cuentas) en esas aperturas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">apertures</span><span class="p">)</span>
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.4g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum
+      pix     pix               
+--- ------- ------- ------------
+  1   378.0   434.0    8.854e+05
+  2  1022.0   964.0    1.467e+06
+  3  1462.0  1112.0    2.401e+06
+  4  1797.0  1282.0    5.808e+05
+</pre>
+<p>Es decir que el flujo en la apertura centrada en nuestra estrella HZ44 (la segunda en esta tabla) es de 1.467e+06 cuentas. Claro la mayor parte son de la estrella pero hay una contribución del fondo de cielo que debemos restar.</p>
+</div>
+</div>
+<div class="section" id="estimacion-del-fondo-de-cielo">
+<h3><span class="section-number">5.6.1.2. </span>Estimación del fondo de cielo<a class="headerlink" href="#estimacion-del-fondo-de-cielo" title="Permalink to this headline">¶</a></h3>
+<p>Una manera sería usar aperturas similares cercanas a la imagen de la estrella en regones libres de otras fuentes. Podemos hacer un listado de posiciones y aperturas de forma manual. Por ejemplo en otra estrella y en dos zonas libres cerca de la estrella problema que servirían para determinar fondo de cielo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">positions_new</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">560</span><span class="p">,</span> <span class="mi">440</span><span class="p">),</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">750</span><span class="p">),</span> <span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1200</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;x_peak&#39;</span><span class="p">],</span> <span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;y_peak&#39;</span><span class="p">]))</span>
+<span class="n">apertures</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span> <span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">apertures</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">apertures_new</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">positions_new</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+<span class="n">apertures_new</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="star-phot-4-fig">
+<a class="reference internal image-reference" href="../_images/p2_08_star_phot_4.png"><img alt="../_images/p2_08_star_phot_4.png" src="../_images/p2_08_star_phot_4.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.41 </span><span class="caption-text">Las aperturas de 30 píxeles de radio centradas en las posicones encontradas por <code class="docutils literal notranslate"><span class="pre">find_peaks</span></code> y las añadidas manualmente.</span><a class="headerlink" href="#star-phot-4-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">apertures_new</span><span class="p">)</span>
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.4g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum
+      pix     pix               
+--- ------- ------- ------------
+  1   560.0   440.0    5.519e+05
+  2  1000.0   750.0    1.008e+05
+  3   800.0  1000.0    9.981e+04
+</pre>
+<p>El fondo de cielo es de unas 100000 cuentas. Entonces las cuentas netas de HZ44 serían 1.467e+06 - 1e+05 = 1.367e+06 cuentas.</p>
+<p>Otra forma de determinar el fondo de cielo de forma global es usar la mediana de la imagen completa o mejor de una zona libre de objetos cerca de nuestra estrella.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">median</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ximage</span><span class="p">)</span>
+<span class="n">median_sky</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ximage</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1250</span><span class="p">,</span><span class="mi">250</span><span class="p">:</span><span class="mi">500</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="s1">&#39; sky &#39;</span><span class="p">,</span> <span class="n">median_sky</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+median 35.73486368629405  sky  34.7267088174489
+</pre>
+<p>Unas 34.7 cuentas/pixel aproximadamente. Podemos usar esta estimación del fondo de cielo para determinar las cuentas netas de HZ44.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bkg</span> <span class="o">=</span> <span class="n">median_sky</span>
+<span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span> <span class="o">-</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">apertures</span><span class="p">)</span> 
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.4g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum
+      pix     pix               
+--- ------- ------- ------------
+  1   378.0   434.0    7.872e+05
+  2  1022.0   964.0    1.368e+06
+  3  1462.0  1112.0    2.302e+06
+  4  1797.0  1282.0    4.826e+05
+  </pre>
+<p>Y llegamos a un valor parecido al de antes 1.368e+06 cuentas netas.</p>
+</div>
+<div class="section" id="usando-multiples-aperturas">
+<h3><span class="section-number">5.6.1.3. </span>Usando múltiples aperturas<a class="headerlink" href="#usando-multiples-aperturas" title="Permalink to this headline">¶</a></h3>
+<p>Es posible definir varias aperturas centradas en la misma posición. Tradicionalmente se usaba este método para lograr el valor asintótico de las cuentas según vamos aumentando el radio.</p>
+<p>Podemos hacer un ejemplo usando cuatro aperturas centradas en HZ44. Nos aseguramos de que es la segunda en esta lista</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">apertures</span><span class="p">)</span>
+<span class="n">HZ44_pos</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+Aperture: CircularAperture
+positions: [[ 378.,  434.],
+            [1022.,  964.],
+            [1462., 1112.],
+            [1797., 1282.]]
+r: 30.0
+[1022  964]
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">radii</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">40.</span><span class="p">]</span>
+<span class="n">apertures</span> <span class="o">=</span> <span class="p">[</span><span class="n">CircularAperture</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">radii</span><span class="p">]</span>
+<span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">apertures</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">phot_table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+     <span class="n">phot_table</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.5g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum_0 aperture_sum_1 aperture_sum_2 aperture_sum_3
+      pix     pix                                                              
+--- ------- ------- -------------- -------------- -------------- --------------
+  1    1022     964     1.0696e+06      1.364e+06     1.4665e+06      1.559e+06
+</pre>
+<p>Nuestra tabla sólo tiene una fila porque hemos decidido medir sólo una estrella.</p>
+</div>
+<div class="section" id="local-background-subtraction">
+<h3><span class="section-number">5.6.1.4. </span>Local Background Subtraction<a class="headerlink" href="#local-background-subtraction" title="Permalink to this headline">¶</a></h3>
+<p>La fotometría de apertura suele usar una estimación del fondo de cielo en un anillo circular cerca de la estrella pero lo suficientemente alejado para mo incluir las alas de la imagen. Por ejemplo usamos una apertura de 30 píxeles para medir el flujo de la estrella (en bruto) y un anillo de radios interior y exterior de 50 y 70 píxeles para estimar el fondo de cielo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aperture</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">annulus_aperture</span> <span class="o">=</span> <span class="n">CircularAnnulus</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">,</span> <span class="n">r_in</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span> <span class="n">r_out</span><span class="o">=</span><span class="mf">70.</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span> <span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+<span class="n">aperture</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">annulus_aperture</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="star-phot-5-fig">
+<a class="reference internal image-reference" href="../_images/p2_08_star_phot_5.png"><img alt="../_images/p2_08_star_phot_5.png" src="../_images/p2_08_star_phot_5.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.42 </span><span class="caption-text">Apertura y anillo centrado en HZ44 para medir el flujo y estimar el fondo de cielo.</span><a class="headerlink" href="#star-phot-5-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apers</span> <span class="o">=</span> <span class="p">[</span><span class="n">aperture</span><span class="p">,</span> <span class="n">annulus_aperture</span><span class="p">]</span>
+<span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">apers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">phot_table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+    <span class="n">phot_table</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum_0 aperture_sum_1
+      pix     pix                                
+--- ------- ------- -------------- --------------
+  1    1022     964      1466526.3      273523.19
+</pre>
+<p>Hemos elegido aperturas que tienen diferente área y por lo tanto no podemos restar directamente. Debemos escalar el fondo de cielo a una apertura como la que usamos para medir la estrella.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">aperture</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">annulus_aperture</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+2827.4333882308138 7539.822368615503
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_mean</span> <span class="o">=</span> <span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum_1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">annulus_aperture</span><span class="o">.</span><span class="n">area</span>
+<span class="n">bkg_sum</span>  <span class="o">=</span> <span class="n">bkg_mean</span> <span class="o">*</span> <span class="n">aperture</span><span class="o">.</span><span class="n">area</span>
+<span class="n">final_sum</span> <span class="o">=</span> <span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">bkg_sum</span>
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;residual_aperture_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_sum</span>
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;residual_aperture_sum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;residual_aperture_sum&#39;</span><span class="p">])</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+residual_aperture_sum
+            1363955.1
+</pre>
+<p>Nótese que hemos generado una columna más en la tabla ‘residual_aperture_sum’ con el valor neto de cuentas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">phot_table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+    <span class="n">phot_table</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum_0 aperture_sum_1 residual_aperture_sum
+      pix     pix                                                      
+--- ------- ------- -------------- -------------- ---------------------
+  1    1022     964      1466526.3      273523.19             1363955.1
+</pre>
+<p>La última columna tiene en flujo neto en cuentas que es igual al que hemos encontrado antes con otro tipo de estimaciones del fondo de cielo.</p>
+<p>Podemos repetir el proceso para la segunda observación de HZ44 para verlo de forma más compacta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ximage</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">median</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">sigma_clipped_stats</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">median</span> <span class="o">+</span> <span class="p">(</span><span class="mf">500.</span> <span class="o">*</span> <span class="n">std</span><span class="p">)</span>
+<span class="n">tbl</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">box_size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;peak_value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tbl</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>  <span class="c1"># print only the first 10 peaks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+x_peak y_peak peak_value
+------ ------ ----------
+  1354    158  5152.9339
+   377    433  12810.798
+   558    440  7772.4841
+  1021    962  25675.776
+  1462   1111  39351.295
+  1796   1281  8302.7578
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;x_peak&#39;</span><span class="p">],</span> <span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;y_peak&#39;</span><span class="p">]))</span>
+<span class="n">apertures</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">apertures</span><span class="p">)</span>
+<span class="n">HZ44_pos</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+Aperture: CircularAperture
+positions: [[1354.,  158.],
+            [ 377.,  433.],
+            [ 558.,  440.],
+            [1021.,  962.],
+            [1462., 1111.],
+            [1796., 1281.]]
+r: 30.0
+[1021  962]
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aperture</span> <span class="o">=</span> <span class="n">CircularAperture</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">annulus_aperture</span> <span class="o">=</span> <span class="n">CircularAnnulus</span><span class="p">(</span><span class="n">HZ44_pos</span><span class="p">,</span> <span class="n">r_in</span><span class="o">=</span><span class="mf">50.</span><span class="p">,</span> <span class="n">r_out</span><span class="o">=</span><span class="mf">70.</span><span class="p">)</span>
+
+<span class="n">apers</span> <span class="o">=</span> <span class="p">[</span><span class="n">aperture</span><span class="p">,</span> <span class="n">annulus_aperture</span><span class="p">]</span>
+
+<span class="n">phot_table</span> <span class="o">=</span> <span class="n">aperture_photometry</span><span class="p">(</span><span class="n">ximage</span><span class="p">,</span> <span class="n">apers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">phot_table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+    <span class="n">phot_table</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+ id xcenter ycenter aperture_sum_0 aperture_sum_1
+      pix     pix                                
+--- ------- ------- -------------- --------------
+  1    1021     962      1483541.9      275957.24
+</pre><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_mean</span> <span class="o">=</span> <span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum_1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">annulus_aperture</span><span class="o">.</span><span class="n">area</span>
+<span class="n">bkg_sum</span>  <span class="o">=</span> <span class="n">bkg_mean</span> <span class="o">*</span> <span class="n">aperture</span><span class="o">.</span><span class="n">area</span>
+<span class="n">final_sum</span> <span class="o">=</span> <span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;aperture_sum_0&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">bkg_sum</span>
+<span class="n">phot_table</span><span class="p">[</span><span class="s1">&#39;residual_aperture_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_sum</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">phot_table</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+    <span class="n">phot_table</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%.8g</span><span class="s1">&#39;</span>  <span class="c1"># for consistent table output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<pre>
+id xcenter ycenter aperture_sum_0 aperture_sum_1 residual_aperture_sum
+      pix     pix                                                      
+--- ------- ------- -------------- -------------- ---------------------
+  1    1021     962      1483541.9      275957.24               1380058
+</pre>
+<p>Que es un valor similar al encontrado en la primera observación de HZ44</p>
+<pre>
+ id xcenter ycenter aperture_sum_0 aperture_sum_1 residual_aperture_sum
+      pix     pix                                                      
+--- ------- ------- -------------- -------------- ---------------------
+  1    1022     964      1466526.3      273523.19             1363955.1
+</pre>
+<p>Resumiendo</p>
+<pre>
+fzt_ALrd120077.fits HZ44 R 5.0    1363955.1 c / 5s = 272791.02 c/s  
+fzt_ALrd120078.fits HZ44 R 5.0    1380058   c / 5s = 276011.6  c/s 
+</pre>
+</div>
+</div>
+<div class="section" id="fotometria-con-ds9">
+<h2><span class="section-number">5.6.2. </span>Fotometría con DS9<a class="headerlink" href="#fotometria-con-ds9" title="Permalink to this headline">¶</a></h2>
+<p>DS9 permite hacer una medida de flujos dentro de regiones que pueden ser creadas del tamaño que queramos y centradas en nuestros puntos de interés. La creación de regiones es sencilla simplemente pinchando con el cursor en el lugar que queramos. En el menú se puede cambiar la forma geométrica de la región. Además con un doble click sobre la región obtenemos la información de sus parámetros que puede editarse para cambiarlos a nuestra elección. Es fácil cuando se ha hecho una vez.</p>
+<p>En el ejemplo que mostramos se ha cargado la imagen fzt_ALrd120077.fits y se han creado tres regines circulares del mismo radio (40 píxeles)</p>
+<div class="figure align-default" id="ds9-phot-1-fig">
+<a class="reference internal image-reference" href="../_images/p2_09_ds9_phot_1.png"><img alt="../_images/p2_09_ds9_phot_1.png" src="../_images/p2_09_ds9_phot_1.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.43 </span><span class="caption-text">Captura de DS9 con tres regiones circulares de 40 píxeles de radio creadas para medir el flujo de HZ44 y de fondo de cielo adyacente.</span><a class="headerlink" href="#ds9-phot-1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Con el menú de análisis podemos mostrar la estadística de esas regiones.</p>
+<div class="figure align-default" id="ds9-phot-2-fig">
+<a class="reference internal image-reference" href="../_images/p2_09_ds9_phot_2.png"><img alt="../_images/p2_09_ds9_phot_2.png" src="../_images/p2_09_ds9_phot_2.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.44 </span><span class="caption-text">Estadística de suma de cuentas en las regiones mostradas en la figura anterior.</span><a class="headerlink" href="#ds9-phot-2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<pre>
+ reg   net_counts     error     area          pixeles
+---- ------------ ---------  ---------       ---------
+   1  1558695.609  1248.477  65098080000.00    5023
+   2   179693.232   423.902  65214720000.00    5032 
+   3   183289.369   428.123  65136960000.00    5026 
+</pre>
+<p>Si se selecciona en las opciones de “region” al cear o modificar una region te proporciona la estadística como vemos en la siguiente captura.</p>
+<div class="figure align-default" id="ds9-phot-3-fig">
+<a class="reference internal image-reference" href="../_images/p2_09_ds9_phot_3.png"><img alt="../_images/p2_09_ds9_phot_3.png" src="../_images/p2_09_ds9_phot_3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.45 </span><span class="caption-text">Menú desplegado de “region” para mostrar la opción de auto estadística y pantallas con las estadísticas generadas al modificar las regiones.</span><a class="headerlink" href="#ds9-phot-3-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Para la región centrada en HZ44 tenemos, por ejemplo,</p>
+<pre>
+center=1189.5206 1199.5732
+image
+
+reg  sum     error     area      surf_bri      surf_err
+                       (pix**2)  (sum/pix**2)  (sum/pix**2)
+1  179693.23 423.90239 5032      35.710102     0.084241333
+
+reg sum     npix  mean      median    min       max        var       stddev    rms 
+1 179693.23 5032  35.710102 35.52132  6.2430902 82.270042  62.149973 7.8835254 36.569951
+</pre>
+<p>Es decir 179693.23 cuentas en cielo en un área de 5032 pixeles lo que supone 35.7 cuentas/pixel. Y para la apertura centrada en la estrella.</p>
+<pre>
+center=1024.0151 964.87335
+image
+
+reg  sum     error     area      surf_bri      surf_err
+                       (pix**2)  (sum/pix**2)  (sum/pix**2)
+1  1558695.6 1248.4773 5023      310.31169     0.24855212
+reg sum     npix  mean      median    min       max        var       stddev    rms 
+1 1558695.6 5023  310.31169 53.757399 12.027513 10068.373 1006073.9 1003.0324 1049.9368
+</pre>
+<p>Ahora la estadística de cuentas/pixel no nos sirve de mucho como tamòco la varianza o la desviación estándard ya que hay mucha variación en esa apertura. Pero sí es interesante ver que el máximo de cuentas en la estrella es de 10068 o sea que la imagen no está saturada.</p>
+<p>Resumiendo tenemos 1558695.6 cuentas brutas (estrella + cielo) y 179693.23 cuentas en el cielo. Luego el flujo neto de HZ44 en esta observación es 1558695.6 - 179693.23 = 1379002.37 cuentas en 5s de observación que es un valor similar al que encontramos con <code class="docutils literal notranslate"><span class="pre">Photutils</span></code></p>
+<pre>
+fzt_ALrd120077.fits HZ44 R 5.0    Photutils  1363955.1  c / 5s = 272791.02 c/s    
+fzt_ALrd120077.fits HZ44 R 5.0    DS9        1379002.37 c / 5s = 275800.5 c/s
+</pre></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="P2_Fotometria_CCD_05.html" title="previous page"><span class="section-number">5.5. </span>Alineamiento de imágenes</a>
+    <a class='right-next' id="next-link" href="P2_Fotometria_CCD_07.html" title="next page"><span class="section-number">5.7. </span>Pasos finales</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By J.Zamorano, N. Cardiel, S. Pascual and J. Gallego<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

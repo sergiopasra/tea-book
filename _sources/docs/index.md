@@ -12,7 +12,7 @@ Book documentation.
 ```
 
 
-```{figure} /_static/lecture_specific/index/Alumnos_3.5_CalarAlto_3D.png
+```{figure} /_static/lecture_specific/index/alumnos_3.5_CalarAlto_3D.png
 :scale: 50%
 ```
 

@@ -25,6 +25,67 @@ La medida en cada pixel del CCD está relacionada con la cantidad de fotones que
 
 Para llegar a la imagen reducida ($I_{i,j}$) desde la matriz de nuestra observación ($X_{i,j}$) debemos conocer el valor del BIAS que se añadió a la imagen y también la corriente de oscuridad ($A_{i,j}$). Este ruido es muy pequeño en los detectores modernos si están convenientemente refrigerados. Es señal que se va acumulanto con el tiempo así que es mayor para observaciones largas. Una característica importante de los CCD es que su respuesta depende la posición del pixel en el chip. La variación de la respuesta espacial que aquí indicamos con ($B_{i,j}$) se determina también con imágenes de calibración.
 
+El número de cuentas X(i,j) obtenidas en el pixel (i,j) de una
+cámara CCD se puede expresar de la siguiente forma:
+
+$$X(i,j) = BIAS + B(i,j) \times I(i,j) + A(i,j)  +  (términos\_ no\_ lineales)$$
+
+donde I(i,j) es el flujo de luz incidente sobre ese pixel. Esta
+ecuación no tiene en cuenta las ineficiencias en la transferencia
+de carga y otros efectos que se sabe tienen lugar en estos
+detectores.
+
+La eficiencia cuántica y la eficiencia en la transferencia de
+carga están incluidos en el término multiplicativo. La
+corriente de oscuridad y las "columnas frías" contribuyen al
+término aditivo A(i,j). La respuesta de los detectores CCD es
+esencialmente lineal, por lo que pueden despreciarse los términos
+no lineales. El BIAS se añade a la señal electrónica de
+salida del detector para evitar el digitalizar valores próximos a
+cero.
+
+El objetivo del primer paso de la calibración de las imágenes
+CCD es determinar la intensidad relativa I(i,j). El segundo paso
+consiste en obtener, por comparación con las medidas realizadas
+para objetos de brillo conocido, una imagen calibrada en flujo
+absoluto.
+
+Para realizar este proceso de conversión a intensidades relativas,
+además de la imagen del objeto de estudio obtenida a través
+del filtro que nos interese (SCIE\_FRM), necesitamos dos imágenes
+más: una imagen obtenida iluminando el CCD con una fuente emisora
+uniforme, conocida como Flat-Field (FLAT\_FRM), que nos permitirá
+determinar el término B(i,j) es decir, cuáles son las
+variaciones de la sensibilidad a lo largo del detector; y una imagen
+obtenida en ausencia de toda señal externa, conocida como Dark
+(DARK\_FRM).
+
+A partir de la primera ecuación se obtiene:
+
+\begin{eqnarray*}
+FLAT\_FRM(i,j) & = & BIAS + DARK\_FRM(i,j) + B(i,j) \; ICONS \\ 	
+SCIE\_FRM(i,j) & = & BIAS + DARK\_FRM(i,j) + B(i,j) \; INT\_FRM(i,j) \\
+DARK\_FRM(i,j) & = & BIAS + DARK\_FRM(i,j)
+\end{eqnarray*}
+
+La imagen Dark (DARK\_FRM) contiene la señal de dark que se va acumulando con el tiempo y la de BIAS ya que ésta aparece en todas las observaciones. Combinando estas ecuaciones se obtiene:
+
+\begin{eqnarray*}
+INT\_FRM(i,j) & = & \frac{SCIE\_FRM(i,j) - DARK\_FRM(i,j)}
+{FLAT\_FRM(i.j) - DARK\_FRM(i,j)} \;\; ICONS
+\end{eqnarray*}
+
+\noindent 
+El valor ICONS puede ser cualquier n\'{u}mero. Para que los valores de
+INT\_FRM sean similares a los de SCIE\_FRM, se suele normalizar de
+modo que
+
+\begin{eqnarray*}
+ICONS & = & FLAT\_FRM - DARK\_FRM 
+\end{eqnarray*}
+
+Por eso debemos restar el DARK a todas las imágenes (incluido el FLAT) para quedarnos con los términos lineales. Buscamos una imagen reducida INT_FRAME(i,j) donde los valores de cuentas de cada pixels sean proporcionales a la cantidad de fotones recibida.
+
 ## (La llegada de fotones a un detector)
 Utilizando un array de pequeñas dimensiones, se simula la llegada poissoniana de fotones a un detector y la posterior conversión analógica-digital. Esta simulación permite ilustrar conceptos básicos de relación señal/ruido y propagación de incertidumbres.  
 Pendiente de hacer pero se puede consultar [CCD data reduction guide](https://mwcraig.github.io/ccd-as-book/01-00-Understanding-an-astronomical-CCD-image.html) written by Matt Craig and Lauren Chambers. Editing was done by Lauren Glattly.

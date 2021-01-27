@@ -32,6 +32,7 @@
         - file: docs/P2_Fotometria_CCD_05
         - file: docs/P2_Fotometria_CCD_06
         - file: docs/P2_Fotometria_CCD_07
+        - file: docs/P2_Fotometria_CCD_08
     - file: docs/P3_Espectroscopia_Rendija_Larga
     - file: notebooks/index-notebooks-ccdproc
       sections:

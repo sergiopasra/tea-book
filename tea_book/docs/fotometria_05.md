@@ -38,7 +38,7 @@ Imagen de una galaxia espiral en codificación de falso color con azul en el niv
 ```{figure} /_static/lecture_specific/fotometria/foto_30_extensos_3.png
 ---
 width: 400px
-name: Foto-extensos-2-fig
+name: Foto-extensos-3-fig
 ---
 Plot de contornos de la galaxia espiral con niveles desde $24.5\;mag/arcsec^2$ y pasos de 
 $0.5\;mag/arcsec^2$

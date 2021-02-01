@@ -1,4 +1,4 @@
-# P3 Espectroscopía de Rendija Larga
+# Práctica 3 Espectroscopía de Rendija Larga
 
 ## Campaña de observación
 Esta práctica se concentra en la reducción de una campaña de observación de espectroscopía

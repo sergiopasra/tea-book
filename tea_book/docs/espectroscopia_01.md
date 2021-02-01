@@ -34,7 +34,7 @@ Esquema de un espectrómetro adaptado a un telescopio de diámetro D (no a escal
 
 La rendija tiene dimensiones $w$ anchura y $h$ longitud y proyectada en el cielo subtiende ángulos $\phi = w/f$ y $\phi' = h/f$ donde $f$ es la distancia focal del telescopio. Esa zona del cielo es la que entra en el sistema óptico y cuyo espectro se registra.  Análogamente, la rendija proyectada en el colimador $\theta = w/f_1$ y $\theta' = h/f_1$. Finalmente la imagen monocromática de la rendija tiene un tamaño  $w' = w f_2/f_1$ y $h' = h f_2/f_1$. Como se ve las relación entre la rendija y su imagen dependen del factor de amplificación $f_2/f_1$. Por ejemplo si la focal de la cámara es el doble que la del colimador la imagen de la rendija es de doble tamaño que la rendija.
 
-#### pureza espectral ####
+### pureza espectral
 La pureza espectral es un parámetro fundamental de los espectrómetros que mide la capacidad del instrumento da idea de la capacidad para resolver líneas de longitud de onda cercana y de observar detalles en las líneas. La pureza espectral es el perfil instrumental y se mide como la anchura de la imagen de la rendija iluminada con luz monocromática. En el criterio de Rayleight una línea está resuelta por el espectrómetro si su anchura es mayor que la pureza espectral $\Delta \lambda > \delta \lambda$
 
 ```{figure} /_static/lecture_specific/espectroscopia/spec_04_Rayleigh.png
@@ -64,7 +64,7 @@ name: anchura-fig
 La resolución espectral es directamente proporcional a la anchura de la rendija. Pero hay que llegar a un compromiso para que la rendija no sea tan estrecha que no permita la entrada de luz en el espectrógrafo.  
 ```
 
-#### resolución espectral ####
+### resolución espectral 
 La resolución $R = \frac{\lambda} {\delta \lambda}$ es el cociente entre la longitud de onda $\lambda$ y la pureza espectral $\delta \lambda$. De acuerdo a este parámetro adimensional se habla de resolución baja ($\sim 10^3$), intermedia ($\sim 10^4$) o alta ($> 5 \times 10^4$).
 
 ```{figure} /_static/lecture_specific/espectroscopia/spec_05_resolucion.png
@@ -75,7 +75,7 @@ name: resolucion-fig
 REPETIR Ejemplo de espectro con un doblete observado con espectrómetros de resolucón R creciente de arriba abajo. 
 ```
 
-### Dispersores ###
+## Dispersores
 Aunque se emplean prismas en algunos espectrómetros especiales, la mayoría de la veces se usa una red de difracción. La ecuación fundamental es,
 
 $$
@@ -141,7 +141,7 @@ $$
 \alpha = 0 \quad \quad \beta = 2 \theta_b  \quad \quad \lambda_b = 2 \sigma \; sen \theta_b cos \theta_b \quad \quad \lambda_b = \sigma \; sen 2 \theta_b
 $$
 
-#### dispersión ####
+### dispersión
 La dispersión angular se determina (a partir de la ecuación fundamental de las redes)
 
 $$
@@ -176,7 +176,7 @@ name: ejemplo-fig
 Se rellenan las tablas recordando la dependencia lineal de la dispersión con el orden, el paso de la red y la focal de la cámara. Por ejemplo, como la dispersión es directamente proporcional al orden la dispersión lineal recíproca en m=2 es de 48 Å/mm luego será de 96 Å/mm en m=1. La dispersión es inversamente  proporcional al paso de la red que podemos calcular con el inverso de la densidad de surcos (o líneas o trazos) de la red $\sigma_2 = 1/600 = 1.65\mu m \quad \quad \sigma_1 = 2 \sigma_2 \quad \quad \sigma_3 = \sigma_2 / 2$.  
 La dispersión es directamente proporcional a la focal de la cámara luego la dispersión lineal recíproca se hace la mitad al doblar la focal de la cámara $f_2$.
  
-#### solapamiento de órdenes  ####
+### solapamiento de órdenes
 Para un cierto ángulo de incidencia $\alpha$, en la dirección $\beta$ se difractan fotones de longitud de onda diferente según el orden. Para $\alpha$ y $\beta$ fijos, las longitudes de onda $\lambda$ y $\lambda '$ en órdenes sucesivos son,
 
 $$

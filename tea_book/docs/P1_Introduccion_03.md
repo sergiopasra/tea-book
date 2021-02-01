@@ -111,9 +111,14 @@ name: ds9_10-fig
 Vemos las tres imágenes cargadas en 3 canales diferentes. Para que se vean así en columnas hay que elegirlo en el menu de 'frame'+'farme parameters'+'tile'.
 ```
 
+```{admonition} DS9 Ejercicio 1
+Busca imágenes en NASA/IPAC Extragalactic Database [NED](https://ned.ipac.caltech.edu/) en dos bandas fotométricas de una galaxia del catálogo de Arp y muéstralas en DS9.
+```
+```{admonition} DS9 Ejercicio 2
+Busca observaciones espectroscópicas obtenidas por [TWIN](http://www.caha.es/CAHA/Instruments/TWIN/HTML/twin.html) en el telescopio de 3.5m del observatorio de Calar Alto que tengan tiempo de exposición de 1800 s y muéstralas en DS9. Las observaciones se encuentran en el Observatorio Virtual Español [SVO](https://svo.cab.inta-csic.es/main/index.php).
+```
 
-- NED buscar y cargar cargar imagen
-- Regiones y Fotometría sencilla
+DS9 permite crear regiones y realizar estadísticas y fotometría sencilla como se verá en la práctica de Fotometría CCD.
 
 ## ALADIN
 [Aladin](https://aladin.u-strasbg.fr/), etc.

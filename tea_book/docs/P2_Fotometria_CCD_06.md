@@ -463,7 +463,7 @@ reg sum     npix  mean      median    min       max        var       stddev    r
 1 1558695.6 5023  310.31169 53.757399 12.027513 10068.373 1006073.9 1003.0324 1049.9368
 </pre>
 
-Ahora la estadística de cuentas/pixel no nos sirve de mucho como tamòco la varianza o la desviación estándard ya que hay mucha variación en esa apertura. Pero sí es interesante ver que el máximo de cuentas en la estrella es de 10068 o sea que la imagen no está saturada. 
+Ahora la estadística de cuentas/pixel no nos sirve de mucho como tampoco la varianza o la desviación estándard ya que hay mucha variación en esa apertura. Pero sí es interesante ver que el máximo de cuentas en la estrella es de 10068 o sea que la imagen no está saturada. 
 
 Resumiendo tenemos 1558695.6 cuentas brutas (estrella + cielo) y 179693.23 cuentas en el cielo. Luego el flujo neto de HZ44 en esta observación es 1558695.6 - 179693.23 = 1379002.37 cuentas en 5s de observación que es un valor similar al que encontramos con ``Photutils``
 

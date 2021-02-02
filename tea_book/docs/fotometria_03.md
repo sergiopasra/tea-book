@@ -138,7 +138,7 @@ La dispersión de los datos da idea de la calidad de la noche y permite estimar 
 ```{figure} /_static/lecture_specific/fotometria/foto_19_absoluta_metodo.png
 ---
 width: 600px
-name: Bouguer_2-fig
+name: Bouguer_3-fig
 ---
 Las observaciones auxiliares de estrellas estándar nos permiten determinar las constantes instrumentales y el coeficiente de exrtinción de esa noche.  
 ```
@@ -147,7 +147,7 @@ Las observaciones auxiliares de estrellas estándar nos permiten determinar las 
 ```{figure} /_static/lecture_specific/fotometria/foto_20_absoluta_calibracion.png
 ---
 width: 600px
-name: Bouguer_2-fig
+name: Bouguer_4-fig
 ---
 Con el flujo en c/s de nuestro objeto de interés podemos determinar la magnitud instrumental y luego corregirla del efecto de la atmósfera gracias a que hemos determinado previamente $C_\lambda$ y $K_\lambda$ 
 ```

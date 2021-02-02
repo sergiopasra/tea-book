@@ -274,7 +274,7 @@ y si revisamos el cuaderno nos damos cuenta de que en realidad esta observación
 ```{figure} /_static/lecture_specific/p2_fotometria/p2_10_bouger_2.png
 ---
 width: 600px
-name: bouger-1-fig
+name: bouger-2-fig
 ---
 Extraído del cuaderno de observaciones.
 ```
